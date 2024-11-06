@@ -5,6 +5,7 @@ import { ProductionChartComponent } from '../../components/production-chart/prod
 @Component({
     selector: 'dashboard',
     templateUrl: './dashboard.component.html',
+    styleUrls: ['./dashboard.component.scss'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [RouterLink, ProductionChartComponent],
