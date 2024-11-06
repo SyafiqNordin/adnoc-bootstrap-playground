@@ -1,7 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { HighchartsChartModule } from 'highcharts-angular';
-import * as Highcharts from 'highcharts';
+import * as Highcharts from 'highcharts/highstock';
+import { DummyData } from './dummyData';
 
 @Component({
   selector: 'production-chart',
@@ -12,44 +13,93 @@ import * as Highcharts from 'highcharts';
   imports: [RouterLink, HighchartsChartModule],
 })
 export class ProductionChartComponent {
+  chartConstructor: string = 'stockChart';
   Highcharts: typeof Highcharts = Highcharts;
+  
   chartOptions: Highcharts.Options = {
-    title: {
-      text: '',
-      align: 'left',
-      style: {
-        color: '#CECECE',
-        fontWeight: 'normal',
-        fontSize: '16px',
-      },
+    chart: {
+      backgroundColor: '', // Set background color here
     },
+    series: [
+      {
+        yAxis: 0,
+        name: 'Oil Actual',
+        type: 'line',
+        data: DummyData.oilActual,
+        color: '#09ff00',
+        dashStyle: 'Solid',
+        pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
+        pointStart: Date.UTC(2024, 0, 1),
+      },
+      {
+        yAxis: 0,
+        name: 'Oil target',
+        type: 'line',
+        data: DummyData.oilTarget,
+        color: '#09ff00',
+        dashStyle: 'Dash',
+        pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
+        pointStart: Date.UTC(2024, 0, 1),
+      },
+      {
+        yAxis: 1,
+        name: 'Gas Actual',
+        type: 'line',
+        data: DummyData.gasActual,
+        color: '#ff0000',
+        dashStyle: 'Solid',
+        pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
+        pointStart: Date.UTC(2024, 0, 1),
+      },
+      {
+        yAxis: 1,
+        name: 'Gas Target',
+        type: 'line',
+        data: DummyData.gasTarget,
+        color: '#ff0000',
+        dashStyle: 'Dash',
+        pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
+        pointStart: Date.UTC(2024, 0, 1),
+      },
+      {
+        yAxis: 0,
+        name: 'Water Actual',
+        type: 'line',
+        data: DummyData.waterActual,
+        pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
+        pointStart: Date.UTC(2024, 0, 1),
+      },
+    ],
     xAxis: {
+      range: 18 * 24 * 3600 * 1000, // 18 days
       type: 'datetime',
       lineColor: '',
-      tickmarkPlacement: 'on',
-      categories: [
-        '01/01',
-        '03/01',
-        '05/01',
-        '07/01',
-        '09/01',
-        '11/01',
-        '13/01',
-        '15/01',
-        '17/01',
-        '19/01',
-      ],
-      gridLineWidth: 0.1,
+      gridLineWidth: 0.5,
       gridLineColor: 'rgba(206, 206, 206, 0.7)',
+      tickColor: '',
+      offset: -20,
       labels: {
         style: {
           color: 'rgba(206, 206, 206, 0.5)', // Set the color for x-axis labels here
           fontSize: '12px', // Optional: customize font size
         },
       },
+      dateTimeLabelFormats: {
+        day: '%d/%m',
+      },
     },
     yAxis: [
       {
+        opposite: false,
+        gridLineColor: '',
+        labels: {
+          reserveSpace: true,
+          style: {
+            color: 'rgba(206, 206, 206, 0.5)',
+            fontSize: '12px',
+          },
+        },
+        offset: 30,
         title: {
           text: 'stb/d',
           style: {
@@ -57,17 +107,18 @@ export class ProductionChartComponent {
             fontSize: '12px', // Optional: customize font size
           },
         },
-        gridLineWidth: 0,
-        type: 'logarithmic',
-        labels: {
-          x: 20,
-          style: {
-            color: 'rgba(206, 206, 206, 0.5)', // Set the color for x-axis labels here
-            fontSize: '12px', // Optional: customize font size
-          },
-        },
+        softMin: 0,
       },
       {
+        gridLineColor: '',
+        labels: {
+          reserveSpace: true,
+          style: {
+            color: 'rgba(206, 206, 206, 0.5)',
+            fontSize: '12px',
+          },
+        },
+        offset: 30,
         title: {
           text: 'MMscf/d',
           style: {
@@ -75,81 +126,9 @@ export class ProductionChartComponent {
             fontSize: '12px', // Optional: customize font size
           },
         },
-        gridLineWidth: 0,
-        type: 'logarithmic',
-        labels: {
-          x: -20,
-          style: {
-            color: 'rgba(206, 206, 206, 0.5)', // Set the color for x-axis labels here
-            fontSize: '12px', // Optional: customize font size
-          },
-        },
-        opposite: true,
+        softMin: 0,
       },
     ],
-    series: [
-      {
-        yAxis: 0,
-        name: 'Oil Actual',
-        type: 'line',
-        data: [
-          38000, 30000, 28000, 40000, 39000, 45000, 31000, 30000, 42000, 39000,
-        ],
-        marker: {
-          enabled: false, // Disable the markers (dots) on the line series
-        },
-        color: '#09ff00',
-      },
-      {
-        yAxis: 0,
-        name: 'Oil Target',
-        type: 'line',
-        data: [
-          32000, 32000, 32000, 32000, 32000, 32000, 32000, 32000, 32000, 32000,
-        ],
-        marker: {
-          enabled: false, // Disable the markers (dots) on the line series
-        },
-        color: '#09ff00',
-        dashStyle: 'Dash',
-      },
-      {
-        yAxis: 1,
-        name: 'Gas Actual',
-        type: 'line',
-        data: [2500, 2000, 2100, 2400, 2700, 2600, 2800, 2400, 2500, 2900],
-        marker: {
-          enabled: false, // Disable the markers (dots) on the line series
-        },
-        color: '#ff0000',
-        dashStyle: 'Solid',
-      },
-      {
-        yAxis: 1,
-        name: 'Gas Target',
-        type: 'line',
-        data: [3500, 3500, 3500, 3500, 3500, 3500, 3500, 3500, 3500, 3500],
-        marker: {
-          enabled: false, // Disable the markers (dots) on the line series
-        },
-        color: '#ff0000',
-        dashStyle: 'Dash',
-      },
-      {
-        yAxis: 0,
-        name: 'Water Actual',
-        type: 'line',
-        data: [
-          45000, 52000, 51000, 55000, 48000, 57000, 52000, 59000, 50000, 52000,
-        ],
-        marker: {
-          enabled: false, // Disable the markers (dots) on the line series
-        },
-      },
-    ],
-    chart: {
-      backgroundColor: '', // Set background color here
-    },
     tooltip: {
       backgroundColor: 'rgba(4, 12, 25, 0.6)',
       borderColor: 'black',
@@ -159,8 +138,66 @@ export class ProductionChartComponent {
       },
     },
     legend: {
+      enabled: true,
       itemStyle: {
         color: 'rgba(129, 129, 129, 1)',
+      },
+      itemDistance: 17,
+    },
+    navigator: {
+      handles: {
+        backgroundColor: '#CECECE',
+        borderColor: '#CECECE',
+        borderRadius: 2,
+        height: 17,
+        width: 6,
+      },
+      height: 61,
+      margin: 20,
+      maskFill: 'rgba(206, 206, 206, 0.5)',
+      outlineWidth: 0,
+      series: {
+        fillOpacity: 0,
+      },
+      xAxis: {
+        gridLineColor: '',
+        labels: {
+          style: {
+            color: 'rgba(206, 206, 206, 1)',
+            fontSize: '12px',
+          },
+        },
+      },
+    },
+    rangeSelector: {
+      buttonPosition: {
+        x: -75,
+      },
+      buttonSpacing: 8,
+      buttonTheme: {
+        fill: 'none',
+        style: {
+          color: 'rgba(129, 129, 129, 1)',
+          fontSize: '12px',
+        },
+        states: {
+          hover: {
+            fill: 'rgba(65, 65, 65, 1)',
+            style: {
+              color: 'rgba(206, 206, 206, 1)',
+            },
+          },
+          select: {
+            fill: 'rgba(65, 65, 65, 1)',
+            style: {
+              color: 'rgba(206, 206, 206, 1)',
+            },
+          },
+        },
+      },
+      inputEnabled: false,
+      labelStyle: {
+        display: 'none',
       },
     },
   };
