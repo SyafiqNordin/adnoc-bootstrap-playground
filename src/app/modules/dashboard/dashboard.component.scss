@@ -14,7 +14,7 @@
 }
 
 .bg-aurora-left {
-  position: absolute;
+  position: fixed;
   top: 30%; /* Adjust position as desired */
   left: 30%; /* Adjust position as desired */
   height: 400px;
@@ -26,7 +26,7 @@
 }
 
 .bg-aurora-right {
-  position: absolute;
+  position: fixed;
   top: 40%; /* Adjust position as desired */
   left: 50%; /* Adjust position as desired */
   height: 400px;
