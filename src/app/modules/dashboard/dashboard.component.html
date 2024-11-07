@@ -1,22 +1,18 @@
 <div
   class="w-100 vh-100 d-flex justify-content-start align-items-center bg-dashboard px-3"
 >
-  <div class="col-9 px-3 d-flex flex-column rounded-top-3 rounded-bottom-3 bg-dashboard-card">
+  <div
+    class="col-9 px-3 d-flex flex-column rounded-top-3 rounded-bottom-3 bg-dashboard-card"
+  >
     <!-- Chart Header -->
     <div class="w-100 pt-4 pb-15px d-flex justify-content-between">
       <span class="fw-normal fs-16px" style="color: #cecece"
         >Production Chart</span
       >
-      <!-- <div class="flex gap-2">
-                <mat-icon class="text-slate-500">settings</mat-icon>
-                <mat-icon class="text-slate-500">fullscreen</mat-icon>
-                <mat-icon class="text-slate-500">more_vert</mat-icon>
-            </div> -->
     </div>
 
     <!-- Chart -->
     <production-chart></production-chart>
-
   </div>
   <div class="col-3">
     <swapped-sidepanel></swapped-sidepanel>
