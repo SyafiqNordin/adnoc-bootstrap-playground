@@ -1,7 +1,77 @@
+@import '../../../styles/variables';
+
 .bg-dashboard {
-  background-color: #001c49;
+  background-color: #141328;
+  z-index: 0;
 }
 
 .bg-dashboard-card {
   background-color: rgba(77, 77, 77, 0.1);
 }
+
+.backdrop {
+  z-index: 1;
+}
+
+.bg-aurora-left {
+  position: fixed;
+  top: 30%; /* Adjust position as desired */
+  left: 30%; /* Adjust position as desired */
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  background-image: linear-gradient(80deg, $blue-light-primary-color, $blue-dark-primary-color);
+  filter: blur(80px);
+  animation: move-aurora-left 16s linear infinite; /* Adjust animation duration and timing */
+}
+
+.bg-aurora-right {
+  position: fixed;
+  top: 40%; /* Adjust position as desired */
+  left: 50%; /* Adjust position as desired */
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  background-image: linear-gradient(80deg, $blue-light-primary-color, $pink-light-primary-color);
+  filter: blur(80px);
+  animation: move-aurora-right 16s linear infinite; /* Adjust animation duration and timing */
+}
+
+/* Keyframes for the aurora animation */
+@keyframes move-aurora-left {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(200px, -100px) scale(1); /* Adjust movement distance */
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate(200px, 100px) scale(1); /* Adjust movement distance */
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes move-aurora-right {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(-200px, 100px) scale(1); /* Adjust movement distance */
+      opacity: 0.5;
+    }
+    75% {
+        transform: translate(-200px, -100px) scale(1); /* Adjust movement distance */
+        opacity: 0.5;
+      }
+    100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+  }

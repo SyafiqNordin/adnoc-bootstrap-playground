@@ -7,5 +7,11 @@
 // Import all utilities
 @import "utilities/index";
 
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 //Import global Google Font
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');

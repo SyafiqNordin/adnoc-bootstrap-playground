@@ -30,6 +30,7 @@ export class ProductionChartComponent {
         dashStyle: 'Solid',
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
+        showInNavigator: true,
       },
       {
         yAxis: 0,
@@ -48,6 +49,7 @@ export class ProductionChartComponent {
         dashStyle: 'Solid',
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
+        showInNavigator: true,
       },
       {
         yAxis: 0,
@@ -58,6 +60,7 @@ export class ProductionChartComponent {
         dashStyle: 'Dash',
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
+        showInNavigator: true,
       },
       {
         yAxis: 1,
@@ -68,6 +71,7 @@ export class ProductionChartComponent {
         dashStyle: 'Dash',
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
+        showInNavigator: true,
       },
       {
         yAxis: 0,
@@ -76,6 +80,7 @@ export class ProductionChartComponent {
         data: DummyData.waterActual,
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
+        showInNavigator: true,
       },
     ],
     xAxis: {
@@ -174,7 +179,14 @@ export class ProductionChartComponent {
             color: 'rgba(206, 206, 206, 1)',
             fontSize: '12px',
           },
+          formatter: function () {
+            return Highcharts.dateFormat('%b', Number(this.value))[0]; // Show first letter of month
+          },
         },
+        dateTimeLabelFormats: {
+            month: '%b'
+        },
+        tickInterval: 31 * 24 * 3600 * 1000,
       },
     },
     rangeSelector: {
