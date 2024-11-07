@@ -15,18 +15,36 @@ import { DummyData } from './dummyData';
 export class ProductionChartComponent {
   chartConstructor: string = 'stockChart';
   Highcharts: typeof Highcharts = Highcharts;
-  
+
   chartOptions: Highcharts.Options = {
     chart: {
       backgroundColor: '', // Set background color here
     },
     series: [
       {
+        yAxis: 1,
+        name: 'Gas Actual',
+        type: 'line',
+        data: DummyData.gasActual,
+        color: '#ff0000',
+        dashStyle: 'Solid',
+        pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
+        pointStart: Date.UTC(2024, 0, 1),
+      },
+      {
         yAxis: 0,
         name: 'Oil Actual',
-        type: 'line',
+        type: 'area',
+        opacity: 0.2,
         data: DummyData.oilActual,
-        color: '#09ff00',
+        color: {
+          linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+          stops: [
+            [0, 'rgba(0, 218, 105, 1)'], // start
+            [0.5, 'rgba(0, 218, 105, 0.5)'], // middle
+            [1, 'rgba(0, 218, 105, 0))'], // end
+          ],
+        },
         dashStyle: 'Solid',
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
@@ -38,16 +56,6 @@ export class ProductionChartComponent {
         data: DummyData.oilTarget,
         color: '#09ff00',
         dashStyle: 'Dash',
-        pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
-        pointStart: Date.UTC(2024, 0, 1),
-      },
-      {
-        yAxis: 1,
-        name: 'Gas Actual',
-        type: 'line',
-        data: DummyData.gasActual,
-        color: '#ff0000',
-        dashStyle: 'Solid',
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
       },
