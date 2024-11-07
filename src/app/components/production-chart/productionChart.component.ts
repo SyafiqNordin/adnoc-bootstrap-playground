@@ -36,7 +36,8 @@ export class ProductionChartComponent {
         yAxis: 0,
         name: 'Oil Actual',
         type: 'area',
-        opacity: 0.2,
+        fillOpacity: 0.3,
+        lineColor: 'rgba(0, 218, 105, 1)',
         data: DummyData.oilActual,
         color: {
           linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
