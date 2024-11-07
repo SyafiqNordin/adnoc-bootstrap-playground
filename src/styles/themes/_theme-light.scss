@@ -6,12 +6,12 @@ $secondary-color: #42586b;
 
 // Button's styles
 .btn-primary {
-  background-color: $primary-color;
-  color: #040C19;
-  border-width: 0;
-  &:hover {
-    background-color: darken($primary-color, 5%);
-    color: #040C19;
+    background-color: $primary-color;
+    color: $button-text-color;
     border-width: 0;
+    &:hover {
+      background-color: darken($primary-color, 5%);
+      color: $button-text-color;
+      border-width: 0;
+    }
   }
-}
