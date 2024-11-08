@@ -7,27 +7,14 @@ import { CommonModule } from '@angular/common';
     templateUrl: './swappedSidepanel.component.html',
     styleUrl: './swappedSidepanel.component.scss',
     standalone: true,
-    imports: [RouterModule, CommonModule],  // Add CommonModule here
+    imports: [RouterModule, CommonModule],
 })
+
 export class swappedSidepanelComponent {
-    isOneFront = true;
-    isTwoFront = false;
-
-    toggleOne() {
-        if (this.isOneFront) {
-            console.log('has front class');
-        } else {
-            this.isOneFront = true;
-            this.isTwoFront = false;
-        }
-    }
-
-    toggleTwo() {
-        if (this.isTwoFront) {
-            console.log('has front class');
-        } else {
-            this.isTwoFront = true;
-            this.isOneFront = false;
-        }
-    }
-}
+    activePanel: string = 'one';
+  
+    bringToFront(panel: string) {
+        this.activePanel = panel;
+      }
+  }
+  

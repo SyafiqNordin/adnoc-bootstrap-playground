@@ -1,7 +1,7 @@
 <div
-  class="w-100 min-vh-100 d-flex justify-content-center align-items-center bg-dashboard px-3"
+  class="backdrop w-100 min-vh-100 d-flex justify-content-center align-items-center bg-dashboard px-3"
 >
-  <div class="backdrop w-100">
+  <div class="w-100 d-flex justify-content-between">
     <div class="bg-aurora-left"></div>
     <div class="bg-aurora-right"></div>
     <div
@@ -16,9 +16,11 @@
 
       <!-- Chart -->
       <production-chart></production-chart>
+
+    </div>
+    <div class="col-3">
+      <swapped-sidepanel></swapped-sidepanel>
     </div>
   </div>
-  <div class="col-3">
-    <swapped-sidepanel></swapped-sidepanel>
-  </div>
+  
 </div>

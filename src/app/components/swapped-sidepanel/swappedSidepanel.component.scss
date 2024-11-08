@@ -47,8 +47,9 @@ main {
     min-height: 80vh;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%); // Center vertically
-    transition: margin-right 0.3s ease, z-index 0s;
+    transform: translateY(-50%);
+    // transition: margin-right 0.3s ease, z-index 0s;
+    transition: margin-right 0.3s ease, margin-left 0.3s ease, z-index 0s;
     box-sizing: border-box;
     padding: 0.5rem;
 

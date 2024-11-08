@@ -1,108 +1,104 @@
 <main>
-    <div class="panel one blurred-panel" [ngClass]="{ 'front': isOneFront }" (click)="toggleOne()">
-        <ng-container *ngIf="isOneFront">
-            <!-- Content for Panel One when it is active -->
-            <p>Panel One is active</p>
-            <div class="panel-header">
-                <div class="header-title">
-                    Smart Ticket
+    <div class="panel one blurred-panel" [ngClass]="{ 'front': activePanel === 'one' }" (click)="bringToFront('one')">
+        <!-- Content for Panel One when it is active -->
+        <p>Panel One is active</p>
+        <div class="panel-header">
+            <div class="header-title">
+                Smart Ticket
+            </div>
+            <div class="header-icon">
+                test
+            </div>
+        </div>
+        <div class="panel-filtering">
+            <label for="">Search Well Name...</label>
+        </div>
+        <div class="panel-container ongdng">
+            <div class="loop-info">
+                <div class="info-header">
+                    <div class="info-title">
+                        MN190
+                    </div>
+                    <div class="info-icon">
+                        test
+                    </div>
                 </div>
-                <div class="header-icon">
-                    test
+                <div class="info-box">
+                    Recommendation:
+                    <br>
+                    Consider increasing ...
+                    <button>View More</button>
                 </div>
             </div>
-            <div class="panel-filtering">
-                <label for="">Search Well Name...</label>
-            </div>
-            <div class="panel-container ongdng">
-                <div class="loop-info">
-                    <div class="info-header">
-                        <div class="info-title">
-                            MN190
-                        </div>
-                        <div class="info-icon">
-                            test
-                        </div>
+    
+            <div class="loop-info">
+                <div class="info-header">
+                    <div class="info-title">
+                        MN190
                     </div>
-                    <div class="info-box">
-                        Recommendation:
-                        <br>
-                        Consider increasing ...
-                        <button>View More</button>
+                    <div class="info-icon">
+                        test
                     </div>
                 </div>
-        
-                <div class="loop-info">
-                    <div class="info-header">
-                        <div class="info-title">
-                            MN190
-                        </div>
-                        <div class="info-icon">
-                            test
-                        </div>
-                    </div>
-                    <div class="info-box">
-                        Recommendation:
-                        <br>
-                        Consider increasing ...
-                        <button>View More</button>
-                    </div>
+                <div class="info-box">
+                    Recommendation:
+                    <br>
+                    Consider increasing ...
+                    <button>View More</button>
                 </div>
             </div>
-        </ng-container>
+        </div>
     </div>
     
-    <div class="panel two blurred-panel" [ngClass]="{ 'front': isTwoFront }" (click)="toggleTwo()">
-        <ng-container *ngIf="isTwoFront">
-            <!-- Content for Panel Two when it is active -->
-            <p>Panel Two is active</p>
-            <div class="panel-header">
-                <div class="header-title">
-                    Smart Ticket
+    <div class="panel two blurred-panel" [ngClass]="{ 'front': activePanel === 'two' }" (click)="bringToFront('two')">
+        <!-- Content for Panel Two when it is active -->
+        <p>Panel Two is active</p>
+        <div class="panel-header">
+            <div class="header-title">
+                Smart Ticket
+            </div>
+            <div class="header-icon">
+                test
+            </div>
+        </div>
+        <div class="panel-filtering">
+            <label for="">Search Well Name...</label>
+        </div>
+        <div class="panel-container ongdng">
+            <div class="loop-info">
+                <div class="info-header">
+                    <div class="info-title">
+                        MN190
+                    </div>
+                    <div class="info-icon">
+                        test
+                    </div>
                 </div>
-                <div class="header-icon">
-                    test
+                <div class="info-box">
+                    Recommendation:
+                    <br>
+                    Consider increasing ...
+                    <button>View More</button>
                 </div>
             </div>
-            <div class="panel-filtering">
-                <label for="">Search Well Name...</label>
-            </div>
-            <div class="panel-container ongdng">
-                <div class="loop-info">
-                    <div class="info-header">
-                        <div class="info-title">
-                            MN190
-                        </div>
-                        <div class="info-icon">
-                            test
-                        </div>
+    
+            <div class="loop-info">
+                <div class="info-header">
+                    <div class="info-title">
+                        MN190
                     </div>
-                    <div class="info-box">
-                        Recommendation:
-                        <br>
-                        Consider increasing ...
-                        <button>View More</button>
+                    <div class="info-icon">
+                        test
                     </div>
                 </div>
-        
-                <div class="loop-info">
-                    <div class="info-header">
-                        <div class="info-title">
-                            MN190
-                        </div>
-                        <div class="info-icon">
-                            test
-                        </div>
-                    </div>
-                    <div class="info-box">
-                        Recommendation:
-                        <br>
-                        Consider increasing ...
-                        <button>View More</button>
-                    </div>
+                <div class="info-box">
+                    Recommendation:
+                    <br>
+                    Consider increasing ...
+                    <button>View More</button>
                 </div>
             </div>
-        </ng-container>
+        </div>
     </div>    
 </main>
 
