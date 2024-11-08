@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 .blurred-panel{
-    position: relative;
     width: 100%;
     height: 80vh;
     padding: 20px;
@@ -24,4 +23,81 @@
 [class*="box"] {
     display: grid;
 
+}
+
+$nudge: 50px;
+
+body, html {
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  padding: 1rem;
+  box-sizing: border-box;
+  max-width: 30rem;
+  height: 15rem;
+  margin: 1rem auto 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  div.panel {
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); // Center vertically
+    transition: margin-right 0.3s ease, z-index 0s;
+    box-sizing: border-box;
+    padding: 0.5rem;
+
+    &:before {
+      content: '';
+      font-size: 0.6rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0.2em 0 0 0.4em;
+    }
+
+    &.one {
+      margin-right: $nudge * 2; // Position the first card to the left
+      z-index: 2;               // Bring to the front
+      box-shadow: 0 2px 3px rgba(#000, 0.2);  // Apply shadow to front card
+      
+      &:before {
+        content: '1';
+      }
+    }
+
+    &.two {
+      margin-right: 0; // Position the second card to the right
+      z-index: 1;      // Send to the back
+      
+      &:before {
+        content: '2';
+      }
+    }
+
+    &.front {
+      z-index: 2;
+      margin-right: $nudge * 2; // Keep the front card on the left
+      box-shadow: 0 2px 3px rgba(#000, 0.2);
+    }
+
+    &:not(.front) {
+      z-index: 1;
+      margin-right: 0; // Position the back card to the right
+    }
+  }
+}
+
+.panel {
+  padding: 20px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+
+  &.front {
+    border-color: #00796b;
+  }
 }
