@@ -4,6 +4,10 @@
   <div class="backdrop w-100">
     <div class="bg-aurora-left"></div>
     <div class="bg-aurora-right"></div>
+    <div class="d-flex justify-content-end">
+      <card></card>
+    </div>
+
     <div
       class="col-9 px-3 d-flex flex-column rounded-top-3 rounded-bottom-3 bg-dashboard-card"
     >
@@ -17,13 +21,22 @@
       <!-- Chart -->
       <production-chart></production-chart>
     </div>
+    <br />
+    <div
+      class="col-9 px-3 d-flex flex-column rounded-top-3 rounded-bottom-3 bg-dashboard-card"
+    >
+      <!-- Chart Header -->
+      <div
+        class="w-100 pt-4 pb-15px d-flex flex-column justify-content-between"
+      >
+        <span class="fw-normal fs-16px" style="color: #cecece"
+          >Gas Production</span
+        >
+        <span class="fw-normal fs-12px" style="color: #818181">MMscf/d</span>
+      </div>
+
+      <!-- Chart -->
+      <pie-chart></pie-chart>
+    </div>
   </div>
-</div>
-<div class="w-100 h-480 pt-4 pb-15px d-flex justify-content-center">
-  <card></card>
-  <!-- <div class="flex gap-2">
-            <mat-icon class="text-slate-500">settings</mat-icon>
-            <mat-icon class="text-slate-500">fullscreen</mat-icon>
-            <mat-icon class="text-slate-500">more_vert</mat-icon>
-        </div> -->
 </div>

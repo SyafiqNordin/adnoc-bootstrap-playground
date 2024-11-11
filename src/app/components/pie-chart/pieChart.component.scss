@@ -1,0 +1,77 @@
+.dashboard-container {
+  background-color: #1a1a2e;
+  padding: 24px;
+  color: white;
+  min-height: 100vh;
+
+  .production-header {
+    margin-bottom: 24px;
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .production-stats {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 24px;
+
+      .stat-item {
+        display: flex;
+        flex-direction: column;
+
+        .label {
+          font-size: 12px;
+          color: #818181;
+          font-weight: 300;
+        }
+
+        .value {
+          font-size: 20px;
+          font-weight: 600;
+        }
+
+        .delta {
+          font-size: 36px;
+
+          &.negative {
+            color: #cd4b4b;
+            text-shadow: 0px 0px 8px rgba(205, 75, 75, 0.65);
+            font-weight: 400;
+            line-height: normal;
+
+            &:before {
+              content: "↓";
+              margin-right: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .charts-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    .gauge-chart {
+      height: 300px;
+      background-color: #1f1f35;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .line-chart {
+      height: 300px;
+      background-color: #1f1f35;
+      border-radius: 8px;
+      padding: 16px;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<div class="dashboard-container">
+  <div class="production-header">
+    <div class="charts-container">
+      <div class="gauge-chart" id="gauge-container"></div>
+      <div class="line-chart" id="line-container"></div>
+    </div>
+    <div class="production-stats">
+      <div class="stat-item">
+        <span class="label">Current</span>
+        <span class="value">{{ chartData.currentProduction }} MMscf/d</span>
+        <span class="delta negative">-0.89%</span>
+      </div>
+      <div class="stat-item">
+        <span class="label">Target</span>
+        <span class="value">{{ chartData.targetProduction }} MMscf/d</span>
+      </div>
+      <div class="stat-item">
+        <span class="label">Potential</span>
+        <span class="value">{{ chartData.potentialProduction }} MMscf/d</span>
+      </div>
+    </div>
+  </div>
+</div>

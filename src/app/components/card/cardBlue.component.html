@@ -1,5 +1,5 @@
 <div class="custom-card">
-<section class="opportunities-container ">
+  <section class="opportunities-container">
     <header class="opportunities-header">
       <div class="title-container">
         <h2 class="main-title">Top Opportunities</h2>
@@ -14,40 +14,50 @@
       </button>
     </header>
     <div class="opportunities-content">
-      <article class="opportunity-card ">
+      <article
+        class="opportunity-card"
+        [ngClass]="{ 'swipe-left': swipeLeft, 'swipe-right': swipeRight }"
+      >
         <div class="gain-info">
           <h3 class="gain-label">Expected Gain</h3>
-          <p class="gain-value">345.3</p>
+          <p class="gain-value">{{ currentCard.gain }}</p>
         </div>
         <div class="well-details">
-          <h4 class="well-name">MN001</h4>
+          <h4 class="well-name">{{ currentCard.wellName }}</h4>
           <div class="secondary-details">
             <div class="expected-gain">
               <p class="detail-label">Expected Gain</p>
-              <p class="detail-value positive">+23.4%</p>
+              <p class="detail-value positive">
+                {{ currentCard.expectedGain }}
+              </p>
             </div>
             <div class="before-value">
               <p class="detail-label">Before Optimization</p>
-              <p class="detail-value">321.45</p>
+              <p class="detail-value">{{ currentCard.beforeValue }}</p>
             </div>
           </div>
         </div>
       </article>
-      <!-- <div class="placeholder-card"></div>
-      <div class="placeholder-card"></div>
-      <div class="placeholder-card"></div>
-      <div class="placeholder-card"></div> -->
     </div>
     <footer class="opportunities-footer">
       <div class="pagination-controls">
-        <button class="nav-btn prev" aria-label="Previous opportunity">
-          <img src="assets/icon/arrow_prev.svg" alt="create" class="" />
-          
+        <button
+          class="nav-btn prev"
+          aria-label="Previous opportunity"
+          (click)="changeCard(-1)"
+        >
+          <img src="arrow_prev.svg" alt="create" class="" />
         </button>
-        <button class="nav-btn next" aria-label="Next opportunity">
-          <img src="assets/icon/arrow_prev.svg" alt="create" class="" />
+        <button
+          class="nav-btn next"
+          aria-label="Next opportunity"
+          (click)="changeCard(1)"
+        >
+          <img src="arrow_prev.svg" alt="create" class="" />
         </button>
-        <span class="pagination-info">1/5</span>
+        <span class="pagination-info"
+          >{{ currentIndex + 1 }}/{{ cards.length }}</span
+        >
       </div>
       <button class="optimization-btn ms-3">
         <span>Optimization</span>

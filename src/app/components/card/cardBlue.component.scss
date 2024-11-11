@@ -61,10 +61,14 @@
   gap: 60px;
   overflow-x: auto;
   padding: 20px 0;
+  overflow: hidden;
 }
 .opportunity-card {
   min-width: 240px;
   width: 323px;
+  transition: transform 0.3s ease;
+  position: relative;
+  width: 100%;
 }
 .gain-info {
   margin-bottom: 17px;
@@ -167,4 +171,12 @@
 .optimization-icon {
   width: 20px;
   height: 20px;
+}
+
+.swipe-left {
+  transform: translateX(100%);
+}
+
+.swipe-right {
+  transform: translateX(-100%);
 }
