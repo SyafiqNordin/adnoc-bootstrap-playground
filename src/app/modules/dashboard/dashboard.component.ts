@@ -6,6 +6,7 @@ import { cardBlueComponent } from '../../components/card/cardBlue.component';
 @Component({
   selector: 'dashboard',
   templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [RouterLink, ProductionChartComponent, cardBlueComponent],

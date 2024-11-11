@@ -1,0 +1,14 @@
+// Import the base Bootstrap customizations
+@import "bootstrap-custom";
+
+// Import the desired theme
+@import "themes/theme-default";
+
+// Import all utilities
+@import "utilities/index";
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
