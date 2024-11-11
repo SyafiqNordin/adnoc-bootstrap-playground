@@ -1,0 +1,170 @@
+:host {
+  display: contents;
+}
+/* Add this CSS to your stylesheet */
+.custom-card {
+  display: flex;
+  width: 383px;
+  height: 480px;
+  padding: 30px;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #0047ba 0%, #002054 100%);
+}
+.opportunities-container {
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  padding: 30px;
+  font-family: Titillium Web, sans-serif;
+}
+.opportunities-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.title-container {
+  display: flex;
+  flex-direction: column;
+}
+.main-title {
+  color: #cecece;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+.subtitle {
+  color: #818181;
+  font-size: 12px;
+  font-weight: 300;
+  margin: 0;
+}
+.table-view-btn {
+  transform: rotate(180deg);
+  border-radius: 8px;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+.table-icon {
+  width: 24px;
+  height: 24px;
+}
+.opportunities-content {
+  display: flex;
+  gap: 60px;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+.opportunity-card {
+  min-width: 240px;
+  width: 323px;
+}
+.gain-info {
+  margin-bottom: 17px;
+}
+.gain-label {
+  color: #818181;
+  font-size: 12px;
+  font-weight: 300;
+  margin: 0;
+}
+.gain-value {
+  color: #cecece;
+  font-size: 64px;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0;
+}
+.well-name {
+  color: #cecece;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+.secondary-details {
+  display: flex;
+  gap: 37px;
+}
+.expected-gain {
+  border-right: 1px solid rgba(129, 129, 129, 0.4);
+  padding-right: 36px;
+}
+.detail-label {
+  color: #818181;
+  font-size: 12px;
+  font-weight: 300;
+  margin: 0;
+}
+.detail-value {
+  color: #cecece;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+.detail-value.positive {
+  color: #00da69;
+  text-shadow: 0 0 8px rgba(0, 255, 123, 0.65);
+}
+.placeholder-card {
+  min-width: 240px;
+  width: 323px;
+  height: 189px;
+}
+.opportunities-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 35px;
+}
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-btn {
+  border-radius: 8px;
+  background-color: rgba(18, 18, 18, 0.3);
+  border: none;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.nav-btn.next {
+  transform: rotate(180deg);
+}
+.nav-icon {
+  width: 12px;
+  height: 20px;
+}
+.pagination-info {
+  color: #818181;
+  font-size: 14px;
+  font-weight: 600;
+}
+.optimization-btn {
+  border-radius: 200px;
+  background-color: #06214c;
+  color: #cecece;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.optimization-icon {
+  width: 20px;
+  height: 20px;
+}
