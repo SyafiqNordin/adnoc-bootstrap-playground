@@ -1,32 +1,24 @@
-<div class="backdrop w-100 min-vh-100 bg-dashboard px-3 py-5">
-  <div class="w-100">
-    <!-- Dashboard Background Aurora Animation -->
-    <div class="bg-aurora-left"></div>
-    <div class="bg-aurora-right"></div>
-
-    <!-- Dashboard Content -->
-    <div class="d-flex flex-column w-100 gap-3">
-      <!-- Field Network Section -->
-      <div
-        class="col-9 d-flex flex-column rounded-top-3 rounded-bottom-3 bg-dashboard-card"
+<!-- Dashboard Content -->
+<div class="d-flex flex-column w-100 gap-3">
+  <!-- Production Chart Section -->
+  <div
+    class="col-9 px-3 d-flex flex-column rounded-top-3 rounded-bottom-3 bg-dashboard-card"
+  >
+    <!-- Chart Header -->
+    <div class="w-100 pt-4 pb-15px d-flex justify-content-between">
+      <span class="fw-normal fs-16px text-white"
+        >Production Chart</span
       >
-        <field-network></field-network>
-      </div>
-
-      <!-- Production Chart Section -->
-      <div
-        class="col-9 px-3 d-flex flex-column rounded-top-3 rounded-bottom-3 bg-dashboard-card"
-      >
-        <!-- Chart Header -->
-        <div class="w-100 pt-4 pb-15px d-flex justify-content-between">
-          <span class="fw-normal fs-16px" style="color: #cecece"
-            >Production Chart</span
-          >
-        </div>
-
-        <!-- Chart -->
-        <production-chart></production-chart>
-      </div>
     </div>
+
+    <!-- Chart -->
+    <production-chart></production-chart>
+  </div>
+
+  <!-- Field Network Section -->
+  <div
+    class="col-9 d-flex flex-column rounded-top-3 rounded-bottom-3 bg-dashboard-card"
+  >
+    <field-network></field-network>
   </div>
 </div>
