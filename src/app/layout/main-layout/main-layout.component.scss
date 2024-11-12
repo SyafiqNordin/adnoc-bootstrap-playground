@@ -5,6 +5,10 @@
   z-index: 0;
 }
 
+.darkened-backdrop { 
+  filter: brightness(0.5); 
+}
+
 .bg-aurora-left {
   position: fixed;
   top: 30%; /* Adjust position as desired */

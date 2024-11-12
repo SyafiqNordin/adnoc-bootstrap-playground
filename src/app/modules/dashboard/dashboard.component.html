@@ -1,24 +1,38 @@
-<!-- Dashboard Content -->
-<div class="d-flex flex-column w-100 gap-3">
-  <!-- Production Chart Section -->
-  <div
-    class="col-9 px-3 d-flex flex-column rounded-top-3 rounded-bottom-3 bg-dashboard-card"
-  >
-    <!-- Chart Header -->
-    <div class="w-100 pt-4 pb-15px d-flex justify-content-between">
-      <span class="fw-normal fs-16px text-white"
-        >Production Chart</span
-      >
+<div class="d-flex w-100 gap-3">
+  <!-- Main Dashboard Content -->
+  <div class="d-flex flex-column col-10 gap-3">
+    <!-- First Row Cards -->
+    <div class="d-flex w-100 gap-3">
+      <div class="col-3 rounded rounded-4 p-3 bg-dashboard-card height-232px"></div>
+      <div class="flex-grow-1 rounded rounded-4 p-3 bg-dashboard-card height-232px"></div>
+      <div class="col-3 rounded rounded-4 p-3 bg-dashboard-card height-232px"></div>
     </div>
 
-    <!-- Chart -->
-    <production-chart></production-chart>
+    <!-- Second Row Cards -->
+    <div class="d-flex w-100 gap-3">
+      <div class="d-flex flex-column col-2 gap-3">
+        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-218px"></div>
+        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-218px"></div>
+      </div>
+
+      <div class="flex-grow-1 rounded rounded-4 bg-dashboard-card p-3"></div>
+    </div>
+
+    <!-- Third Row Cards -->
+    <div class="d-flex w-100 gap-3">
+      <div class="d-flex flex-column col-5 gap-3">
+        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-232px"></div>
+        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-232px"></div>
+      </div>
+
+      <div class="flex-grow-1 rounded rounded-4 p-3 bg-dashboard-card"></div>
+
+      <div class="flex-grow-1 rounded rounded-4 p-3 bg-dashboard-card"></div>
+    </div>
   </div>
 
-  <!-- Field Network Section -->
-  <div
-    class="col-9 d-flex flex-column rounded-top-3 rounded-bottom-3 bg-dashboard-card"
-  >
-    <field-network></field-network>
+  <!-- Smart Ticket & Alarm Panels -->
+  <div class="d-flex flex-grow-1">
+    <div class="w-100 rounded-4 bg-dashboard-card h-100"></div>
   </div>
 </div>
