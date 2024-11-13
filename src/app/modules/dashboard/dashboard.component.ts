@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProductionChartComponent } from '../../components/production-chart/productionChart.component';
+import { OilProductionComponent } from '../../components/oil-production/oilProduction.component';
 import { FieldNetworkComponent } from '../../components/field-network/fieldNetwork.component';
 import { SmartAlarmToggleService } from '../../services/smart-alarm-toggle.service';
 import { Subscription } from 'rxjs';
@@ -17,6 +18,7 @@ import { Subscription } from 'rxjs';
     ProductionChartComponent,
     FieldNetworkComponent,
     CommonModule,
+    OilProductionComponent,
   ],
 })
 export class DashboardComponent implements OnInit, OnDestroy {

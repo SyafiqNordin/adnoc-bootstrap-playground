@@ -11,8 +11,12 @@
   height: 218px;
 }
 
+.height-464px {
+  height: 464px;
+}
+
 .smart-alarm-panel {
-  height: 71%;
+  max-height: 855px;
   position: sticky;
   top: 78px;
 }

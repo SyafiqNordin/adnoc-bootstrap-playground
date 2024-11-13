@@ -49,10 +49,29 @@
         <!-- Card Content Here -->
       </div>
     </div>
+
+    <!-- Production Chart -->
+    <div class="d-flex flex-column w-100 rounded rounded-4 p-3 bg-dashboard-card height-464px">
+      <!-- Card Header -->
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="text-white">Production Chart</span>
+      </div>
+      <!-- Card Content Here -->
+       <production-chart></production-chart>
+    </div>
+
+    <!-- Oil Production -->
+    <div class="d-flex flex-column w-100 rounded rounded-4 p-3 bg-dashboard-card height-464px">
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="text-white">Oil Production</span>
+      </div>
+      <!-- Card Content Here -->
+       <oil-production></oil-production>
+    </div>
   </div>
 
   <!-- Smart Ticket & Alarm Panels -->
-  <div class="flex-grow-1" [ngClass]="{'d-flex': isShowSmartAlarmPanel, 'd-none': !isShowSmartAlarmPanel}">
+  <div class="w-100" [ngClass]="{'d-flex': isShowSmartAlarmPanel, 'd-none': !isShowSmartAlarmPanel}">
     <div class="w-100 rounded-4 bg-dashboard-card smart-alarm-panel">
       <!-- Card Content Here -->
     </div>
