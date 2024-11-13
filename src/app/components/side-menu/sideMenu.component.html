@@ -1,5 +1,5 @@
-<div class="side-menu rounded rounded-2 position-fixed d-flex flex-column p-3">
-  <div class="d-flex justify-content-end">
-    <button (click)="closePanel()">Close</button>
+<div [ngStyle]="{ translate: translateValues }" class="side-menu rounded rounded-2 position-fixed d-flex flex-column">
+  <div class="d-flex justify-content-end pt-3 px-3">
+    <img src="../../../assets/icons/close.svg" alt="Close icon" (click)="closePanel()" class="cursor-pointer">
   </div>
 </div>

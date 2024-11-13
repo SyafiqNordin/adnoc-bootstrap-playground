@@ -1,5 +1,12 @@
-import { Component, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  ViewEncapsulation,
+  Output,
+  Input,
+  EventEmitter,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-side-menu',
@@ -7,16 +14,18 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./sideMenu.component.scss'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
 })
 export class SideMenuComponent {
-  @Output() isSideMenuOpen = new EventEmitter<boolean>();
+  @Input() translateValues: string = '0 0';
+  @Output() close = new EventEmitter<void>();
+
   /**
    * Constructor
    */
   constructor() {}
 
   closePanel() {
-    this.isSideMenuOpen.emit(false);
+    this.close.emit();
   }
 }

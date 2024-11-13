@@ -5,18 +5,32 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { SideMenuComponent } from '../../components/side-menu/sideMenu.component';
 @Component({
-    selector: 'app-main-layout',
-    templateUrl: './main-layout.component.html',
-    styleUrls: ['./main-layout.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    standalone: true,
-    imports: [RouterLink, RouterModule, HeaderComponent, SideMenuComponent, CommonModule],
+  selector: 'app-main-layout',
+  templateUrl: './main-layout.component.html',
+  styleUrls: ['./main-layout.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  standalone: true,
+  imports: [
+    RouterLink,
+    RouterModule,
+    HeaderComponent,
+    SideMenuComponent,
+    CommonModule,
+  ],
 })
 export class MainLayoutComponent {
-    isSideMenuOpen: boolean = false;
+  isSideMenuOpen: boolean = false;
 
-    /**
-     * Constructor
-     */
-    constructor() {}
+  /**
+   * Constructor
+   */
+  constructor() {}
+
+  openSideMenu() {
+    this.isSideMenuOpen = true;
+  }
+
+  closeSideMenu() {
+    this.isSideMenuOpen = false;
+  }
 }
