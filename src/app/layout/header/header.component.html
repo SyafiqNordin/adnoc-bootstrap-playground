@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg p-3">
+  <div class="d-flex w-100 justify-content-between align-items-center">
+    <div class="d-flex gap-3">
+      <!-- Hamburger Menu -->
+      <div class="d-flex align-items-center cursor-pointer" (click)="togglePanel()">
+        <img
+          src=".././../../assets/icons/hamburgerNavigation.svg"
+          alt="Hamburger icon"
+        />
+      </div>
+
+      <!-- ADNOC logo -->
+      <div class="d-flex align-items-center">
+        <img
+          src="../../../assets/images/adnoc-logo.jpg"
+          alt="ADNOC logo"
+          class="adnoc-logo"
+        />
+      </div>
+
+      <!-- Dropdown Pages -->
+      <div class="d-flex px-3 py-1 rounded-pill border navbar-items-container">
+        <span class="text-white fs-14px">Field Performance Summary</span>
+      </div>
+
+      <!-- Breadcrumbs -->
+      <div
+        class="d-flex gap-2 px-3 py-1 rounded-pill border navbar-items-container"
+      >
+        <span class="text-white-50 fs-14px">Onshore</span>
+        <span class="text-white-50 fs-14px">&#62;</span>
+        <span class="text-white-50 fs-14px">NEB</span>
+        <span class="text-white-50 fs-14px">&#62;</span>
+        <span class="text-white fs-14px">Dabbiya</span>
+      </div>
+    </div>
+
+    <div class="d-flex gap-2">
+      <!-- Date and Time -->
+      <div
+        class="d-flex gap-2 px-3 py-1 rounded-pill border navbar-items-container"
+      >
+        <span class="text-white fs-14px">&#60;</span>
+        <span class="text-white-50 fs-14px">20-01-2024 00:00</span>
+        <span class="text-white fs-14px">&#62;</span>
+      </div>
+
+      <!-- Notifications -->
+      <div
+        class="d-flex px-1 align-items-center border rounded-circle navbar-items-container"
+      >
+        <img
+          src="../../../assets/icons/notifications.svg"
+          alt="Notification icon"
+        />
+      </div>
+
+      <!-- AI -->
+      <div
+        class="d-flex px-1 align-items-center border rounded-circle navbar-items-container"
+      >
+        <img
+          src="../../../assets/icons/ArtificialIntelligence.svg"
+          alt="AI icon"
+        />
+      </div>
+    </div>
+  </div>
+</nav>
