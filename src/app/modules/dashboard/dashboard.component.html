@@ -1,6 +1,6 @@
 <div class="d-flex w-100 gap-3">
   <!-- Main Dashboard Content -->
-  <div class="d-flex flex-column col-10 gap-3">
+  <div class="d-flex flex-column gap-3" [ngClass]="{'col-10': isShowSmartAlarmPanel, 'col-12': !isShowSmartAlarmPanel}">
     <!-- First Row Cards -->
     <div class="d-flex w-100 gap-3">
       <div class="col-3 rounded rounded-4 p-3 bg-dashboard-card height-232px"></div>
@@ -32,7 +32,7 @@
   </div>
 
   <!-- Smart Ticket & Alarm Panels -->
-  <div class="d-flex flex-grow-1">
+  <div class="flex-grow-1" [ngClass]="{'d-flex': isShowSmartAlarmPanel, 'd-none': !isShowSmartAlarmPanel}">
     <div class="w-100 rounded-4 bg-dashboard-card h-100"></div>
   </div>
 </div>

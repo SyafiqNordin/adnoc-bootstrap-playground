@@ -2,7 +2,7 @@
   <div class="d-flex w-100 justify-content-between align-items-center">
     <div class="d-flex gap-3">
       <!-- Hamburger Menu -->
-      <div class="d-flex align-items-center cursor-pointer" (click)="togglePanel()">
+      <div class="d-flex align-items-center cursor-pointer" (click)="toggleSideMenu()">
         <img
           src=".././../../assets/icons/hamburgerNavigation.svg"
           alt="Hamburger icon"
@@ -47,7 +47,8 @@
 
       <!-- Notifications -->
       <div
-        class="d-flex px-1 align-items-center border rounded-circle navbar-items-container"
+        class="d-flex px-1 align-items-center border rounded-circle navbar-items-container cursor-pointer"
+        (click)="toggleSmartAlarmPanel()"
       >
         <img
           src="../../../assets/icons/notifications.svg"

@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation, EventEmitter, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SmartAlarmToggleService } from '../../services/smart-alarm-toggle.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -14,9 +15,15 @@ export class HeaderComponent {
   /**
    * Constructor
    */
-  constructor() {}
+  constructor(
+    private smartAlarmToggleService: SmartAlarmToggleService
+  ) {}
 
-  togglePanel() {
+  toggleSideMenu() {
     this.isSideMenuOpen.emit(true);
+  };
+
+  toggleSmartAlarmPanel() {
+    this.smartAlarmToggleService.emitButtonClick();
   }
 }
