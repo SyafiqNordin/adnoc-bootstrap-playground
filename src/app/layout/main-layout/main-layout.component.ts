@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
-import { SideMenuComponent } from '../../components/side-menu/sideMenu.component';
+import { SideMenuComponent } from '../side-menu/sideMenu.component';
 @Component({
   selector: 'app-main-layout',
   templateUrl: './main-layout.component.html',
