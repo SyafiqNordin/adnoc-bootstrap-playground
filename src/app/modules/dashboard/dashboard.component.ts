@@ -6,7 +6,7 @@ import { OilProductionComponent } from '../../components/oil-production/oilProdu
 import { FieldNetworkComponent } from '../../components/field-network/fieldNetwork.component';
 import { SmartAlarmToggleService } from '../../services/smart-alarm-toggle.service';
 import { Subscription } from 'rxjs';
-import { swappedSidepanelComponent } from '../../components/swapped-sidepanel/swappedSidepanel.component';
+import { SwappedSidepanelComponent } from '../../components/swapped-sidepanel/swappedSidepanel.component';
 
 @Component({
   selector: 'dashboard',
@@ -20,7 +20,7 @@ import { swappedSidepanelComponent } from '../../components/swapped-sidepanel/sw
     FieldNetworkComponent,
     CommonModule,
     OilProductionComponent,
-    swappedSidepanelComponent,
+    SwappedSidepanelComponent,
   ],
 })
 export class DashboardComponent implements OnInit, OnDestroy {

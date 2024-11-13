@@ -1,17 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { timestamp } from 'rxjs';
+import { AlarmsNotiComponent } from '../../components/swapped-sidepanel/alarms-noti/alarmsNoti.component';
+import { SmartTicketNotiComponent } from '../../components/swapped-sidepanel/smart-ticket-noti/smartTicketNoti.component';
 
 @Component({
     selector: 'swapped-sidepanel',
     templateUrl: './swappedSidepanel.component.html',
     styleUrl: './swappedSidepanel.component.scss',
     standalone: true,
-    imports: [RouterModule, CommonModule],
+    imports: [
+        RouterModule,
+        CommonModule,
+        AlarmsNotiComponent,
+        SmartTicketNotiComponent,
+    ],
 })
   
-export class swappedSidepanelComponent implements OnInit {
+export class SwappedSidepanelComponent implements OnInit {
     activePanel: string = 'one';
     smartTickets: any[] = []; // Array to hold smart ticket details
 
@@ -48,6 +54,5 @@ export class swappedSidepanelComponent implements OnInit {
 
     viewMore(ticket: any): void {
         console.log('View More:', ticket);
-        // You can add additional logic here for the "View More" action
     }
 }

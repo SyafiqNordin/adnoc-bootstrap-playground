@@ -3,88 +3,13 @@
     <!-- Smart Ticket Panel -->
     <div class="one w-100 position-absolute rounded-3 h-100 d-flex flex-column overflow-auto"
     [ngClass]="{ 'front': activePanel === 'one' }" (click)="bringToFront('one')">
-
-        <div class="px-3 py-4 border-bottom">
-            <div class="mx-2">
-                Smart Ticket
-            </div>
-        </div>
-        
-        <div class="px-3 py-2">
-            <div class="mx-2">
-                <label for="">Search Well Name...</label>
-            </div>
-        </div>
-
-        <div class="border-top">
-            <!-- Dynamically generated cards -->
-            <div class="mx-4 my-3" *ngFor="let ticket of smartTickets">
-                <div class="">
-                    <h5 class="fw-bold">
-                        {{ ticket.title }}
-                    </h5>
-                    <h6 class="fs-6">
-                        {{ ticket.timestamp }}
-                    </h6>
-                </div>
-                <div class="bg-dark rounded-2 p-3">
-                    <h5 style="color:#818181;">Recommendation:</h5>
-                    <h4 class="">
-                        {{ ticket.recommendation }}
-                    </h4>
-                    <div class="primary" (click)="viewMore(ticket)">View More</div>
-                </div>
-                <div class="w-50 mt-3 p-2 border rounded-3 text-center">
-                    Assign
-                </div>
-                <hr>
-            </div>
-        </div>
-
-        <div class="mt-auto px-3 py-4 border-top text-center">
-            Read More
-        </div>
+        <smart-ticket-noti [smartTickets]="smartTickets"></smart-ticket-noti>
     </div>
     
     <!-- Alarms Panel -->
     <div class="two w-100 position-absolute rounded-3 h-100 d-flex flex-column overflow-auto"
         [ngClass]="{ 'front': activePanel === 'two' }" (click)="bringToFront('two')">
-
-        <div class="px-3 py-4 border-bottom">
-            <div class="mx-2">
-                Alarms
-            </div>
-        </div>
-        
-        <div class="mx-2 px-3 py-2">
-            <div class="mx-2">
-                <label for="">Search Well Name...</label>
-            </div>
-        </div>
-
-        <div class="border-top">
-            <!-- Dynamically generated cards -->
-            <div class="mx-4 my-3" *ngFor="let ticket of smartTickets">
-                <div class="">
-                    <h5 class="fw-bold">
-                        {{ ticket.title }}
-                    </h5>
-                    <h6 class="fs-6">
-                        {{ ticket.timestamp }}
-                    </h6>
-                </div>
-                <div class="">
-                    <h5 class="">
-                        {{ ticket.recommendation }}
-                    </h5>
-                </div>
-                <hr>
-            </div>
-        </div>
-
-        <div class="mt-auto px-3 py-4 border-top text-center">
-            Read More
-        </div>
+        <alarms-noti [alarms]="smartTickets"></alarms-noti>
     </div>    
 </main>
 

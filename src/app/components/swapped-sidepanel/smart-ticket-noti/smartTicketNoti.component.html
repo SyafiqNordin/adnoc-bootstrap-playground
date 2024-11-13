@@ -1,0 +1,48 @@
+<div class="px-3 py-4 border-bottom">
+    <div class="mx-2 d-flex justify-content-between">
+        <div class="d-flex">
+            <i class="bi-ticket-perforated me-3" style="font-size: 1.75rem;"></i>
+            <h5 class="" style="font-weight: 600;">Smart Ticket</h5>
+        </div>
+        <i class="bi-three-dots-vertical" style="font-size: 1.5rem;"></i>
+    </div>
+</div>
+
+<div class="px-3 py-2">
+    <div class="mx-2 d-flex">
+        <i class="bi bi-search me-3"></i>
+        <input type="text" class="bg-transparent border-0" style="color: #CECECE4D;" placeholder="Search Well Name..."/>
+    </div>
+</div>
+
+<div class="border-top">
+    <!-- Dynamically generated cards -->
+    <div class="mx-4 my-3" *ngFor="let ticket of smartTickets">
+        <div class="mb-3">
+            <div class="d-flex justify-content-between">
+                <h5 class="fw-bold">
+                    {{ ticket.title }}
+                </h5>
+                <i class="bi-three-dots-vertical"></i>
+            </div>
+            <small class="">
+                {{ ticket.timestamp }}
+            </small>
+        </div>
+        <div class="bg-dark rounded-2 p-3">
+            <h5 style="color:#818181;">Recommendation:</h5>
+            <h4 class="">
+                {{ ticket.recommendation }}
+            </h4>
+            <!-- <div class="primary" (click)="viewMore(ticket)">View More</div> -->
+        </div>
+        <div class="w-50 mt-3 p-2 border rounded-3 text-center">
+            Assign
+        </div>
+        <hr>
+    </div>
+</div>
+
+<div class="mt-auto px-3 py-4 border-top text-center">
+    Read More
+</div>

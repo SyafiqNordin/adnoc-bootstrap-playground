@@ -1,0 +1,43 @@
+<div class="px-3 py-4 border-bottom">
+    <div class="mx-2 d-flex justify-content-between">
+        <div class="d-flex">
+            <i class="bi-bell me-3" style="font-size: 1.75rem;"></i>
+            <h5 class="" style="font-weight: 600;">Alarms</h5>
+        </div>
+        <i class="bi-three-dots-vertical" style="font-size: 1.5rem;"></i>
+    </div>
+</div>
+
+<div class="mx-2 px-3 py-2">
+    <div class="mx-2 d-flex">
+        <i class="bi bi-search me-3"></i>
+        <input type="text" class="bg-transparent border-0" style="color: #CECECE4D;" placeholder="Search Well Name..."/>
+    </div>
+</div>
+
+<div class="border-top">
+    <!-- Dynamically generated cards -->
+    <div class="mx-4 my-3" *ngFor="let ticket of alarms">
+        <div class="mb-3">
+            <div class="d-flex justify-content-between">
+                <h5 class="fw-bold">
+                    {{ ticket.title }}
+                </h5>
+                <i class="bi-three-dots-vertical"></i>
+            </div>
+            <small class="">
+                {{ ticket.timestamp }}
+            </small>
+        </div>
+        <div class="">
+            <h5 class="">
+                {{ ticket.recommendation }}
+            </h5>
+        </div>
+        <hr>
+    </div>
+</div>
+
+<div class="mt-auto px-3 py-4 border-top text-center">
+    Read More
+</div>
