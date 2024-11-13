@@ -1,94 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-[class*="header"] {
-    display: flex;
-    justify-content: space-between;
-}
-
-[class*="content"],
-[class*="box"] {
-    display: grid;
-
-}
-
-$nudge: 50px;
-
-body, html {
-  -webkit-font-smoothing: antialiased;
-}
+$nudge: 3rem;
 
 main {
-  padding: 1rem;
-  box-sizing: border-box;
-  max-width: 30rem;
-  height: 15rem;
-  margin: 1rem auto 0;
-  position: relative;
-  display: flex;
-  justify-content: center;
+  margin-left: $nudge;
 
-  div.panel {
-    border-radius: 18px;
-    background: radial-gradient(206.04% 90.65% at 94.19% 100%, rgba(220, 220, 220, 0.25) 0%, rgba(200, 200, 200, 0.15) 100%);
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+
+  > div {
+    background: radial-gradient(206.04% 90.65% at 94.19% 100%, rgba(255, 205, 0, 0.10) 0%, rgba(178, 178, 178, 0.10) 100%);
     backdrop-filter: blur(17.5px);
+    border: 2px solid rgba(229, 229, 229, 0.5);
     color: #CECECE;
-    width: 100%;
-    height: auto;
-    min-height: 600px;
-    position: absolute;
-    margin-top: 220px;
-    transform: translateY(-50%);
     transition: margin-right 0.3s ease, margin-left 0.3s ease, z-index 0s;
-    box-sizing: border-box;
-    padding: 0.5rem;
-
-    &:before {
-      content: '';
-      font-size: 0.6rem;
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 0.2em 0 0 0.4em;
-    }
-
+    
     &.one {
-      margin-right: $nudge * 2; // Position the first card to the left
-      z-index: 2;               // Bring to the front
-      box-shadow: 0 2px 3px rgba(#000, 0.2);  // Apply shadow to front card
-      
-      &:before {
-        content: '1';
-      }
+      margin-right: $nudge * 2;
+      z-index: 2;
     }
 
     &.two {
-      margin-right: 0; // Position the second card to the right
-      z-index: 1;      // Send to the back
-      
-      &:before {
-        content: '2';
-      }
+      margin-right: 0;
+      z-index: 1;
     }
 
     &.front {
       z-index: 2;
-      margin-right: $nudge * 2; // Keep the front card on the left
-      box-shadow: 0 2px 3px rgba(#000, 0.2);
+      margin-right: $nudge * 2;
     }
 
     &:not(.front) {
       z-index: 1;
-      margin-right: 0; // Position the back card to the right
+      margin-right: 0;
     }
-  }
-}
-
-.panel {
-  padding: 20px;
-  border: 1px solid transparent;
-  cursor: pointer;
-
-  &.front {
-    border-color: #00796b;
   }
 }
