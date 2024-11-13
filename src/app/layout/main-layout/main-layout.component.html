@@ -7,7 +7,7 @@
     <div class="d-flex flex-column w-100">
       <!-- Header -->
       <app-header
-        (isSideMenuOpen)="isSideMenuOpen = $event"
+        (isSideMenuOpen)="openSideMenu()"
         class="position-sticky top-0"
       ></app-header>
 
@@ -23,7 +23,7 @@
 
 <!-- Side Menu -->
 <app-side-menu
-  *ngIf="isSideMenuOpen"
-  (isSideMenuOpen)="isSideMenuOpen = $event"
+  [translateValues]="isSideMenuOpen ? '320px 0px' : '0 0'"
+  (close)="closeSideMenu()"
   class="z-2 position-absolute"
 ></app-side-menu>

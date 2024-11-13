@@ -1,40 +1,79 @@
 <div class="d-flex w-100 gap-3">
   <!-- Main Dashboard Content -->
-  <div class="d-flex flex-column col-10 gap-3">
+  <div class="d-flex flex-column gap-3" [ngClass]="{'col-10': isShowSmartAlarmPanel, 'col-12': !isShowSmartAlarmPanel}">
     <!-- First Row Cards -->
     <div class="d-flex w-100 gap-3">
-      <div class="col-3 rounded rounded-4 p-3 bg-dashboard-card height-232px"></div>
-      <div class="flex-grow-1 rounded rounded-4 p-3 bg-dashboard-card height-232px"></div>
-      <div class="col-3 rounded rounded-4 p-3 bg-dashboard-card height-232px"></div>
+      <div class="col-3 rounded rounded-4 p-3 bg-dashboard-card height-232px">
+        <!-- Card Content Here -->
+      </div>
+      <div class="flex-grow-1 rounded rounded-4 p-3 bg-dashboard-card height-232px">
+        <!-- Card Content Here -->
+      </div>
+      <div class="col-3 rounded rounded-4 p-3 bg-dashboard-card height-232px">
+        <!-- Card Content Here -->
+      </div>
     </div>
 
     <!-- Second Row Cards -->
     <div class="d-flex w-100 gap-3">
       <div class="d-flex flex-column col-2 gap-3">
-        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-218px"></div>
-        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-218px"></div>
+        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-218px">
+          <!-- Card Content Here -->
+        </div>
+        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-218px">
+          <!-- Card Content Here -->
+        </div>
       </div>
 
-      <div class="flex-grow-1 rounded rounded-4 bg-dashboard-card p-3"></div>
+      <div class="flex-grow-1 rounded rounded-4 bg-dashboard-card p-3">
+        <!-- Card Content Here -->
+      </div>
     </div>
 
     <!-- Third Row Cards -->
     <div class="d-flex w-100 gap-3">
       <div class="d-flex flex-column col-5 gap-3">
-        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-232px"></div>
-        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-232px"></div>
+        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-232px">
+          <!-- Card Content Here -->
+        </div>
+        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-232px">
+          <!-- Card Content Here -->
+        </div>
       </div>
 
-      <div class="flex-grow-1 rounded rounded-4 p-3 bg-dashboard-card"></div>
+      <div class="flex-grow-1 rounded rounded-4 p-3 bg-dashboard-card">
+        <!-- Card Content Here -->
+      </div>
 
-      <div class="flex-grow-1 rounded rounded-4 p-3 bg-dashboard-card"></div>
+      <div class="flex-grow-1 rounded rounded-4 p-3 bg-dashboard-card">
+        <!-- Card Content Here -->
+      </div>
+    </div>
+
+    <!-- Production Chart -->
+    <div class="d-flex flex-column w-100 rounded rounded-4 p-3 bg-dashboard-card height-464px">
+      <!-- Card Header -->
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="text-white">Production Chart</span>
+      </div>
+      <!-- Card Content Here -->
+       <production-chart></production-chart>
+    </div>
+
+    <!-- Oil Production -->
+    <div class="d-flex flex-column w-100 rounded rounded-4 p-3 bg-dashboard-card height-464px">
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="text-white">Oil Production</span>
+      </div>
+      <!-- Card Content Here -->
+       <oil-production></oil-production>
     </div>
   </div>
 
   <!-- Smart Ticket & Alarm Panels -->
-  <div class="d-flex flex-grow-1">
-    <div class="w-100 rounded-4 bg-dashboard-card h-100">
-    	<swapped-sidepanel></swapped-sidepanel>
+  <div class="w-100" [ngClass]="{'d-flex': isShowSmartAlarmPanel, 'd-none': !isShowSmartAlarmPanel}">
+    <div class="w-100 rounded-4 bg-dashboard-card smart-alarm-panel">
+      <swapped-sidepanel></swapped-sidepanel>
     </div>
   </div>
 </div>

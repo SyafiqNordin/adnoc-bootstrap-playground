@@ -5,14 +5,14 @@ import * as Highcharts from 'highcharts/highstock';
 import { DummyData } from './dummyData';
 
 @Component({
-  selector: 'production-chart',
-  templateUrl: './productionChart.component.html',
-  styleUrls: ['./productionChart.component.scss'],
+  selector: 'oil-production',
+  templateUrl: './oilProduction.component.html',
+  styleUrls: ['./oilProduction.component.scss'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [RouterLink, HighchartsChartModule],
 })
-export class ProductionChartComponent {
+export class OilProductionComponent {
   chartConstructor: string = 'stockChart';
   Highcharts: typeof Highcharts = Highcharts;
 
@@ -22,22 +22,20 @@ export class ProductionChartComponent {
     },
     series: [
       {
-        yAxis: 1,
-        name: 'Gas Actual',
-        type: 'line',
-        data: DummyData.gasActual,
-        color: '#ff0000',
-        dashStyle: 'Solid',
-        pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
-        pointStart: Date.UTC(2024, 0, 1),
-        showInNavigator: true,
-      },
-      {
         yAxis: 0,
-        name: 'Oil Actual',
-        type: 'line',
+        name: 'Actual',
+        type: 'area',
+        fillOpacity: 0.3,
+        lineColor: 'rgba(0, 218, 105, 1)',
         data: DummyData.oilActual,
-        color: '#00DA69',
+        color: {
+          linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+          stops: [
+            [0, 'rgba(0, 218, 105, 1)'], // start
+            [0.5, 'rgba(0, 218, 105, 0.5)'], // middle
+            [1, 'rgba(0, 218, 105, 0))'], // end
+          ],
+        },
         dashStyle: 'Solid',
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
@@ -45,34 +43,23 @@ export class ProductionChartComponent {
       },
       {
         yAxis: 0,
-        name: 'Oil target',
+        name: 'Target',
         type: 'line',
         data: DummyData.oilTarget,
-        color: '#09ff00',
-        dashStyle: 'Dash',
-        pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
-        pointStart: Date.UTC(2024, 0, 1),
-        showInNavigator: true,
-      },
-      {
-        yAxis: 1,
-        name: 'Gas Target',
-        type: 'line',
-        data: DummyData.gasTarget,
         color: '#ff0000',
         dashStyle: 'Dash',
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
-        showInNavigator: true,
       },
       {
-        yAxis: 0,
-        name: 'Water Actual',
+        yAxis: 1,
+        name: 'Potential',
         type: 'line',
-        data: DummyData.waterActual,
+        data: DummyData.gasTarget,
+        color: '#ffffff',
+        dashStyle: 'Dash',
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
-        showInNavigator: true,
       },
     ],
     xAxis: {
@@ -142,13 +129,7 @@ export class ProductionChartComponent {
         color: 'rgba(206, 206, 206, 1)',
       },
     },
-    legend: {
-      enabled: true,
-      itemStyle: {
-        color: 'rgba(129, 129, 129, 1)',
-      },
-      itemDistance: 17,
-    },
+    
     navigator: {
       handles: {
         backgroundColor: '#CECECE',
