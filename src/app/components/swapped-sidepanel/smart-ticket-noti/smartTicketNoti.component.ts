@@ -10,4 +10,14 @@ import { CommonModule } from '@angular/common';
 })
 export class SmartTicketNotiComponent {
   @Input() smartTickets: any[] = [];
+
+  viewMore(ticket: any): void {
+    console.log('View More:', ticket);
+  }
+
+  assignTicket(ticket: any): void {
+    console.log('Assign Ticket:', ticket);
+  }
 }
+
+

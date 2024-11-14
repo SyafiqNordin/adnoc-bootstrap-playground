@@ -1,16 +1,16 @@
-<main class="d-flex justify-content-center max-w-30 position-relative h-100">
+<div class="main-swap-sidepanel d-flex justify-content-center position-relative h-100">
     
     <!-- Smart Ticket Panel -->
-    <div class="one w-100 position-absolute rounded-3 h-100 d-flex flex-column overflow-auto"
-    [ngClass]="{ 'front': activePanel === 'one' }" (click)="bringToFront('one')">
+    <div class="swap-sidepanel one w-100 position-absolute rounded-3 h-100 d-flex flex-column overflow-auto overflow-x-hidden"
+    [ngClass]="{ 'front': activePanel === 'one', 'back': activePanel === 'two' }" (click)="bringToFront('one')">
         <smart-ticket-noti [smartTickets]="smartTickets"></smart-ticket-noti>
     </div>
     
     <!-- Alarms Panel -->
-    <div class="two w-100 position-absolute rounded-3 h-100 d-flex flex-column overflow-auto"
-        [ngClass]="{ 'front': activePanel === 'two' }" (click)="bringToFront('two')">
+    <div class="swap-sidepanel two w-100 position-absolute rounded-3 h-100 d-flex flex-column overflow-auto overflow-x-hidden"
+        [ngClass]="{ 'front': activePanel === 'two', 'back': activePanel === 'one' }" (click)="bringToFront('two')">
         <alarms-noti [alarms]="smartTickets"></alarms-noti>
     </div>    
-</main>
+</div>
 
 
