@@ -18,15 +18,15 @@ import '@arcgis/map-components/dist/components/arcgis-basemap-toggle';
 import '@arcgis/map-components/dist/components/arcgis-basemap-gallery';
 
 @Component({
-  selector: 'field-network',
-  templateUrl: './fieldNetwork.component.html',
-  styleUrls: ['./fieldNetwork.component.scss'],
+  selector: 'static-field-network',
+  templateUrl: './static-fieldNetwork.component.html',
+  styleUrls: ['./static-fieldNetwork.component.scss'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [RouterLink],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class FieldNetworkComponent {
+export class StaticFieldNetworkComponent {
   /**
    * Constructor
    */

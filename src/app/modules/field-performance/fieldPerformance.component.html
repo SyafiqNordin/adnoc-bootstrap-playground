@@ -57,7 +57,7 @@
         <span class="text-white">Production Chart</span>
       </div>
       <!-- Card Content Here -->
-       <production-chart></production-chart>
+       <static-production-chart></static-production-chart>
     </div>
 
     <!-- Oil Production -->
@@ -66,14 +66,14 @@
         <span class="text-white">Oil Production</span>
       </div>
       <!-- Card Content Here -->
-       <oil-production></oil-production>
+       <static-oil-production></static-oil-production>
     </div>
   </div>
 
   <!-- Smart Ticket & Alarm Panels -->
   <div class="w-100" [ngClass]="{'d-flex': isShowSmartAlarmPanel, 'd-none': !isShowSmartAlarmPanel}">
     <div class="w-100 rounded-4 smart-alarm-panel">
-      <swapped-sidepanel></swapped-sidepanel>
+      <static-swapped-sidepanel></static-swapped-sidepanel>
     </div>
   </div>
 </div>

@@ -2,13 +2,13 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'smart-ticket-noti',
-  templateUrl: './smartTicketNoti.component.html',
-  styleUrls: ['./smartTicketNoti.component.scss'],
+  selector: 'static-smart-ticket-noti',
+  templateUrl: './static-smartTicketNoti.component.html',
+  styleUrls: ['./static-smartTicketNoti.component.scss'],
   standalone: true,
   imports: [CommonModule, ],
 })
-export class SmartTicketNotiComponent {
+export class StaticSmartTicketNotiComponent {
   @Input() smartTickets: any[] = [];
 
   viewMore(ticket: any): void {
