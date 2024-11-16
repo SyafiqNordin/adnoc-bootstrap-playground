@@ -134,6 +134,9 @@ export class StaticProductionChartComponent {
         softMin: 0,
       },
     ],
+    scrollbar: {
+      enabled: false,
+    },
     tooltip: {
       backgroundColor: 'rgba(4, 12, 25, 0.6)',
       borderColor: 'black',
@@ -176,7 +179,7 @@ export class StaticProductionChartComponent {
           },
         },
         dateTimeLabelFormats: {
-            month: '%b'
+          month: '%b',
         },
         tickInterval: 31 * 24 * 3600 * 1000,
       },

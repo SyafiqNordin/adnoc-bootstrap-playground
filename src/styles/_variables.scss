@@ -4,15 +4,21 @@ $blue-light-primary-color: #00a19c;
 $pink-light-primary-color: #763f98;
 $blue-dark-primary-color: #20419a;
 $adnoc-logo-blue-text-color: #0047ba;
-$white-base-color: #ffffff;
+$white-base-color: #cecece;
+$black-base-color: #000000;
 $button-text-color: #040c19;
+$neutral-gray-color: #717276;
+$red-primary-color: #cd4b4b;
+$primary-gray-color: #4d4d4d;
 
 :root {
   --bs-border-radius-lg: 18px;
 }
 
+.negative-value-text {
+  color: $red-primary-color;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
-
-$font-family-base: "Titillium Web";

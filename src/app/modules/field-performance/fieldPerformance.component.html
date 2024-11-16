@@ -1,15 +1,39 @@
 <div class="d-flex w-100 gap-3">
   <!-- Main Dashboard Content -->
-  <div class="d-flex flex-column gap-3" [ngClass]="{'col-10': isShowSmartAlarmPanel, 'col-12': !isShowSmartAlarmPanel}">
+  <div
+    class="d-flex flex-column gap-3"
+    [ngClass]="{
+      'col-10': isShowSmartAlarmPanel,
+      'col-12': !isShowSmartAlarmPanel
+    }"
+  >
     <!-- First Row Cards -->
     <div class="d-flex w-100 gap-3">
-      <div class="col-3 rounded rounded-4 p-3 bg-dashboard-card height-232px">
+      <div
+        class="rounded rounded-4 p-3 bg-dashboard-card dynamic-border height-232px"
+        [ngClass]="{
+          'flex-grow-1': !expandGasProductionContainer,
+          'col-3': expandGasProductionContainer
+        }"
+      >
         <!-- Card Content Here -->
       </div>
-      <div class="flex-grow-1 rounded rounded-4 p-3 bg-dashboard-card height-232px">
+      <div
+        class="rounded rounded-4 bg-dashboard-card dynamic-border height-232px"
+        [ngClass]="{
+          'flex-grow-1': expandGasProductionContainer,
+          'col-3': !expandGasProductionContainer
+        }"
+      >
         <!-- Card Content Here -->
+        <static-gas-production
+          (toggleExpandContainer)="toggleExpandContainer()"
+        >
+        </static-gas-production>
       </div>
-      <div class="col-3 rounded rounded-4 p-3 bg-dashboard-card height-232px">
+      <div
+        class="col-3 rounded rounded-4 p-3 bg-dashboard-card dynamic-border height-232px"
+      >
         <!-- Card Content Here -->
       </div>
     </div>
@@ -17,15 +41,21 @@
     <!-- Second Row Cards -->
     <div class="d-flex w-100 gap-3">
       <div class="d-flex flex-column col-2 gap-3">
-        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-218px">
+        <div
+          class="w-100 rounded rounded-4 p-3 bg-dashboard-card dynamic-border height-218px"
+        >
           <!-- Card Content Here -->
         </div>
-        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-218px">
+        <div
+          class="w-100 rounded rounded-4 p-3 bg-dashboard-card dynamic-border height-218px"
+        >
           <!-- Card Content Here -->
         </div>
       </div>
 
-      <div class="flex-grow-1 rounded rounded-4 bg-dashboard-card p-3">
+      <div
+        class="flex-grow-1 rounded rounded-4 bg-dashboard-card dynamic-border p-3"
+      >
         <!-- Card Content Here -->
       </div>
     </div>
@@ -33,45 +63,63 @@
     <!-- Third Row Cards -->
     <div class="d-flex w-100 gap-3">
       <div class="d-flex flex-column col-5 gap-3">
-        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-232px">
+        <div
+          class="w-100 rounded rounded-4 p-3 bg-dashboard-card dynamic-border height-232px"
+        >
           <!-- Card Content Here -->
         </div>
-        <div class="w-100 rounded rounded-4 p-3 bg-dashboard-card height-232px">
+        <div
+          class="w-100 rounded rounded-4 p-3 bg-dashboard-card dynamic-border height-232px"
+        >
           <!-- Card Content Here -->
         </div>
       </div>
 
-      <div class="flex-grow-1 rounded rounded-4 p-3 bg-dashboard-card">
+      <div
+        class="flex-grow-1 rounded rounded-4 p-3 bg-dashboard-card dynamic-border"
+      >
         <!-- Card Content Here -->
       </div>
 
-      <div class="flex-grow-1 rounded rounded-4 p-3 bg-dashboard-card">
+      <div
+        class="flex-grow-1 rounded rounded-4 p-3 bg-dashboard-card dynamic-border"
+      >
         <!-- Card Content Here -->
       </div>
     </div>
 
     <!-- Production Chart -->
-    <div class="d-flex flex-column w-100 rounded rounded-4 p-3 bg-dashboard-card height-464px">
+    <div
+      class="d-flex flex-column w-100 rounded rounded-4 p-3 bg-dashboard-card dynamic-border height-464px"
+    >
       <!-- Card Header -->
       <div class="d-flex justify-content-between align-items-center">
-        <span class="text-white">Production Chart</span>
+        <span class="text-primary">Production Chart</span>
       </div>
       <!-- Card Content Here -->
-       <static-production-chart></static-production-chart>
+      <static-production-chart></static-production-chart>
     </div>
 
     <!-- Oil Production -->
-    <div class="d-flex flex-column w-100 rounded rounded-4 p-3 bg-dashboard-card height-464px">
+    <div
+      class="d-flex flex-column w-100 rounded rounded-4 p-3 bg-dashboard-card dynamic-border height-464px"
+    >
       <div class="d-flex justify-content-between align-items-center">
-        <span class="text-white">Oil Production</span>
+        <span class="text-primary">Oil Production</span>
       </div>
       <!-- Card Content Here -->
-       <static-oil-production></static-oil-production>
+      <static-oil-production></static-oil-production>
     </div>
   </div>
 
   <!-- Smart Ticket & Alarm Panels -->
-  <div class="w-100" [ngClass]="{'d-flex': isShowSmartAlarmPanel, 'd-none': !isShowSmartAlarmPanel}">
+  <div
+    class="w-100"
+    [ngClass]="{
+      'd-flex': isShowSmartAlarmPanel,
+      'd-none': !isShowSmartAlarmPanel
+    }"
+  >
     <div class="w-100 rounded-4 smart-alarm-panel">
       <static-swapped-sidepanel></static-swapped-sidepanel>
     </div>
