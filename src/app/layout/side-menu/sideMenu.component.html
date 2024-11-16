@@ -1,5 +1,57 @@
-<div [ngStyle]="{ translate: translateValues }" class="side-menu rounded rounded-2 position-fixed d-flex flex-column">
-  <div class="d-flex justify-content-end pt-3 px-3">
-    <img src="../../../assets/icons/close.svg" alt="Close icon" (click)="closePanel()" class="cursor-pointer">
+<div
+  [ngStyle]="{ translate: translateValues }"
+  class="side-menu d-flex flex-column rounded rounded-2 position-fixed d-flex flex-column justify-content-between"
+>
+  <div class="d-flex flex-column">
+    <!-- Header -->
+    <div
+      class="d-flex justify-content-between py-4 px-20px border-bottom border-dark-subtle"
+    >
+      <div class="d-flex gap-2">
+        <!-- User Avatar -->
+        <img src="../../../assets/images/user-avatar.png" alt="User avatar" />
+
+        <div class="d-flex flex-column">
+          <span class="text-white fs-16px">Roland Doe</span>
+          <span class="text-white fs-14px fw-light">Settings</span>
+        </div>
+      </div>
+
+      <img
+        src="../../../assets/icons/close.svg"
+        alt="Close icon"
+        (click)="closePanel()"
+        class="cursor-pointer"
+      />
+    </div>
+
+    <!-- List of pages -->
+    <div class="d-flex flex-column px-12px pt-14px">
+      <div
+        class="d-flex px-4 py-3 gap-2 align-items-center"
+        *ngFor="let page of pageList"
+      >
+        <img [src]="page.icon" alt="" />
+        <span class="text-white fs-16px">{{ page.name }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer px-20px py-4">
+    <div class="d-flex flex-column justify-content-between h-100">
+      <div clas="d-flex flex-column">
+        <span class="d-block fs-30px fw-bolder footer-text">iPSO</span>
+        <span class="fs-14px fw-semibold footer-text"
+          >Intelligent Production System Optimization</span
+        >
+      </div>
+
+      <img
+        src="assets/images/adnoc-logo.jpg"
+        alt="ADNOC logo"
+        class="adnoc-logo"
+      />
+    </div>
   </div>
 </div>

@@ -3,13 +3,13 @@
     <!-- Smart Ticket Panel -->
     <div class="swap-sidepanel one w-100 position-absolute rounded-3 h-100 d-flex flex-column overflow-auto overflow-x-hidden"
     [ngClass]="{ 'front': activePanel === 'one', 'back': activePanel === 'two' }" (click)="bringToFront('one')">
-        <smart-ticket-noti [smartTickets]="smartTickets"></smart-ticket-noti>
+        <static-smart-ticket-noti [smartTickets]="smartTickets"></static-smart-ticket-noti>
     </div>
     
     <!-- Alarms Panel -->
     <div class="swap-sidepanel two w-100 position-absolute rounded-3 h-100 d-flex flex-column overflow-auto overflow-x-hidden"
         [ngClass]="{ 'front': activePanel === 'two', 'back': activePanel === 'one' }" (click)="bringToFront('two')">
-        <alarms-noti [alarms]="smartTickets"></alarms-noti>
+        <static-alarms-noti [alarms]="smartTickets"></static-alarms-noti>
     </div>    
 </div>
 

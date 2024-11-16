@@ -5,14 +5,14 @@ import * as Highcharts from 'highcharts/highstock';
 import { DummyData } from './dummyData';
 
 @Component({
-  selector: 'production-chart',
-  templateUrl: './productionChart.component.html',
-  styleUrls: ['./productionChart.component.scss'],
+  selector: 'static-production-chart',
+  templateUrl: './static-productionChart.component.html',
+  styleUrls: ['./static-productionChart.component.scss'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [RouterLink, HighchartsChartModule],
 })
-export class ProductionChartComponent {
+export class StaticProductionChartComponent {
   chartConstructor: string = 'stockChart';
   Highcharts: typeof Highcharts = Highcharts;
 

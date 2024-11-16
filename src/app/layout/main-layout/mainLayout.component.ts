@@ -6,8 +6,8 @@ import { HeaderComponent } from '../header/header.component';
 import { SideMenuComponent } from '../side-menu/sideMenu.component';
 @Component({
   selector: 'app-main-layout',
-  templateUrl: './main-layout.component.html',
-  styleUrls: ['./main-layout.component.scss'],
+  templateUrl: './mainLayout.component.html',
+  styleUrls: ['./mainLayout.component.scss'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [

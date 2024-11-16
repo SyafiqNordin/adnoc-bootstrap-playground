@@ -1,13 +1,19 @@
 import { Routes } from '@angular/router';
-import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { MainLayoutComponent } from './layout/main-layout/mainLayout.component';
 
 export const routes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
-    {
-        path: '',
-        component: MainLayoutComponent,  // Main Layout as the wrapper
-        children: [
-            { path: 'dashboard', loadComponent: () => import('./modules/dashboard/dashboard.component').then(m => m.DashboardComponent) },
-        ]
-    }
+  { path: '', pathMatch: 'full', redirectTo: '/field-performance' },
+  {
+    path: '',
+    component: MainLayoutComponent, // Main Layout as the wrapper
+    children: [
+      {
+        path: 'field-performance',
+        loadComponent: () =>
+          import('./modules/field-performance/fieldPerformance.component').then(
+            (m) => m.FieldPerformanceComponent
+          ),
+      },
+    ],
+  },
 ];

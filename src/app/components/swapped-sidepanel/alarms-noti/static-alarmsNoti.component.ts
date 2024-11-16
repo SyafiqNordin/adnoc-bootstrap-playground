@@ -2,12 +2,12 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'alarms-noti',
-  templateUrl: './alarmsNoti.component.html',
-  styleUrls: ['./alarmsNoti.component.scss'],
+  selector: 'static-alarms-noti',
+  templateUrl: './static-alarmsNoti.component.html',
+  styleUrls: ['./static-alarmsNoti.component.scss'],
   standalone: true,
   imports: [CommonModule],
 })
-export class AlarmsNotiComponent {
+export class StaticAlarmsNotiComponent {
   @Input() alarms: any[] = [];
 }

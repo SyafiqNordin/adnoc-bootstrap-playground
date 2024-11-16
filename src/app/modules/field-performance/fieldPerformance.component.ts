@@ -1,29 +1,29 @@
 import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ProductionChartComponent } from '../../components/production-chart/productionChart.component';
-import { OilProductionComponent } from '../../components/oil-production/oilProduction.component';
-import { FieldNetworkComponent } from '../../components/field-network/fieldNetwork.component';
-import { SmartAlarmToggleService } from '../../services/smart-alarm-toggle.service';
+import { StaticProductionChartComponent } from '../../components/production-chart/static-productionChart.component';
+import { StaticOilProductionComponent } from '../../components/oil-production/static-oilProduction.component';
+import { StaticFieldNetworkComponent } from '../../components/field-network/static-fieldNetwork.component';
+import { SmartAlarmToggleService } from '../../services/smartAlarmToggle.service';
 import { Subscription } from 'rxjs';
-import { SwappedSidepanelComponent } from '../../components/swapped-sidepanel/swappedSidepanel.component';
+import { StaticSwappedSidepanelComponent } from '../../components/swapped-sidepanel/static-swappedSidepanel.component';
 
 @Component({
-  selector: 'dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+  selector: 'field-performance',
+  templateUrl: './fieldPerformance.component.html',
+  styleUrls: ['./fieldPerformance.component.scss'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [
     RouterLink,
-    ProductionChartComponent,
-    FieldNetworkComponent,
+    StaticProductionChartComponent,
+    StaticFieldNetworkComponent,
     CommonModule,
-    OilProductionComponent,
-    SwappedSidepanelComponent,
+    StaticOilProductionComponent,
+    StaticSwappedSidepanelComponent,
   ],
 })
-export class DashboardComponent implements OnInit, OnDestroy {
+export class FieldPerformanceComponent implements OnInit, OnDestroy {
   private smartAlarmButtonSubscription: Subscription | undefined;
   isShowSmartAlarmPanel: boolean = true;
   /**
