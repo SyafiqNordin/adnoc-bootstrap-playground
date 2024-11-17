@@ -7,6 +7,7 @@ import { StaticFieldNetworkComponent } from '../../components/field-network/stat
 import { SmartAlarmToggleService } from '../../services/smartAlarmToggle.service';
 import { Subscription } from 'rxjs';
 import { StaticSwappedSidepanelComponent } from '../../components/swapped-sidepanel/static-swappedSidepanel.component';
+import { StaticTopOpportunitiesComponent } from '../../components/swapped-top-opportunities/static-topOpportunities.component';
 
 @Component({
   selector: 'field-performance',
@@ -21,6 +22,7 @@ import { StaticSwappedSidepanelComponent } from '../../components/swapped-sidepa
     CommonModule,
     StaticOilProductionComponent,
     StaticSwappedSidepanelComponent,
+    StaticTopOpportunitiesComponent,
   ],
 })
 export class FieldPerformanceComponent implements OnInit, OnDestroy {
