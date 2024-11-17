@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './static-opportunitiesListing.component.html',
   styleUrls: ['./static-opportunitiesListing.component.scss'],
   standalone: true,
-  imports: [CommonModule, ],
+  imports: [CommonModule],
 })
 export class StaticOpportunitiesListingComponent {
   @Input() opportunities: Array<{ well: string, expectedGain: number, percentageChange: string }> = [];

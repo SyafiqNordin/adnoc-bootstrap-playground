@@ -9,6 +9,7 @@ import { SmartAlarmToggleService } from '../../services/smartAlarmToggle.service
 import { Subscription } from 'rxjs';
 import { StaticSwappedSidepanelComponent } from '../../components/swapped-sidepanel/static-swappedSidepanel.component';
 import { StaticTopOpportunitiesComponent } from '../../components/swapped-top-opportunities/static-topOpportunities.component';
+import { StaticProducerWellComponent } from '../../components/producer-well/static-producerWell.component';
 
 @Component({
   selector: 'field-performance',
@@ -25,6 +26,7 @@ import { StaticTopOpportunitiesComponent } from '../../components/swapped-top-op
     StaticSwappedSidepanelComponent,
     StaticGasProductionComponent,
     StaticTopOpportunitiesComponent,
+    StaticProducerWellComponent,
   ],
 })
 export class FieldPerformanceComponent implements OnInit, OnDestroy {
