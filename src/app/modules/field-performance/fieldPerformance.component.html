@@ -10,26 +10,32 @@
     <!-- First Row Cards -->
     <div class="d-flex w-100 gap-3">
       <div
-        class="rounded rounded-4 p-3 bg-dashboard-card dynamic-border height-232px"
+        class="rounded rounded-4 bg-dashboard-card dynamic-border height-232px"
         [ngClass]="{
-          'flex-grow-1': !expandGasProductionContainer,
-          'col-3': expandGasProductionContainer
+          'flex-grow-1': expandOilProductionSummaryContainer,
+          'col-3': !expandOilProductionSummaryContainer
         }"
       >
         <!-- Card Content Here -->
+        <static-oil-production-summary
+          (toggleExpandContainer)="toggleExpandOilSummaryContainer()"
+          [hideAreaChart]="!expandOilProductionSummaryContainer"
+        >
+        </static-oil-production-summary>
       </div>
       <div
         class="rounded rounded-4 bg-dashboard-card dynamic-border height-232px"
         [ngClass]="{
-          'flex-grow-1': expandGasProductionContainer,
-          'col-3': !expandGasProductionContainer
+          'flex-grow-1': expandGasProductionSummaryContainer,
+          'col-3': !expandGasProductionSummaryContainer
         }"
       >
         <!-- Card Content Here -->
-        <static-gas-production
-          (toggleExpandContainer)="toggleExpandContainer()"
+        <static-gas-production-summary
+          (toggleExpandContainer)="toggleExpandGasSummaryContainer()"
+          [hideAreaChart]="!expandGasProductionSummaryContainer"
         >
-        </static-gas-production>
+        </static-gas-production-summary>
       </div>
       <div
         class="col-3 rounded rounded-4 p-3 bg-dashboard-card dynamic-border height-232px"

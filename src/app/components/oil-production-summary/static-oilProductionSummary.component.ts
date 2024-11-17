@@ -2,6 +2,7 @@ import {
   Component,
   ViewEncapsulation,
   Output,
+  Input,
   EventEmitter,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -19,20 +20,19 @@ import * as stockHighcharts from 'highcharts/highstock';
 import { DummyData } from './dummyData';
 
 @Component({
-  selector: 'static-gas-production',
-  templateUrl: './static-gasProduction.component.html',
-  styleUrls: ['./static-gasProduction.component.scss'],
+  selector: 'static-oil-production-summary',
+  templateUrl: './static-oilProductionSummary.component.html',
+  styleUrls: ['./static-oilProductionSummary.component.scss'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [RouterLink, HighchartsChartModule, CommonModule, LottieComponent],
 })
-export class StaticGasProductionComponent {
+export class StaticOilProductionSummaryComponent {
+  @Input() hideAreaChart: boolean = true;
   @Output() toggleExpandContainer = new EventEmitter<void>();
 
-  hideAreaChart: boolean = false;
-
   options: AnimationOptions = {
-    path: 'assets/animations/red-arrow.json',
+    path: 'assets/animations/green-arrow.json',
   };
   
   gaugeChartConstructor: string = 'chart';
@@ -88,7 +88,7 @@ export class StaticGasProductionComponent {
           {
             radius: '90%',
             innerRadius: '70%',
-            y: 80,
+            y: 86.56,
             color: 'rgba(255, 0, 0, 0.5',
           },
         ],
@@ -100,8 +100,8 @@ export class StaticGasProductionComponent {
           {
             radius: '90%',
             innerRadius: '70%',
-            y: 60,
-            color: '#FF0000',
+            y: 92.96,
+            color: 'rgba(0, 218, 105, 1)',
           },
         ],
       },
@@ -119,14 +119,14 @@ export class StaticGasProductionComponent {
         name: 'Actual',
         type: 'area',
         fillOpacity: 0.3,
-        lineColor: 'rgba(255, 0, 0, 1)',
+        lineColor: 'rgba(0, 218, 105, 1)',
         data: DummyData.actual,
         color: {
           linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
           stops: [
-            [0, 'rgba(255, 0, 0, 1)'], // start
-            [0.5, 'rgba(255, 0, 0, 0.5)'], // middle
-            [1, 'rgba(255, 0, 0, 0))'], // end
+            [0, 'rgba(0, 218, 105, 1)'], // start
+            [0.5, 'rgba(0, 218, 105, 0.5)'], // middle
+            [1, 'rgba(0, 218, 105, 0)'], // end
           ],
         },
         dashStyle: 'Solid',
@@ -179,7 +179,7 @@ export class StaticGasProductionComponent {
         labels: {
           enabled: false,
         },
-        min: 2500,
+        min: 20000,
       },
     ],
     scrollbar: {
