@@ -1,13 +1,13 @@
 <div class="main-swap-card d-flex justify-content-center position-relative h-100">
     
     <!-- Overview Card -->
-    <div class="swap-card one w-100 position-absolute rounded-3 h-100 d-flex flex-column overflow-hidden"
+    <div class="swap-card one w-100 position-absolute rounded-3 h-100 d-flex flex-column overflow-hidden dynamic-border"
     [ngClass]="{ 'front': activePanel === 'one', 'back': activePanel === 'two' }" (click)="bringToFront('one')">
         <static-opportunities-overview class="justify-content-between" [opportunities]="topOpportunities"></static-opportunities-overview>
     </div>
     
     <!-- Listing Panel -->
-    <div class="swap-card two w-100 position-absolute rounded-3 h-100 d-flex flex-column overflow-hidden"
+    <div class="swap-card two w-100 position-absolute rounded-3 h-100 d-flex flex-column overflow-hidden dynamic-border"
         [ngClass]="{ 'front': activePanel === 'two', 'back': activePanel === 'one' }" (click)="bringToFront('two')">
         <static-opportunities-listing [opportunities]="topOpportunities"></static-opportunities-listing>
     </div>    
