@@ -31,6 +31,7 @@ export class StaticProductionChartComponent {
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
         showInNavigator: true,
+        legendSymbol: 'rectangle',
       },
       {
         yAxis: 0,
@@ -42,6 +43,7 @@ export class StaticProductionChartComponent {
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
         showInNavigator: true,
+        legendSymbol: 'rectangle',
       },
       {
         yAxis: 0,
@@ -73,6 +75,7 @@ export class StaticProductionChartComponent {
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
         showInNavigator: true,
+        legendSymbol: 'rectangle',
       },
     ],
     xAxis: {

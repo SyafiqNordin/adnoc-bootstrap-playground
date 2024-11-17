@@ -6,8 +6,15 @@ import {
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AnimationItem } from 'lottie-web';
+import { LottieComponent, AnimationOptions } from 'ngx-lottie';
 import { HighchartsChartModule } from 'highcharts-angular';
-import * as donutHighcharts from 'highcharts';
+import * as gaugeHighcharts from 'highcharts';
+import HighchartsMore from 'highcharts/highcharts-more';
+import SolidGauge from 'highcharts/modules/solid-gauge';
+HighchartsMore(gaugeHighcharts);
+SolidGauge(gaugeHighcharts);
+
 import * as stockHighcharts from 'highcharts/highstock';
 import { DummyData } from './dummyData';
 
@@ -17,43 +24,85 @@ import { DummyData } from './dummyData';
   styleUrls: ['./static-gasProduction.component.scss'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports: [RouterLink, HighchartsChartModule, CommonModule],
+  imports: [RouterLink, HighchartsChartModule, CommonModule, LottieComponent],
 })
 export class StaticGasProductionComponent {
   @Output() toggleExpandContainer = new EventEmitter<void>();
 
   hideAreaChart: boolean = false;
-  donutChartConstructor: string = 'chart';
+
+  options: AnimationOptions = {
+    path: 'assets/animations/red-arrow.json',
+  };
+  
+  gaugeChartConstructor: string = 'chart';
   stockChartConstructor: string = 'stockChart';
-  donutHighcharts: typeof donutHighcharts = donutHighcharts;
+  gaugeHighcharts: typeof gaugeHighcharts = gaugeHighcharts;
   stockHighcharts: typeof stockHighcharts = stockHighcharts;
 
-  donutChartOptions: donutHighcharts.Options = {
+  gaugeChartOptions: gaugeHighcharts.Options = {
     chart: {
       backgroundColor: '',
-      type: 'pie',
+      type: 'solidgauge',
+      margin: [0, 0, 0, 0],
     },
     title: {
       text: '',
     },
-    plotOptions: {
-      pie: {
-        innerSize: '60%', // Creates the "donut" shape by adding a hollow center
-        dataLabels: {
-          enabled: true,
-          format: '{point.name}: {point.percentage:.1f}%',
+    tooltip: {
+        enabled: false
+    },
+    pane: {
+      startAngle: 0,
+      endAngle: 360,
+      background: [
+        {
+          outerRadius: '100%',
+          innerRadius: '60%',
+          backgroundColor: 'rgba(84, 86, 90, 0.30)',
+          borderWidth: 0,
         },
+      ],
+    },
+    yAxis: {
+      min: 0,
+      max: 100,
+      lineWidth: 0,
+      tickPositions: [],
+    },
+    plotOptions: {
+      solidgauge: {
+        dataLabels: {
+          enabled: false,
+        },
+        linecap: 'round',
+        stickyTracking: false,
+        rounded: true,
       },
     },
     series: [
       {
-        type: 'pie',
-        name: 'Share',
+        name: 'Target',
+        type: 'solidgauge',
         data: [
-          { name: 'Category A', y: 40 },
-          { name: 'Category B', y: 30 },
-          { name: 'Category C', y: 20 },
-          { name: 'Category D', y: 10 },
+          {
+            radius: '90%',
+            innerRadius: '70%',
+            y: 80,
+            color: 'rgba(255, 0, 0, 0.5',
+          },
+        ],
+      },
+      {
+        name: 'Actual',
+        type: 'solidgauge',
+        data: [
+          {
+            radius: '90%',
+            innerRadius: '70%',
+            y: 60,
+            color: '#FF0000',
+          },
         ],
       },
     ],
@@ -63,9 +112,7 @@ export class StaticGasProductionComponent {
     chart: {
       backgroundColor: '#54565a33', // Set background color here
       marginBottom: 0,
-      marginTop: 0,
-      marginLeft: 0,
-      marginRight: 0,
+      margin: [0, 0, 0, 0],
     },
     series: [
       {
@@ -205,5 +252,9 @@ export class StaticGasProductionComponent {
   toggleExpand() {
     this.hideAreaChart = !this.hideAreaChart;
     this.toggleExpandContainer.emit();
-  }
+  };
+
+  animationCreated(animationItem: AnimationItem): void {
+    console.log(animationItem);
+  };
 }
