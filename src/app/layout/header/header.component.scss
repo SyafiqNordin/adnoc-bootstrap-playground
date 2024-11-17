@@ -1,16 +1,20 @@
 .navbar {
-    height: 78px;
-    background-color: rgba(39, 39, 39, 0.1);
-    backdrop-filter: blur(25px);
-    z-index: 10;
+  height: 78px;
+  background-color: rgba(39, 39, 39, 0.1);
+  backdrop-filter: blur(25px);
+  z-index: 10;
 }
 
 .adnoc-logo {
-    height: 29px;
-    width: auto;
+  height: 29px;
+  width: auto;
+}
+
+.header-button {
+  height: 20px;
+  width: 20px;
 }
 
 .navbar-items-container {
-    background-color: rgba(84, 86, 90, 0.1);
-    border-color: rgba(255, 255, 255, 0.28) !important;
+  background-color: rgba(84, 86, 90, 0.1);
 }

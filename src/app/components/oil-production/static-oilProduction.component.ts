@@ -121,6 +121,9 @@ export class StaticOilProductionComponent {
         softMin: 0,
       },
     ],
+    scrollbar: {
+      enabled: false,
+    },
     tooltip: {
       backgroundColor: 'rgba(4, 12, 25, 0.6)',
       borderColor: 'black',
@@ -129,7 +132,7 @@ export class StaticOilProductionComponent {
         color: 'rgba(206, 206, 206, 1)',
       },
     },
-    
+
     navigator: {
       handles: {
         backgroundColor: '#CECECE',
@@ -157,7 +160,7 @@ export class StaticOilProductionComponent {
           },
         },
         dateTimeLabelFormats: {
-            month: '%b'
+          month: '%b',
         },
         tickInterval: 31 * 24 * 3600 * 1000,
       },

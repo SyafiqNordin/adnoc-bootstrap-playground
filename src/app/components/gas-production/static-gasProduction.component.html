@@ -1,0 +1,91 @@
+<div class="d-flex w-100 h-100">
+  <!-- Donut Chart Section -->
+  <div
+    class="d-flex flex-column p-4 h-100 gap-2"
+    [ngClass]="{ 'col-6': !hideAreaChart, 'col-12': hideAreaChart }"
+  >
+    <!-- Header -->
+    <div class="d-flex justify-content-between">
+      <div class="d-flex flex-column">
+        <span class="text-primary">Gas Production</span>
+        <span class="fs-12px text-secondary">MMscf/d</span>
+      </div>
+
+      <div class="d-flex gap-3 align-items-start">
+        <img src="assets/icons/fullscreen.svg" alt="fullscreen icon" />
+        <img
+          *ngIf="!hideAreaChart"
+          src="assets/icons/expand.svg"
+          alt="expand icon"
+          (click)="toggleExpand()"
+          class="cursor-pointer"
+        />
+        <img
+          *ngIf="hideAreaChart"
+          src="assets/icons/compress.svg"
+          alt="expand icon"
+          (click)="toggleExpand()"
+          class="cursor-pointer"
+        />
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="d-flex h-100 gap-3">
+      <!-- Donut Chart -->
+      <div class="d-flex flex-column col-4">
+        <highcharts-chart
+          class="w-100 h-100 d-block"
+          [Highcharts]="gaugeHighcharts"
+          [constructorType]="gaugeChartConstructor"
+          [options]="gaugeChartOptions"
+        >
+        </highcharts-chart>
+      </div>
+
+      <div class="flex-grow-1 d-flex flex-column h-100 justify-content-between">
+        <div class="d-flex w-100 gap-2 align-items-center">
+          <ng-lottie
+            [options]="options"
+            (animationCreated)="animationCreated($event)"
+          ></ng-lottie>
+          <h2 class="m-0 negative-value-text red-text-shadow">-0.89%</h2>
+        </div>
+
+        <div class="d-flex w-100 justify-content-between">
+          <div class="d-flex flex-column">
+            <span class="fs-12px text-secondary">Actual</span>
+            <span class="text-primary">3,415</span>
+          </div>
+          <div class="d-flex flex-column">
+            <span class="fs-12px text-secondary">Target</span>
+            <span class="text-primary">3,500</span>
+          </div>
+          <div class="d-flex flex-column">
+            <span class="fs-12px text-secondary">Potential</span>
+            <span class="text-primary">4,150</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Date of data -->
+    <div class="d-flex justify-content-start">
+      <span class="fs-12px text-secondary">Data as at 19-01-2024 00:00</span>
+    </div>
+  </div>
+
+  <!-- Area Graph Section -->
+  <div
+    class="flex-column col-6 h-100"
+    [ngClass]="{ 'd-none': hideAreaChart, 'd-flex': !hideAreaChart }"
+  >
+    <highcharts-chart
+      class="w-100 h-100 d-block rounded-end-4"
+      [Highcharts]="stockHighcharts"
+      [constructorType]="stockChartConstructor"
+      [options]="stockChartOptions"
+    >
+    </highcharts-chart>
+  </div>
+</div>

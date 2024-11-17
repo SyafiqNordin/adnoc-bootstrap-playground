@@ -2,7 +2,10 @@
   <div class="d-flex w-100 justify-content-between align-items-center">
     <div class="d-flex gap-3">
       <!-- Hamburger Menu -->
-      <div class="d-flex align-items-center cursor-pointer" (click)="toggleSideMenu()">
+      <div
+        class="d-flex align-items-center cursor-pointer"
+        (click)="toggleSideMenu()"
+      >
         <img
           src=".././../../assets/icons/hamburgerNavigation.svg"
           alt="Hamburger icon"
@@ -19,46 +22,64 @@
       </div>
 
       <!-- Dropdown Pages -->
-      <div class="d-flex px-3 py-1 rounded-pill border navbar-items-container">
-        <span class="text-white fs-14px">Field Performance Summary</span>
+      <div
+        class="d-flex px-3 py-1 rounded-pill dynamic-border navbar-items-container"
+      >
+        <span class="fs-14px text-primary"
+          >Field Performance Summary</span
+        >
       </div>
 
       <!-- Breadcrumbs -->
       <div
-        class="d-flex gap-2 px-3 py-1 rounded-pill border navbar-items-container"
+        class="d-flex gap-2 px-3 py-1 rounded-pill dynamic-border navbar-items-container"
       >
-        <span class="text-white-50 fs-14px">Onshore</span>
-        <span class="text-white-50 fs-14px">&#62;</span>
-        <span class="text-white-50 fs-14px">NEB</span>
-        <span class="text-white-50 fs-14px">&#62;</span>
-        <span class="text-white fs-14px">Dabbiya</span>
+        <span class="fs-14px text-secondary">Onshore</span>
+        <span class="fs-14px text-secondary">&#62;</span>
+        <span class="fs-14px text-secondary">NEB</span>
+        <span class="fs-14px text-secondary">&#62;</span>
+        <span class="fs-14px text-primary">Dabbiya</span>
       </div>
     </div>
 
     <div class="d-flex gap-2">
       <!-- Date and Time -->
       <div
-        class="d-flex gap-2 px-3 py-1 rounded-pill border navbar-items-container"
+        class="d-flex gap-2 px-3 py-1 rounded-pill navbar-items-container dynamic-border"
       >
-        <span class="text-white fs-14px">&#60;</span>
-        <span class="text-white-50 fs-14px">20-01-2024 00:00</span>
-        <span class="text-white fs-14px">&#62;</span>
+        <span class="fs-14px text-primary">&#60;</span>
+        <span class="fs-14px text-primary">20-01-2024 00:00</span>
+        <span class="fs-14px text-primary">&#62;</span>
       </div>
 
       <!-- Notifications -->
       <div
-        class="d-flex px-1 align-items-center border rounded-circle navbar-items-container cursor-pointer"
+        class="d-flex px-1 align-items-center dynamic-border rounded-circle navbar-items-container cursor-pointer"
         (click)="toggleSmartAlarmPanel()"
       >
-        <img
-          src="../../../assets/icons/notifications.svg"
-          alt="Notification icon"
-        />
+        <i
+          class="bi bi-bell fs-16px d-flex justify-content-center align-items-center text-primary header-button"
+        ></i>
+      </div>
+
+      <!-- Theme switching button (Just for testing) -->
+      <div
+        class="d-flex px-1 align-items-center dynamic-border rounded-circle navbar-items-container cursor-pointer"
+        (click)="toggleTheme()"
+      >
+        <i
+          *ngIf="currentTheme === 'light'"
+          class="bi bi-moon fs-16px d-flex justify-content-center align-items-center text-primary header-button"
+        ></i>
+        <i
+          *ngIf="currentTheme === 'dark'"
+          class="bi bi-brightness-high fs-16px d-flex justify-content-center align-items-center text-primary header-button"
+        ></i>
       </div>
 
       <!-- AI -->
       <div
-        class="d-flex px-1 align-items-center border rounded-circle navbar-items-container"
+        class="d-flex px-1 align-items-center dynamic-border rounded-circle navbar-items-container"
       >
         <img
           src="../../../assets/icons/ArtificialIntelligence.svg"

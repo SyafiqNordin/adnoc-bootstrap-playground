@@ -1,9 +1,6 @@
 // Import the base Bootstrap customizations
 @import "bootstrap-custom";
 
-// Import the desired theme
-@import "themes/theme-default";
-
 // Import all utilities
 @import "utilities/index";
 
@@ -17,9 +14,14 @@ html,
 body {
   height: 100%;
   margin: 0;
+  font-family: "Titillium Web";
   font-size: 16px; // To set 1 rem = 16px by default
 }
 
-html * {
-  font-family: "Titillium Web";
+.light-theme {
+  @import "themes/theme-light";
+}
+
+.dark-theme {
+  @import "themes/theme-dark";
 }

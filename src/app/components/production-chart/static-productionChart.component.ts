@@ -31,6 +31,7 @@ export class StaticProductionChartComponent {
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
         showInNavigator: true,
+        legendSymbol: 'rectangle',
       },
       {
         yAxis: 0,
@@ -42,6 +43,7 @@ export class StaticProductionChartComponent {
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
         showInNavigator: true,
+        legendSymbol: 'rectangle',
       },
       {
         yAxis: 0,
@@ -73,6 +75,7 @@ export class StaticProductionChartComponent {
         pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
         showInNavigator: true,
+        legendSymbol: 'rectangle',
       },
     ],
     xAxis: {
@@ -134,6 +137,9 @@ export class StaticProductionChartComponent {
         softMin: 0,
       },
     ],
+    scrollbar: {
+      enabled: false,
+    },
     tooltip: {
       backgroundColor: 'rgba(4, 12, 25, 0.6)',
       borderColor: 'black',
@@ -176,7 +182,7 @@ export class StaticProductionChartComponent {
           },
         },
         dateTimeLabelFormats: {
-            month: '%b'
+          month: '%b',
         },
         tickInterval: 31 * 24 * 3600 * 1000,
       },
