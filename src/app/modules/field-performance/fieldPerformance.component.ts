@@ -9,6 +9,8 @@ import { StaticOilProductionSummaryComponent } from '../../components/oil-produc
 import { SmartAlarmToggleService } from '../../services/smartAlarmToggle.service';
 import { StaticSwappedSidepanelComponent } from '../../components/swapped-sidepanel/static-swappedSidepanel.component';
 import { Subscription } from 'rxjs';
+import { StaticTopOpportunitiesComponent } from '../../components/swapped-top-opportunities/static-topOpportunities.component';
+import { StaticProducerWellComponent } from '../../components/producer-well/static-producerWell.component';
 
 @Component({
   selector: 'field-performance',
@@ -25,6 +27,8 @@ import { Subscription } from 'rxjs';
     StaticSwappedSidepanelComponent,
     StaticGasProductionSummaryComponent,
     StaticOilProductionSummaryComponent,
+    StaticTopOpportunitiesComponent,
+    StaticProducerWellComponent,
   ],
 })
 export class FieldPerformanceComponent implements OnInit, OnDestroy {

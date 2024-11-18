@@ -1,0 +1,24 @@
+<div class="m-4 p-1">
+    <div class="mx-2 d-flex justify-content-between">
+        <div class="">
+            <h5 class="fw-600 fs-16px m-0">Top Opportunities</h5>
+            <span class="light-grey-text fs-12px">stb/d</span>
+        </div>
+        <i class="bi bi-table"></i>
+    </div>
+</div>
+
+<!-- Table -->
+<div class="m-4 p-1 overflow-x-auto">
+    <table class="w-100">
+        <tr class="fs-12px text-start">
+            <th class="py-3 px-4">Well</th>
+            <th class="py-3 px-4">Expected Gain</th>
+        </tr>
+        <tr *ngFor="let opportunity of opportunities" class="fs-14px text-start">
+            <td class="py-3 px-4">{{ opportunity.well }}</td>
+            <td class="py-3 px-4">{{ opportunity.expectedGain }}</td>
+            <td class="py-3 px-4 success-text">{{ opportunity.percentageChange }}</td>
+        </tr>
+    </table>
+</div>
