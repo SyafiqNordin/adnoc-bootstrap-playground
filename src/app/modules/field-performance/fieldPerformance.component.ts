@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { StaticProductionChartComponent } from '../../components/production-chart/static-productionChart.component';
 import { StaticOilProductionComponent } from '../../components/oil-production/static-oilProduction.component';
 import { StaticFieldNetworkComponent } from '../../components/field-network/static-fieldNetwork.component';
-import { StaticGasProductionComponent } from '../../components/gas-production/static-gasProduction.component';
+import { StaticGasProductionSummaryComponent } from '../../components/gas-production-summary/static-gasProductionSummary.component';
+import { StaticOilProductionSummaryComponent } from '../../components/oil-production-summary/static-oilProductionSummary.component';
 import { SmartAlarmToggleService } from '../../services/smartAlarmToggle.service';
-import { Subscription } from 'rxjs';
 import { StaticSwappedSidepanelComponent } from '../../components/swapped-sidepanel/static-swappedSidepanel.component';
+import { Subscription } from 'rxjs';
 import { StaticTopOpportunitiesComponent } from '../../components/swapped-top-opportunities/static-topOpportunities.component';
 import { StaticProducerWellComponent } from '../../components/producer-well/static-producerWell.component';
 
@@ -24,7 +25,8 @@ import { StaticProducerWellComponent } from '../../components/producer-well/stat
     CommonModule,
     StaticOilProductionComponent,
     StaticSwappedSidepanelComponent,
-    StaticGasProductionComponent,
+    StaticGasProductionSummaryComponent,
+    StaticOilProductionSummaryComponent,
     StaticTopOpportunitiesComponent,
     StaticProducerWellComponent,
   ],
@@ -32,7 +34,8 @@ import { StaticProducerWellComponent } from '../../components/producer-well/stat
 export class FieldPerformanceComponent implements OnInit, OnDestroy {
   private smartAlarmButtonSubscription: Subscription | undefined;
   isShowSmartAlarmPanel: boolean = true;
-  expandGasProductionContainer: boolean = true;
+  expandGasProductionSummaryContainer: boolean = true;
+  expandOilProductionSummaryContainer: boolean = false;
   /**
    * Constructor
    */
@@ -52,7 +55,13 @@ export class FieldPerformanceComponent implements OnInit, OnDestroy {
     }
   }
 
-  toggleExpandContainer() {
-    this.expandGasProductionContainer = !this.expandGasProductionContainer;
+  toggleExpandGasSummaryContainer() {
+    this.expandGasProductionSummaryContainer = !this.expandGasProductionSummaryContainer;
+    this.expandOilProductionSummaryContainer = !this.expandOilProductionSummaryContainer;
+  }
+
+  toggleExpandOilSummaryContainer() {
+    this.expandOilProductionSummaryContainer = !this.expandOilProductionSummaryContainer;
+    this.expandGasProductionSummaryContainer = !this.expandGasProductionSummaryContainer;
   }
 }

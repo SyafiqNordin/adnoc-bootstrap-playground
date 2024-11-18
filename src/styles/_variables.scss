@@ -9,6 +9,7 @@ $black-base-color: #000000;
 $button-text-color: #040c19;
 $neutral-gray-color: #717276;
 $red-primary-color: #cd4b4b;
+$green-primary-color: #00DA69;
 $primary-gray-color: #4d4d4d;
 
 :root {
@@ -17,6 +18,10 @@ $primary-gray-color: #4d4d4d;
 
 .negative-value-text {
   color: $red-primary-color;
+}
+
+.positive-value-text {
+  color: $green-primary-color;
 }
 
 .cursor-pointer {
