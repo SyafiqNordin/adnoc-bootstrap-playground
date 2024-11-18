@@ -130,7 +130,7 @@ export class StaticGasProductionSummaryComponent {
           ],
         },
         dashStyle: 'Solid',
-        pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
+        pointInterval: 24 * 3600 * 1000, // 1 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
         showInNavigator: true,
       },
@@ -140,7 +140,7 @@ export class StaticGasProductionSummaryComponent {
         data: DummyData.target,
         color: '#ff0000',
         dashStyle: 'Dash',
-        pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
+        pointInterval: 24 * 3600 * 1000, // 1 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
       },
       {
@@ -149,7 +149,7 @@ export class StaticGasProductionSummaryComponent {
         data: DummyData.potential,
         color: '#ffffff',
         dashStyle: 'Dash',
-        pointInterval: 24 * 3600 * 1000, // 2 days in milliseconds
+        pointInterval: 24 * 3600 * 1000, // 1 days in milliseconds
         pointStart: Date.UTC(2024, 0, 1),
       },
     ],
@@ -193,6 +193,21 @@ export class StaticGasProductionSummaryComponent {
         color: 'rgba(206, 206, 206, 1)',
       },
       shared: true,
+      split: false,
+      useHTML: true,
+      formatter: function () {
+        // Format the date
+        const formattedDate = stockHighcharts.dateFormat('%d-%m-%Y %H:%M', Number(this.x));
+        // Build the tooltip content
+        let tooltipContent = `<table><tr><th class="pb-2 border-bottom border-light-subtle">${formattedDate}</th></tr>`;
+        this.points?.forEach(point => {
+          tooltipContent += `<tr>
+            <td class="pt-2">${point.series.name}: ${point.y}</td>
+          </tr>`;
+        });
+        tooltipContent += '</table>';
+        return tooltipContent;
+      },
     },
     navigator: {
       enabled: false,
