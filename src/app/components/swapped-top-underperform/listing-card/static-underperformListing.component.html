@@ -19,7 +19,9 @@
         <tr *ngFor="let underperform of underperform" class="fs-14px text-start">
             <td class="py-3 px-4">{{ underperform.well }}</td>
             <td class="py-3 px-4">{{ underperform.deferment }}</td>
-            <td class="py-3 px-4 danger-text">{{ underperform.percentageChange }}</td>
+            <td class="py-3 px-4">
+                <span class="badge rounded-pill bg-danger fw-600 fs-14px">{{ underperform.percentageChange }}</span>
+            </td>
         </tr>
     </table>
 </div>
