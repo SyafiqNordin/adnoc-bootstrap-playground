@@ -1,5 +1,9 @@
 @import "../../../styles/variables";
 
+app-header {
+  z-index: 10;
+}
+
 .backdrop {
   background-color: #141328;
   z-index: 0;
