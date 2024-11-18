@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
 })
 export class StaticOpportunitiesOverviewComponent {
-  @Input() opportunities: Array<{ well: string, expectedGain: number, percentageChange: string }> = [];
+  @Input() opportunities: Array<{ well: string, expectedGain: number, percentageChange: string, beforeOptimize: number }> = [];
 }
