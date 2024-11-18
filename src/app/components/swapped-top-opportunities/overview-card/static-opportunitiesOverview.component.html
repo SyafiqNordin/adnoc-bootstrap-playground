@@ -1,8 +1,8 @@
 <div class="p-4 m-1">
     <div class="d-flex justify-content-between">
         <div class="">
-            <h5 class="fw-600 fs-16px m-0">Top Opportunities</h5>
-            <span class="grey-text fs-12px">stb/d</span>
+            <h5 class="fw-600 fs-16px m-0 text-primary">Top Opportunities</h5>
+            <span class="fs-12px text-secondary fw-light">stb/d</span>
         </div>
         <i class="bi bi-info-circle"></i>
     </div>
@@ -11,20 +11,20 @@
 <!-- Carousel -->
 <div class="px-4 m-1 py-0">
     <div class="">
-        <span class="grey-text fs-12px">Expected Gain</span>
-        <h3 class="fs-64px">345.3</h3>
+        <span class="fs-12px text-secondary fw-light">Expected Gain</span>
+        <h3 class="fs-64px text-primary">{{ opportunities[0].expectedGain }}</h3>
     </div>
     <div class="mt-4">
-        <h4 class="fs-24px">{{ opportunities[0].well }}</h4>
+        <h4 class="fs-24px text-primary">{{ opportunities[0].well }}</h4>
         <div class="d-flex gap-2">
             <div class="pe-4">
-                <span class="grey-text fs-12px">Expected Gain</span>
-                <h6 class="success-text">{{ opportunities[0].percentageChange }}</h6>
+                <span class="fs-12px text-secondary fw-light">Expected Gain</span>
+                <h6 class="success-text fw-600">{{ opportunities[0].percentageChange }}</h6>
             </div>
-            <div class="ps-2 me-2 border-end"></div>
+            <div class="ps-2 me-2 border-end border-vertical"></div>
             <div class="ps-4">
-                <span class="grey-text fs-12px">Before Optimization</span>
-                <h6 class="">{{ opportunities[0].expectedGain }}</h6>
+                <span class="fs-12px text-secondary fw-light">Before Optimization</span>
+                <h6 class="fw-600">{{ opportunities[0].beforeOptimize }}</h6>
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
     <div 
         class="dark-blue-btn d-flex align-items-center rounded-pill py-2 px-4"
     >
-        <div class="">Optimization</div>
+        <div class="text-primary">Optimization</div>
         <i class="bi bi-arrow-right-short ms-2 mt-1 fs-24px"></i>
     </div>
 </div>

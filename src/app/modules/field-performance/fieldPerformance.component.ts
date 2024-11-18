@@ -11,6 +11,8 @@ import { StaticSwappedSidepanelComponent } from '../../components/swapped-sidepa
 import { Subscription } from 'rxjs';
 import { StaticTopOpportunitiesComponent } from '../../components/swapped-top-opportunities/static-topOpportunities.component';
 import { StaticProducerWellComponent } from '../../components/producer-well/static-producerWell.component';
+import { StaticTopUnderperformComponent } from '../../components/swapped-top-underperform/static-topUnderperform.component';
+
 
 @Component({
   selector: 'field-performance',
@@ -29,6 +31,7 @@ import { StaticProducerWellComponent } from '../../components/producer-well/stat
     StaticOilProductionSummaryComponent,
     StaticTopOpportunitiesComponent,
     StaticProducerWellComponent,
+    StaticTopUnderperformComponent,
   ],
 })
 export class FieldPerformanceComponent implements OnInit, OnDestroy {

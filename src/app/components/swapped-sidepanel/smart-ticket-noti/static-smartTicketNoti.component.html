@@ -1,63 +1,61 @@
-<div class="px-3 py-4 border-bottom">
+<div class="px-3 py-4">
     <div class="mx-2 d-flex justify-content-between">
         <div class="d-flex align-items-center">
             <i class="bi-ticket-perforated me-3 fs-22px"></i> 
-            <h5 class="fw-600 fs-16px m-0">Smart Ticket</h5>
+            <h5 class="fw-600 fs-16px m-0 text-primary">Smart Ticket</h5>
         </div>
         <i class="bi-three-dots-vertical"></i>
     </div>
 </div>
 
-<div class="px-3 py-2">
+<div class="px-3 py-2 border-top-bottom">
     <div class="mx-2 d-flex">
         <i class="bi bi-search me-3"></i>
-        <input type="text" class="bg-transparent border-0 tr-gray-text fs-14px" placeholder="Search Well Name..."/>
+        <input type="text" class="bg-transparent border-0 fs-14px" placeholder="Search Well Name..."/>
     </div>
 </div>
 
-<div class="border-top">
-    <!-- Dynamically generated cards -->
-    <div class="mx-4 my-3" *ngFor="let ticket of smartTickets">
-        <div class="mb-3 d-grid">
-            <div class="d-flex justify-content-between">
-                <div class="mb-2 d-flex">
-                    <h5 class="m-0 fw-bold fs-16px">
-                        {{ ticket.title }}
-                        <span *ngIf="ticket.sev_level === 'High'" class="sev-level-dot"></span>
-                    </h5>
-                    
-                    <span 
-                        *ngIf="ticket.sev_level"
-                        class="ms-2 badge fw-normal rounded-4 px-2"
-                        [ngClass]="{
-                            'bg-danger': ticket.sev_level === 'High', 
-                            'bg-warning': ticket.sev_level === 'Medium'
-                        }">
-                        {{ ticket.sev_level }}
-                    </span>
-                    
-                </div>
-                <i class="bi-three-dots-vertical"></i>
+<!-- Dynamically generated cards -->
+<div class="m-4" *ngFor="let ticket of smartTickets">
+    <div class="mb-3 d-grid">
+        <div class="d-flex justify-content-between">
+            <div class="mb-2 d-flex">
+                <h5 class="m-0 fw-bold fs-16px text-primary">
+                    {{ ticket.title }}
+                    <span *ngIf="ticket.sev_level === 'High'" class="sev-level-dot d-inline-block bg-danger rounded-circle align-top"></span>
+                </h5>
+                
+                <span 
+                    *ngIf="ticket.sev_level"
+                    class="ms-2 badge fw-normal rounded-4 px-2"
+                    [ngClass]="{
+                        'bg-danger': ticket.sev_level === 'High', 
+                        'bg-warning': ticket.sev_level === 'Medium'
+                    }">
+                    {{ ticket.sev_level }}
+                </span>
+                
             </div>
-            <span class="light-gray-text fs-10px">
-                {{ ticket.timestamp }}
-            </span>
+            <i class="bi-three-dots-vertical"></i>
         </div>
-        <div class="bg-dark rounded-2 p-3">
-            <h6 class="light-gray-text fs-12px">Recommendation:</h6>
-            <h6 class="">
-                {{ ticket.recommendation }}
-            </h6>
-            <div class="hyperlink-btn fs-14px" (click)="viewMore(ticket)">View More</div>
-        </div>
-        <div 
-            *ngIf="ticket.assignable" 
-            class="ghost-btn w-50 mt-3 p-2 fs-14px border rounded-3 text-center" 
-            (click)="assignTicket(ticket)">
-            Assign
-        </div>
-        <hr>
+        <span class="fs-10px text-secondary">
+            {{ ticket.timestamp }}
+        </span>
     </div>
+    <div class="bg-dark rounded-2 p-3 mb-4">
+        <h6 class="fs-12px text-secondary">Recommendation:</h6>
+        <h6 class="text-primary">
+            {{ ticket.recommendation }}
+        </h6>
+        <div class="hyperlink-btn fs-14px" (click)="viewMore(ticket)">View More</div>
+    </div>
+    <div 
+        *ngIf="ticket.assignable" 
+        class="ghost-btn w-50 mb-4 p-2 fs-14px border border-2 rounded-3 text-center text-primary dynamic-border" 
+        (click)="assignTicket(ticket)">
+        Assign
+    </div>
+    <hr>
 </div>
 
 <div class="hyperlink-btn mt-auto p-3 text-center fs-14px">

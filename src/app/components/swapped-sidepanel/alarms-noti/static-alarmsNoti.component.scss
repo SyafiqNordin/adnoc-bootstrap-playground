@@ -1,21 +1,21 @@
 h5 .sev-level-dot {
-    display: inline-block;
-    width: 8px;      /* Adjust the size as needed */
-    height: 8px;     /* Adjust the size as needed */
-    background-color: red;
-    border-radius: 50%;  /* Makes it a circle */
-    vertical-align: top; /* Aligns the dot with the text */
-  }
-  
-  .hyperlink-btn {
-    color: #287EFF;
-  }
-  
-  .hyperlink-btn:hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
-  .ghost-btn:hover {
-    cursor: pointer;
-  }
+  width: 8px;
+  height: 8px;
+}
+
+.hyperlink-btn {
+  color: #287EFF;
+}
+
+.hyperlink-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.ghost-btn:hover {
+  cursor: pointer;
+}
+
+.border-top-bottom {
+  border: 1px solid rgba(229, 229, 229, 0.2);
+}
