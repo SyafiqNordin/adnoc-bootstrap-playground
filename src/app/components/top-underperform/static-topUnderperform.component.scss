@@ -11,8 +11,8 @@ tr:nth-child(even) {
 }
 
 .danger-text {
-  color: #00DA69;
-  text-shadow: 0px 0px 8px rgba(0, 255, 123, 0.65);
+  color: #E6A5A5;
+  text-shadow: 0px 0px 8px rgba(255, 0, 0, 0.65);
 }
 
 .border-end.border-vertical {
@@ -26,4 +26,9 @@ tr:nth-child(even) {
 .hyperlink-btn:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.bold-danger-text {
+  color: #F82F2F;
+  text-shadow: 0px 0px 8px #F82F2F;
 }
