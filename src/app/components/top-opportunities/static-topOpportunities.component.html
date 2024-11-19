@@ -1,0 +1,58 @@
+<div class="d-flex w-100 h-100">
+    
+    <!-- Overview Card -->
+    <div class="overview-card col-6 d-flex flex-column h-auto gap-2 rounded-start-4">  
+        <!-- Content -->
+        <kendo-card class=" h-100 w-100 bg-transparent">
+            <kendo-card-header class="p-4 pb-0 border-0">
+                <div>
+                    <h5 class="fw-600 fs-16px m-0 text-primary">Top Opportunities</h5>
+                    <span class="fs-12px text-secondary fw-light">stb/d</span>
+                </div>
+            </kendo-card-header>
+            <kendo-card-body class="px-4 py-3 d-grid align-items-start flex-column">
+                <div>
+                    <h4 class="fs-20px text-primary mb-0">{{ opportunities[0].well }}</h4>
+                    <h3 class="fs-64px text-primary mb-0">{{ opportunities[0].expectedGain }}</h3>
+                </div>
+                <div>
+                    <div class="d-flex gap-2">
+                        <div class="pe-4">
+                            <span class="fs-12px text-light fw-light">Var.</span>
+                            <h6 class="success-text fw-600">{{ opportunities[0].percentageChange }}</h6>
+                        </div>
+                        <div class="ps-2 me-2 border-end border-vertical"></div>
+                        <div class="ps-4">
+                            <span class="fs-12px text-light fw-light">Before Optimization</span>
+                            <h6 class="fw-600 text-primary">{{ opportunities[0].beforeOptimize }}</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- Date of data -->
+                <div class="d-flex justify-content-start mt-auto">
+                    <span class="fs-10px text-light">Data as at 19-01-2024 00:00</span>
+                </div>
+            </kendo-card-body>
+        </kendo-card>      
+    </div>
+    
+    <!-- Listing Panel -->
+    <div class="listing-card col-6 d-grid flex-column h-auto overflow-x-auto">
+        <table class="w-100 text-primary text-start">
+            <tr class="fs-12px fw-light">
+                <th class="py-3 px-4">Well</th>
+                <th class="py-3 px-4">Expected Gain</th>
+            </tr>
+            <tr *ngFor="let opportunity of opportunities | slice:0:3" class="fs-14px">
+                <td class="py-3 px-4 fw-normal">{{ opportunity.well }}</td>
+                <td class="py-3 px-4">{{ opportunity.expectedGain }}</td>
+                <td class="py-3 px-4 success-text">{{ opportunity.percentageChange }}</td>
+            </tr>
+        </table>
+        <div class="hyperlink-btn mt-auto p-4 text-center fs-14px">
+            View More
+        </div>
+    </div>    
+</div>
+
+

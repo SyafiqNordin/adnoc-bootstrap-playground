@@ -46,6 +46,38 @@
 
     <!-- Second Row Cards -->
     <div class="d-flex w-100 gap-3">
+      <div
+        class="rounded rounded-4 bg-dashboard-card dynamic-border height-232px"
+        [ngClass]="{
+          'flex-grow-1': expandOilProductionSummaryContainer,
+          'col-4': !expandOilProductionSummaryContainer
+        }"
+      >
+        <!-- Card Content Here -->
+        <static-oil-production-summary
+          (toggleExpandContainer)="toggleExpandOilSummaryContainer()"
+          [hideAreaChart]="!expandOilProductionSummaryContainer"
+        >
+        </static-oil-production-summary>
+      </div>
+      <div
+        class="rounded rounded-4 bg-dashboard-card dynamic-border height-232px"
+        [ngClass]="{
+          'flex-grow-1': expandGasProductionSummaryContainer,
+          'col-4': !expandGasProductionSummaryContainer
+        }"
+      >
+        <!-- Card Content Here -->
+        <static-gas-production-summary
+          (toggleExpandContainer)="toggleExpandGasSummaryContainer()"
+          [hideAreaChart]="!expandGasProductionSummaryContainer"
+        >
+        </static-gas-production-summary>
+      </div>
+    </div>
+
+    <!-- Third Row Cards -->
+    <div class="d-flex w-100 gap-3">
       <div class="d-flex flex-column col-2 gap-3">
         <div
           class="w-100 rounded rounded-4 p-4 bg-dashboard-card dynamic-border height-218px"
@@ -66,30 +98,14 @@
       </div>
     </div>
 
-    <!-- Third Row Cards -->
+    <!-- Fourth Row Cards -->
     <div class="d-flex w-100 gap-3">
-      <div class="d-flex flex-column col-5 gap-3">
-        <div
-          class="w-100 rounded rounded-4 p-3 bg-dashboard-card dynamic-border height-232px"
-        >
-          <!-- Card Content Here -->
-        </div>
-        <div
-          class="w-100 rounded rounded-4 p-3 bg-dashboard-card dynamic-border height-232px"
-        >
-          <!-- Card Content Here -->
-        </div>
-      </div>
-
-      <div
-        class="flex-grow-1 rounded rounded-4 bg-dashboard-card dynamic-border border-0"
-      >
+      <div class="col-6 rounded rounded-4 bg-dashboard-card dynamic-border height-314px">
+        <!-- Card Content Here -->
         <static-top-opportunities></static-top-opportunities>
       </div>
-
-      <div
-        class="flex-grow-1 rounded rounded-4 bg-dashboard-card dynamic-border border-0"
-      >
+      <div class="col-6 rounded rounded-4 bg-dashboard-card dynamic-border height-314px">
+        <!-- Card Content Here -->
         <static-top-underperform></static-top-underperform>
       </div>
     </div>

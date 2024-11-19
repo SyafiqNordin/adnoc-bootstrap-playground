@@ -1,24 +1,27 @@
-import { Component } from '@angular/core';
+import { Input, Output, Component, EventEmitter } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { StaticUnderperformOverviewComponent } from './overview-card/static-underperformOverview.component';
-import { StaticUnderperformListingComponent } from './listing-card/static-underperformListing.component';
+import { KENDO_LAYOUT } from '@progress/kendo-angular-layout';
+import { KENDO_BUTTON } from "@progress/kendo-angular-buttons";
 
 @Component({
-  selector: 'static-top-underperform_',
+  selector: 'static-top-underperform',
   templateUrl: './static-topUnderperform.component.html',
   styleUrl: './static-topUnderperform.component.scss',
   standalone: true,
   imports: [
     RouterModule,
     CommonModule,
-    StaticUnderperformOverviewComponent,
-    StaticUnderperformListingComponent,
+    KENDO_LAYOUT,
+    KENDO_BUTTON,
   ],
 })
 export class StaticTopUnderperformComponent {
   activePanel: string = 'one';
-  topUnderperforms: any[] = [
+  @Input() hideAreaTable: boolean = true;
+  @Output() toggleExpandContainer = new EventEmitter<void>();
+
+  underperforms: any[] = [
     { well: 'MN001', deferment: 290, percentageChange: '-9.3%', actual: 299.5 },
     { well: 'MN002', deferment: 218.3, percentageChange: '-5%', actual: 223 },
     { well: 'MN003', deferment: 192, percentageChange: '-19.2%', actual: 200.4 },
@@ -33,4 +36,9 @@ export class StaticTopUnderperformComponent {
   optimizeItem(well: any): void {
     console.log('Selected item:', well);
   }
+
+  toggleExpand() {
+    this.hideAreaTable = !this.hideAreaTable;
+    this.toggleExpandContainer.emit();
+  };
 }

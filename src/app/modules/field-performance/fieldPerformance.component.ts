@@ -9,9 +9,9 @@ import { StaticOilProductionSummaryComponent } from '../../components/oil-produc
 import { SmartAlarmToggleService } from '../../services/smartAlarmToggle.service';
 import { StaticSwappedSidepanelComponent } from '../../components/swapped-sidepanel/static-swappedSidepanel.component';
 import { Subscription } from 'rxjs';
-import { StaticTopOpportunitiesComponent } from '../../components/swapped-top-opportunities/static-topOpportunities.component';
+import { StaticTopOpportunitiesComponent } from '../../components/top-opportunities/static-topOpportunities.component';
 import { StaticProducerWellComponent } from '../../components/producer-well/static-producerWell.component';
-import { StaticTopUnderperformComponent } from '../../components/swapped-top-underperform/static-topUnderperform.component';
+import { StaticTopUnderperformComponent } from '../../components/top-underperform/static-topUnderperform.component';
 
 
 @Component({
