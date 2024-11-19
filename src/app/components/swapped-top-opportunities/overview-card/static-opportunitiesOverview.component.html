@@ -1,41 +1,48 @@
-<div class="p-4 m-1">
-    <div class="d-flex justify-content-between">
-        <div class="">
-            <h5 class="fw-600 fs-16px m-0 text-primary">Top Opportunities</h5>
-            <span class="fs-12px text-secondary fw-light">stb/d</span>
-        </div>
-        <i class="bi bi-info-circle"></i>
-    </div>
-</div>
-
-<!-- Carousel -->
-<div class="px-4 m-1 py-0">
-    <div class="">
-        <span class="fs-12px text-secondary fw-light">Expected Gain</span>
-        <h3 class="fs-64px text-primary">{{ opportunities[0].expectedGain }}</h3>
-    </div>
-    <div class="mt-4">
-        <h4 class="fs-24px text-primary">{{ opportunities[0].well }}</h4>
-        <div class="d-flex gap-2">
-            <div class="pe-4">
-                <span class="fs-12px text-secondary fw-light">Expected Gain</span>
-                <h6 class="success-text fw-600">{{ opportunities[0].percentageChange }}</h6>
+<kendo-card class="h-100 w-100 bg-transparent border-0 rounded-0">
+    <kendo-card-header class="p-4 m-1 border-0 p-0">
+        <div class="d-flex justify-content-between">
+            <div class="">
+                <h5 class="fw-600 fs-16px m-0 text-primary">Top Opportunities</h5>
+                <span class="fs-12px text-secondary fw-light">stb/d</span>
             </div>
-            <div class="ps-2 me-2 border-end border-vertical"></div>
-            <div class="ps-4">
-                <span class="fs-12px text-secondary fw-light">Before Optimization</span>
-                <h6 class="fw-600">{{ opportunities[0].beforeOptimize }}</h6>
+            <button
+                kendoButton
+                fillMode="clear"
+                title="Browse"
+                themeColor="light"
+                class="rounded-circle"
+            >
+                <img src="assets/icons/table_view.svg" alt="Tablet" />
+            </button>
+        </div>
+    </kendo-card-header>
+    <kendo-card-body class="p-4 m-1 pt-0">
+        <div>
+            <span class="fs-12px text-secondary fw-light">Expected Gain</span>
+            <h3 class="fs-64px text-primary">{{ opportunities[0].expectedGain }}</h3>
+        </div>
+        <div class="mt-4">
+            <h4 class="fs-24px text-primary">{{ opportunities[0].well }}</h4>
+            <div class="d-flex gap-2">
+                <div class="pe-4">
+                    <span class="fs-12px text-secondary fw-light">Expected Gain</span>
+                    <h6 class="success-text fw-600">{{ opportunities[0].percentageChange }}</h6>
+                </div>
+                <div class="ps-2 me-2 border-end border-vertical"></div>
+                <div class="ps-4">
+                    <span class="fs-12px text-secondary fw-light">Before Optimization</span>
+                    <h6 class="fw-600 text-primary">{{ opportunities[0].beforeOptimize }}</h6>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="p-4 m-1 mt-2 d-flex justify-content-between">
-    <div class=""></div>
-    <div 
-        class="dark-blue-btn d-flex align-items-center rounded-pill py-2 px-4"
-    >
-        <div class="text-primary">Optimization</div>
-        <i class="bi bi-arrow-right-short ms-2 mt-1 fs-24px"></i>
-    </div>
-</div>
+    </kendo-card-body>
+    <kendo-card-actions orientation="horizontal" class="p-4 d-flex justify-content-end">
+        <button
+            kendoButton
+            fillMode="flat"
+            class="dark-blue-btn border-0 rounded-pill text-primary d-flex align-items-center p-3">
+            Optimization
+            <img src="assets/icons/expand.svg" alt="Click" class="pe-2 flip-horizontal" />
+        </button>
+    </kendo-card-actions>
+</kendo-card>

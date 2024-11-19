@@ -1,35 +1,39 @@
-<div class="p-4 m-1">
-    <div class="d-flex justify-content-between">
+<kendo-card class="h-100 w-100 bg-transparent border-0 rounded-0">
+    <kendo-card-header class="p-4 m-1 border-0 p-0">
+        <div class="d-flex justify-content-between">
+            <div class="">
+                <h5 class="fw-600 fs-16px m-0 text-primary">Top Underperforming Wells</h5>
+                <span class="fs-12px text-primary fw-light">stb/d</span>
+            </div>
+            <button
+                kendoButton
+                fillMode="clear"
+                title="Browse"
+                themeColor="light"
+                class="rounded-circle"
+            >
+                <img src="assets/icons/table_view.svg" alt="Tablet" />
+            </button>
+        </div>
+    </kendo-card-header>
+    <kendo-card-body class="p-4 m-1 pt-0">
         <div class="">
-            <h5 class="fw-600 fs-16px m-0 text-primary">Top Underperforming Wells</h5>
-            <span class="fs-12px text-primary fw-light">stb/d</span>
+            <span class="fs-12px text-primary fw-light">Potential Deferment</span>
+            <h3 class="fs-64px text-primary">{{ underperform[0].deferment }}</h3>
         </div>
-        <i class="bi bi-info-circle"></i>
-    </div>
-</div>
-
-<!-- Carousel -->
-<div class="px-4 m-1 py-0">
-    <div class="">
-        <span class="fs-12px text-primary fw-light">Potential Deferment</span>
-        <h3 class="fs-64px text-primary">{{ underperform[0].deferment }}</h3>
-    </div>
-    <div class="mt-4">
-        <h4 class="fs-24px text-primary">{{ underperform[0].well }}</h4>
-        <div class="d-flex gap-2">
-            <div class="pe-4">
-                <span class="fs-12px text-primary fw-light">Potential Deferment</span>
-                <h6 class="danger-text fw-600">{{ underperform[0].percentageChange }}</h6>
-            </div>
-            <div class="ps-2 me-2 border-end border-vertical"></div>
-            <div class="ps-4">
-                <span class="fs-12px text-primary fw-light">Actual</span>
-                <h6 class="fw-600">{{ underperform[0].actual }}</h6>
+        <div class="mt-4">
+            <h4 class="fs-24px text-primary">{{ underperform[0].well }}</h4>
+            <div class="d-flex gap-2">
+                <div class="pe-4">
+                    <span class="fs-12px text-primary fw-light">Potential Deferment</span>
+                    <h6 class="danger-text fw-600">{{ underperform[0].percentageChange }}</h6>
+                </div>
+                <div class="ps-2 me-2 border-end border-vertical"></div>
+                <div class="ps-4">
+                    <span class="fs-12px text-primary fw-light">Actual</span>
+                    <h6 class="fw-600 text-primary">{{ underperform[0].actual }}</h6>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="p-4 m-1 mt-2 d-flex justify-content-between">
-    <div class=""></div>
-</div>
+    </kendo-card-body>
+</kendo-card>

@@ -1,5 +1,5 @@
 .dark-blue-btn {
-    background: #06214C;
+    background: #06214C !important;
 }
 
 .success-text {
@@ -10,3 +10,7 @@
 .border-end.border-vertical {
     border-color: rgba(129, 129, 129, 0.40) !important;
 }
+
+.flip-horizontal {
+    transform: scaleX(-1);  /* Flip horizontally */
+  }
