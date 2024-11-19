@@ -20,7 +20,10 @@
             "outputPath": "dist/adnoc-bootstrap-playground",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": ["zone.js", "@angular/localize/init"],
+            "polyfills": [
+              "zone.js",
+              "@angular/localize/init"
+            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -30,6 +33,9 @@
               }
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles/styles.scss"
             ],
@@ -90,7 +96,12 @@
                 "output": "/assets"
               }
             ],
-            "styles": ["src/styles/styles.scss"],
+            "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
+              "src/styles/styles.scss"
+            ],
             "scripts": []
           }
         }
