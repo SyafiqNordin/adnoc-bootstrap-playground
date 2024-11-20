@@ -35,3 +35,9 @@
     width: 90px;
   }
 }
+
+.menu-item:hover {
+  border-radius: 8px;
+  background: rgba(169, 170, 172, 0.10);
+  cursor: pointer;
+}

@@ -13,6 +13,7 @@ import { StaticProducerWellComponent } from '../../components/producer-well/stat
 import { StaticTopUnderperformComponent } from '../../components/top-underperform/static-topUnderperform.component';
 import { StaticGasInjectionComponent } from '../../components/gas-injection/static-gasInjection.component';
 import { Subscription } from 'rxjs';
+import { StaticExceptionsWellComponent } from '../../components/exceptions-well/static-exceptionsWell.component';
 
 
 @Component({
@@ -34,6 +35,7 @@ import { Subscription } from 'rxjs';
     StaticProducerWellComponent,
     StaticTopUnderperformComponent,
     StaticGasInjectionComponent,
+    StaticExceptionsWellComponent,
   ],
 })
 export class FieldPerformanceComponent implements OnInit, OnDestroy {

@@ -1,0 +1,37 @@
+<kendo-grid 
+  [kendoGridBinding]="filteredGridData"
+  [columnMenu]="menuSettings"
+  [filterable]="true"
+  [sortable]="true"
+  [groupable]="true"
+  [pageable]="true"
+  [pageSize]="10"
+  [height]="400"
+>
+  <ng-template kendoGridToolbarTemplate>
+    <button type="button" kendoGridExcelCommand [svgIcon]="downloadIcon">
+      Export to Excel
+    </button>
+  </ng-template>
+
+  <kendo-grid-toolbar>
+    <label for="categoryFilter">Filter by Category:</label>
+    <kendo-dropdownlist
+      id="categoryFilter"
+      [data]="categories"
+      [defaultItem]="'All'"
+      [(ngModel)]="selectedCategory"
+      (valueChange)="onCategoryFilterChange($event)"
+    ></kendo-dropdownlist>
+  </kendo-grid-toolbar>
+
+  <kendo-grid-column field="wellName" title="Well Name"  [groupable]="true"> </kendo-grid-column>
+  <kendo-grid-column field="dateTime" title="Date & Time"> </kendo-grid-column>
+  <kendo-grid-column field="category" title="Category"></kendo-grid-column>
+  <kendo-grid-column field="eventName" title="Well Behaviour/Event"> </kendo-grid-column>
+  <kendo-grid-column field="indicator" title="Indicator"> </kendo-grid-column>
+  <kendo-grid-column field="criteria" title="Criteria"> </kendo-grid-column>
+  <kendo-grid-column field="status" title="Resolution Status"> </kendo-grid-column>
+  
+  <kendo-grid-excel fileName="FPS_ExceptionsByWell.xlsx"></kendo-grid-excel>
+</kendo-grid>

@@ -41,10 +41,13 @@
         <table class="w-100 text-primary text-start">
             <tr class="fs-12px fw-light">
                 <th class="py-3 px-4">Well</th>
+                <th class="py-3 px-4">Actual</th>
+                <th class="py-3 px-4">Exp. Oil Gain (stb/d)</th>
                 <th class="py-3 px-4">Expected Gain</th>
             </tr>
             <tr *ngFor="let opportunity of opportunities | slice:0:3" class="fs-14px">
                 <td class="py-3 px-4 fw-normal">{{ opportunity.well }}</td>
+                <td class="py-3 px-4 fw-normal">{{ opportunity.actual }}</td>
                 <td class="py-3 px-4">{{ opportunity.expectedGain }}</td>
                 <td class="py-3 px-4 success-text">{{ opportunity.percentageChange }}</td>
             </tr>
