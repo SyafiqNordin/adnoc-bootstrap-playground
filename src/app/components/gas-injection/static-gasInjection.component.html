@@ -1,0 +1,40 @@
+<div class="d-flex flex-column h-100 w-100 justify-content-between">
+  <!-- Header -->
+  <div class="d-flex w-100 justify-content-between">
+    <div class="d-flex flex-column">
+      <span class="text-primary">Gas injection</span>
+      <span class="text-secondary fs-12px">MMscf/d</span>
+    </div>
+    <img src="assets/icons/fullscreen.svg" alt="fullscreen icon" />
+  </div>
+
+  <!-- Content -->
+  <div class="d-flex align-items-center">
+    <div class="d-flex w-100 gap-4 align-items-center">
+      <ng-lottie
+        [options]="options"
+        (animationCreated)="animationCreated($event)"
+      ></ng-lottie>
+      <h2 class="m-0 red-text red-text-shadow">-0.28%</h2>
+    </div>
+    <div class="d-flex w-100 justify-content-between align-items-center">
+      <div class="d-flex flex-column">
+        <span class="text-secondary fs-12px">Actual</span>
+        <span class="text-primary">698.5</span>
+      </div>
+      <div class="d-flex flex-column">
+        <span class="text-secondary fs-12px">Target</span>
+        <span class="text-primary">700.5</span>
+      </div>
+      <div class="d-flex flex-column">
+        <span class="text-secondary fs-12px">Potential</span>
+        <span class="text-primary">950</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="d-flex w-100">
+    <span class="fs-12px text-secondary">Data as at 19-01-2024 06:00</span>
+  </div>
+</div>
