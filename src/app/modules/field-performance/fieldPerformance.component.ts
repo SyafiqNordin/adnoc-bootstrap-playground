@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 import { StaticTopOpportunitiesComponent } from '../../components/top-opportunities/static-topOpportunities.component';
 import { StaticProducerWellComponent } from '../../components/producer-well/static-producerWell.component';
 import { StaticTopUnderperformComponent } from '../../components/top-underperform/static-topUnderperform.component';
+import { StaticExceptionsWellComponent } from '../../components/exceptions-well/static-exceptionsWell.component';
 
 
 @Component({
@@ -32,6 +33,7 @@ import { StaticTopUnderperformComponent } from '../../components/top-underperfor
     StaticTopOpportunitiesComponent,
     StaticProducerWellComponent,
     StaticTopUnderperformComponent,
+    StaticExceptionsWellComponent,
   ],
 })
 export class FieldPerformanceComponent implements OnInit, OnDestroy {
