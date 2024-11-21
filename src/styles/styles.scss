@@ -29,3 +29,70 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+// Kendo Table global transparent background
+.k-grid,
+.k-toolbar-solid,
+.k-grid-header,
+.k-grouping-header,
+.k-table-thead,
+.k-pager,
+.k-grid .k-grouping-row,
+.k-grouping-row .k-table-td,
+.k-header,
+.k-grouping-row td,
+.k-table-tbody .k-group-cell {
+  background-color: transparent !important;
+  --kendo-color-surface-alt: transparent !important;
+  border: none !important;
+}
+
+.k-grid tr,
+.k-grid td,
+.k-grid .k-toolbar-solid,
+.k-grid .k-grid-header,
+.k-grid .k-grouping-header,
+.k-grid .k-textbox, 
+.k-grid .k-pager,
+.k-grouping-row .k-table-td,
+.k-grouping-row td {
+  color: #CECECE !important;
+  border: none !important;
+  border-color: none !important;
+}
+
+.k-grid-content::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.k-grid-content::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.k-grid .k-button-flat-primary {
+  height: 38px;
+  width: 38px;
+  border-radius: 6px;
+  background-color: #0D6EFD14;
+  color: #0D6EFD;
+}
+
+.k-grid .k-pager-nav {
+  height: 38px;
+  width: 38px;
+  border-radius: 6px;
+}
+
+.striped-row {
+  background-color: rgba(169, 170, 172, 0.10) !important;
+}
+
+.k-grid-header-menu.k-grid-column-menu .k-svg-i-more-vertical.k-svg-icon{
+  color: #B7B8BA;
+}
+
+.k-grid-header-menu.k-grid-column-menu:hover {
+  background: transparent;
+}

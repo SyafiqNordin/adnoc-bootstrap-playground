@@ -4,28 +4,61 @@
   [filterable]="true"
   [sortable]="true"
   [groupable]="true"
-  [pageable]="true"
-  [pageSize]="10"
-  [height]="400"
+  [pageable]="{
+    buttonCount: buttonCount,
+    info: info,
+    type: type,
+    pageSizes: pageSizes,
+    previousNext: previousNext,
+    position: position
+  }"
+  [pageSize]="pageSize"
+  [rowHeight]="40"
+  [height]="600"
+  scrollable="scrollable"
+  [rowClass]="stripedRows"
 >
   <ng-template kendoGridToolbarTemplate>
-    <button type="button" kendoGridExcelCommand [svgIcon]="downloadIcon">
-      Export to Excel
-    </button>
+    <div class="w-100 d-flex justify-content-between align-items-center">
+      <h5 class="fs-16px fw-600 m-0">Exceptions by Well</h5>
+      <div>
+        <button
+          kendoButton
+          fillMode="solid"
+          title="Download Excel"
+          themeColor="dark"
+          size="large"
+          class="fs-16px py-2 px-3 rounded-3 bg-transparent"
+        >
+          Reset
+        </button>
+        <button
+          kendoGridExcelCommand
+          fillMode="clear"
+          title="Download Excel"
+          themeColor="light"
+          class="rounded"
+        >
+          <img src="assets/icons/download.svg" alt="download-icon" />
+        </button>
+        <button
+          kendoButton
+          fillMode="clear"
+          title="Swap Table"
+          themeColor="light"
+          class="rounded"
+        >
+          <img src="assets/icons/table_view.svg" alt="swap-table-icon" />
+        </button>
+      </div>
+    </div>
+    <div class="w-100 bg-transparent-blue text-primary p-3 mt-3 rounded-4">
+      <img src="assets/icons/hexagon-info.svg" alt="warning-info-icon" class="me-3" />
+      Hover over the parameter and click to add it to the table.
+    </div>
   </ng-template>
 
-  <kendo-grid-toolbar>
-    <label for="categoryFilter">Filter by Category:</label>
-    <kendo-dropdownlist
-      id="categoryFilter"
-      [data]="categories"
-      [defaultItem]="'All'"
-      [(ngModel)]="selectedCategory"
-      (valueChange)="onCategoryFilterChange($event)"
-    ></kendo-dropdownlist>
-  </kendo-grid-toolbar>
-
-  <kendo-grid-column field="wellName" title="Well Name"  [groupable]="true"> </kendo-grid-column>
+  <kendo-grid-column field="wellName" title="Well Name"> </kendo-grid-column>
   <kendo-grid-column field="dateTime" title="Date & Time"> </kendo-grid-column>
   <kendo-grid-column field="category" title="Category"></kendo-grid-column>
   <kendo-grid-column field="eventName" title="Well Behaviour/Event"> </kendo-grid-column>
