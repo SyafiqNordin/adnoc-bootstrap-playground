@@ -1,71 +1,79 @@
-<div class="px-3 py-4">
-    <div class="mx-2 d-flex justify-content-between">
-        <div class="d-flex align-items-center">
-            <img src="assets/icons/notifications.svg" alt="Alarms" />
-            <h5 class="fw-600 fs-16px m-0 ms-3 text-primary">Alarms</h5>
-        </div>
-        <button
-            kendoButton
-            (click)="onAlarmsMenuClick()"
-            [svgIcon]="menuDots"
-            fillMode="clear"
-            title="Browse"
-            themeColor="light"
-        ></button>
-    </div>
-</div>
-
-<div class="px-3 py-2 border-top-bottom">
-    <div class="mx-2 d-flex">
-        <img src="assets/icons/search.svg" alt="Search" />
-        <kendo-textbox class="bg-transparent fs-14px border-0 text-primary" placeholder="Search Well Name..."></kendo-textbox>
-    </div>
-</div>
-
-<!-- Dynamically generated cards -->
-<div class="m-4" *ngFor="let ticket of alarms">
-    <kendo-card class="w-100 bg-transparent border-0 rounded-0">
-        <kendo-card-header class="border-0 p-0 mb-3">
-            <div class="d-flex justify-content-between">
+<div class="d-flex flex-column h-100">
+    <!-- Fixed header -->
+    <div class="header-section flex-shrink-0">
+        <div class="px-3 py-4">
+            <div class="mx-2 d-flex justify-content-between">
                 <div class="d-flex align-items-center">
-                    <h5 class="m-0 fw-bold fs-16px text-primary">
-                        {{ ticket.title }}
-                        <span *ngIf="ticket.sev_level === 'High'" class="sev-level-dot d-inline-block bg-danger rounded-circle align-top"></span>
-                    </h5>
-                    <span 
-                        *ngIf="ticket.sev_level"
-                        class="ms-2 badge fw-normal rounded-4 px-2"
-                        [ngClass]="{
-                            'bg-danger': ticket.sev_level === 'High', 
-                            'bg-warning text-dark': ticket.sev_level === 'Medium'
-                        }">
-                        {{ ticket.sev_level }}
-                    </span>
+                    <img src="assets/icons/notifications.svg" alt="Alarms" />
+                    <h5 class="fw-600 fs-16px m-0 ms-3 text-primary">Alarms</h5>
                 </div>
                 <button
                     kendoButton
-                    (click)="onItemClick(ticket)"
+                    (click)="onAlarmsMenuClick()"
                     [svgIcon]="menuDots"
                     fillMode="clear"
                     title="Browse"
                     themeColor="light"
                 ></button>
             </div>
-            <span class="fs-10px text-secondary">
-                {{ ticket.timestamp }}
-            </span>
-        </kendo-card-header>
-        <kendo-card-body class="p-0">
-            <div>
-                <h6 class="text-primary">
-                    {{ ticket.recommendation }}
-                </h6>
-            </div>
-        </kendo-card-body>
-    </kendo-card>
-    <hr class="my-4">
-</div>
+        </div>
 
-<div class="hyperlink-btn mt-auto p-3 text-center fs-14px">
-    View More
+        <div class="px-3 py-2 border-top-bottom">
+            <div class="mx-2 d-flex">
+                <img src="assets/icons/search.svg" alt="Search" />
+                <kendo-textbox class="bg-transparent fs-14px border-0 text-primary" placeholder="Search Well Name..."></kendo-textbox>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scrollable Content -->
+    <div class="content-section flex-grow-1 overflow-x-hidden overflow-y-auto mb-4">
+        <!-- Dynamically generated cards -->
+        <div class="m-4" *ngFor="let ticket of alarms">
+            <kendo-card class="w-100 bg-transparent border-0 rounded-0">
+                <kendo-card-header class="border-0 p-0 mb-3">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <h5 class="m-0 fw-bold fs-16px text-primary">
+                                {{ ticket.title }}
+                                <span *ngIf="ticket.sev_level === 'High'" class="sev-level-dot d-inline-block bg-danger rounded-circle align-top"></span>
+                            </h5>
+                            <span 
+                                *ngIf="ticket.sev_level"
+                                class="ms-2 badge fw-normal rounded-4 px-2"
+                                [ngClass]="{
+                                    'bg-danger': ticket.sev_level === 'High', 
+                                    'bg-warning text-dark': ticket.sev_level === 'Medium'
+                                }">
+                                {{ ticket.sev_level }}
+                            </span>
+                        </div>
+                        <button
+                            kendoButton
+                            (click)="onItemClick(ticket)"
+                            [svgIcon]="menuDots"
+                            fillMode="clear"
+                            title="Browse"
+                            themeColor="light"
+                        ></button>
+                    </div>
+                    <span class="fs-10px text-secondary">
+                        {{ ticket.timestamp }}
+                    </span>
+                </kendo-card-header>
+                <kendo-card-body class="p-0">
+                    <div>
+                        <h6 class="text-primary">
+                            {{ ticket.recommendation }}
+                        </h6>
+                    </div>
+                </kendo-card-body>
+            </kendo-card>
+            <hr class="my-4">
+        </div>
+
+        <div class="hyperlink-btn mt-auto p-3 text-center fs-14px">
+            View More
+        </div>
+    </div>
 </div>

@@ -30,7 +30,7 @@
                 </div>
                 <!-- Date of data -->
                 <div class="d-flex justify-content-start mt-auto">
-                    <span class="fs-12px text-light">Data as at 19-01-2024 00:00</span>
+                    <span class="fs-10px text-light">Data as at 19-01-2024 00:00</span>
                 </div>
             </kendo-card-body>
         </kendo-card>
@@ -38,18 +38,20 @@
     </div>
     
     <!-- Listing Panel -->
-    <div class="listing-card col-6 d-grid flex-column h-auto overflow-x-auto">
+    <div class="listing-card col-6 d-grid flex-column h-auto overflow-y-hidden overflow-x-auto">
         <table class="w-100 text-primary text-start">
-            <tr class="fs-12px fw-light">
-                <th class="py-3 px-4">Well</th>
-                <th class="py-3 px-4">Oil Rate</th>
-                <th class="py-3 px-4">Pot. Deferment</th>
+            <tr class="fs-12px">
+                <th class="p-3 fw-light ps-4">Well</th>
+                <th class="p-3 fw-light text-end">Actual</th>
+                <th class="p-3 fw-light text-end">Oil Rate (stb/d)</th>
+                <th class="p-3 fw-light text-end pe-4">Potential Deferment</th>
             </tr>
             <tr *ngFor="let underperform of underperforms | slice:0:3" class="fs-14px">
-                <td class="py-3 px-4 fw-normal">{{ underperform.well }}</td>
-                <td class="py-3 px-4">{{ underperform.deferment }}</td>
-                <td class="py-3 px-4">
-                    <span class="bold-danger-text fw-600 fs-14px">{{ underperform.percentageChange }}</span>
+                <td class="p-3 fw-normal ps-4">{{ underperform.well }}</td>
+                <td class="p-3 fw-600 text-end">{{ underperform.actual }}</td>
+                <td class="p-3 fw-600 text-end">{{ underperform.deferment }}</td>
+                <td class="p-3 fw-600 text-end">
+                    <span class="bold-danger-text fw-600 fs-14px pe-4">{{ underperform.percentageChange }}</span>
                 </td>
             </tr>
         </table>

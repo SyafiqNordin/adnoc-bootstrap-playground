@@ -1,3 +1,7 @@
+:host {
+  height: 100%;
+}
+
 h5 .sev-level-dot {
   width: 8px;
   height: 8px;
@@ -23,4 +27,8 @@ h5 .sev-level-dot {
 .badge.bg-danger,
 .sev-level-dot.bg-danger {
   background: #F82F2F !important;
+}
+
+.header-section {
+  z-index: 1;
 }
