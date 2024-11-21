@@ -146,7 +146,7 @@ export class StaticExceptionsWellComponent {
 
     public stripedRows = (args: any) => ({
         'striped-row': args.index % 2 === 0
-      });
+    });
 
     // Filtering logic
     public onCategoryFilterChange(selected: string): void {
