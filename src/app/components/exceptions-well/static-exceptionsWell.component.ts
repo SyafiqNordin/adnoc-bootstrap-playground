@@ -134,7 +134,7 @@ export class StaticExceptionsWellComponent {
     public filteredGridData: any[] = [...this.exceptionsWell];
     public categories: string[] = ['All', ...new Set(this.exceptionsWell.map(item => item.category))];
     public selectedCategory: string = 'All';
-
+    
     public pageSizes = [10, 20, 50];
     public pageSize = 10;
     public previousNext = true;
@@ -143,6 +143,10 @@ export class StaticExceptionsWellComponent {
     public type: PagerType = "numeric";
     public info = true;
     public buttonCount = 10;
+
+    public stripedRows = (args: any) => ({
+        'striped-row': args.index % 2 === 0
+      });
 
     // Filtering logic
     public onCategoryFilterChange(selected: string): void {
