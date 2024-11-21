@@ -7,55 +7,65 @@
             <kendo-card-header class="p-4 pb-0 border-0">
                 <div>
                     <h5 class="fw-600 fs-16px m-0 text-primary">Top Opportunities</h5>
-                    <span class="fs-12px text-secondary fw-light">stb/d</span>
                 </div>
             </kendo-card-header>
             <kendo-card-body class="px-4 py-3 d-grid align-items-start flex-column">
                 <div>
                     <h4 class="fs-20px text-primary mb-0">{{ opportunities[0].well }}</h4>
-                    <h3 class="fs-64px text-primary mb-0">{{ opportunities[0].expectedGain }}</h3>
+                    <span class="fs-12px text-secondary fw-light">Actual (stb/d)</span>
+                    <h3 class="fs-64px text-primary mb-0">{{ opportunities[0].actual }}</h3>
                 </div>
                 <div>
                     <div class="d-flex gap-2">
                         <div class="pe-4">
-                            <span class="fs-12px text-light fw-light">Var.</span>
-                            <h6 class="success-text fw-600">{{ opportunities[0].percentageChange }}</h6>
+                            <span class="fs-12px text-secondary fw-light">Expected Oil Gain</span>
+                            <h6 class="fw-600 text-primary">{{ opportunities[0].expOilGain }}</h6>
                         </div>
                         <div class="ps-2 me-2 border-end border-vertical"></div>
                         <div class="ps-4">
-                            <span class="fs-12px text-light fw-light">Before Optimization</span>
-                            <h6 class="fw-600 text-primary">{{ opportunities[0].beforeOptimize }}</h6>
+                            <span class="fs-12px text-secondary fw-light">Expected Gain</span>
+                            <h6 class="success-text fw-600">{{ opportunities[0].expGain }}</h6>
                         </div>
                     </div>
                 </div>
                 <!-- Date of data -->
                 <div class="d-flex justify-content-start mt-auto">
-                    <span class="fs-10px text-light">Data as at 19-01-2024 00:00</span>
+                    <span class="fs-10px text-secondary">Data as at 19-01-2024 00:00</span>
                 </div>
             </kendo-card-body>
         </kendo-card>      
     </div>
     
     <!-- Listing Panel -->
-    <div class="listing-card col-6 d-grid flex-column h-auto overflow-y-hidden overflow-x-auto">
-        <table class="w-100 text-primary text-start">
+    <div class="listing-card col-6 d-grid flex-column h-auto">
+        <!-- <table class="w-100 text-primary text-start">
             <tr class="fs-12px">
                 <th class="p-3 fw-light ps-4">Well</th>
                 <th class="p-3 fw-light text-end">Actual</th>
                 <th class="p-3 fw-light text-end">Exp. Oil Gain (stb/d)</th>
                 <th class="p-3 fw-light text-end pe-4">Expected Gain</th>
             </tr>
-            <tr *ngFor="let opportunity of opportunities | slice:0:3" class="fs-14px">
+            <tr *ngFor="let opportunity of opportunities" class="fs-14px">
                 <td class="p-3 fw-normal ps-4">{{ opportunity.well }}</td>
                 <td class="p-3 fw-600 text-end">{{ opportunity.actual }}</td>
-                <td class="p-3 fw-600 text-end">{{ opportunity.expectedGain }}</td>
-                <td class="p-3 fw-600 text-end success-text pe-4">{{ opportunity.percentageChange }}</td>
+                <td class="p-3 fw-600 text-end">{{ opportunity.expOilGain }}</td>
+                <td class="p-3 fw-600 text-end success-text pe-4">{{ opportunity.expGain }}</td>
             </tr>
-        </table>
-        <div class="hyperlink-btn mt-auto p-4 text-center fs-14px">
-            View More
-        </div>
-    </div>    
+        </table> -->
+    
+    <kendo-grid 
+        [data]="gridData"
+        [height]="300"
+        scrollable="scrollable"
+        [rowClass]="stripedRows"
+    >
+        <kendo-grid-column field="well" title="Well"> </kendo-grid-column>
+        <kendo-grid-column field="actual" title="Actual"> </kendo-grid-column>
+        <kendo-grid-column field="expOilGain" title="Exp. Oil Gain (stb/d)"></kendo-grid-column>
+        <kendo-grid-column class="success-text" field="expGain" title="Expected Gain"> </kendo-grid-column>
+    </kendo-grid>
+</div>
+
 </div>
 
 
