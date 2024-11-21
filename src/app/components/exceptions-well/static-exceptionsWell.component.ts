@@ -1,12 +1,10 @@
 import { Component } from "@angular/core";
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { KENDO_GRID } from "@progress/kendo-angular-grid";
-import { SVGIcon, downloadIcon } from "@progress/kendo-svg-icons";
-import { ColumnMenuSettings } from "@progress/kendo-angular-grid";
-import { KENDO_DROPDOWNLIST } from '@progress/kendo-angular-dropdowns';
 import { FormsModule } from '@angular/forms';
-import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { KENDO_GRID, ColumnMenuSettings, PagerPosition, PagerType } from "@progress/kendo-angular-grid";
+import { KENDO_DROPDOWNLIST, DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { KENDO_BUTTON } from "@progress/kendo-angular-buttons";
 
 export interface TableItem {
     well: string;
@@ -26,10 +24,10 @@ export interface TableItem {
         KENDO_DROPDOWNLIST,
         FormsModule,
         DropDownsModule,
+        KENDO_BUTTON,
     ],
 })
 export class StaticExceptionsWellComponent {
-    public downloadIcon: SVGIcon = downloadIcon;
 
     exceptionsWell: any[] = [
         {
@@ -132,9 +130,19 @@ export class StaticExceptionsWellComponent {
             status: "Ticket Raised",
         },
     ];
+
     public filteredGridData: any[] = [...this.exceptionsWell];
     public categories: string[] = ['All', ...new Set(this.exceptionsWell.map(item => item.category))];
     public selectedCategory: string = 'All';
+
+    public pageSizes = [10, 20, 50];
+    public pageSize = 10;
+    public previousNext = true;
+    public position: PagerPosition = "bottom";
+    public pagerTypes = ["numeric", "input"];
+    public type: PagerType = "numeric";
+    public info = true;
+    public buttonCount = 10;
 
     // Filtering logic
     public onCategoryFilterChange(selected: string): void {

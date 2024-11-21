@@ -29,3 +29,41 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+// Kendo Table global transparent background
+.k-grid,
+.k-toolbar-solid,
+.k-grid-header,
+.k-grouping-header,
+.k-table-thead,
+.k-pager,
+.k-grid .k-grouping-row,
+.k-grouping-row .k-table-td,
+.k-grouping-row td,
+.k-table-tbody .k-group-cell {
+  background-color: transparent !important;
+  --kendo-color-surface-alt: transparent !important;
+  border: none;
+}
+
+.k-grid tr,
+.k-grid td,
+.k-grid .k-toolbar-solid,
+.k-grid .k-grid-header,
+.k-grid .k-grouping-header,
+.k-grid .k-textbox, 
+.k-grid .k-pager,
+.k-grouping-row .k-table-td,
+.k-grouping-row td {
+  color: #CECECE !important;
+}
+
+.k-grid-content::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.k-grid-content::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+}
