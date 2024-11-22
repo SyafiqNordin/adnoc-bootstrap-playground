@@ -32,34 +32,26 @@ body {
 
 // Kendo Table global transparent background
 .k-grid,
-.k-toolbar-solid,
-.k-grid-header,
-.k-grouping-header,
-.k-table-thead,
-.k-pager,
+.k-grid .k-toolbar-solid,
+.k-grid .k-grouping-header,
 .k-grid .k-grouping-row,
-.k-grouping-row .k-table-td,
-.k-header,
-.k-grouping-row td,
-.k-table-tbody .k-group-cell {
+.k-grid .k-grouping-row .k-table-td,
+.k-grid .k-grouping-row td,
+.k-grid .k-table-tbody .k-group-cell {
   background-color: transparent !important;
   --kendo-color-surface-alt: transparent !important;
   border: none !important;
 }
 
-.k-grid tr,
-.k-grid td,
-.k-grid .k-toolbar-solid,
-.k-grid .k-grid-header,
-.k-grid .k-grouping-header,
-.k-grid .k-textbox, 
-.k-grid .k-pager,
-.k-grouping-row .k-table-td,
-.k-grouping-row td,
-.k-grid .k-header {
-  color: #CECECE !important;
+.k-grid .k-textbox {
+  background-color: transparent !important;
+  --kendo-color-surface-alt: transparent !important;
+}
+
+.k-grid .k-grid-header .k-table-th,
+.k-grid .k-grid-pager {
+  background: rgba(169, 170, 172, 0.10);
   border: none !important;
-  border-color: none !important;
 }
 
 .k-grid-content::-webkit-scrollbar {
@@ -72,28 +64,25 @@ body {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.k-grid .k-button-flat-primary {
-  height: 38px;
-  width: 38px;
-  border-radius: 6px;
-  background-color: #0D6EFD14;
-  color: #0D6EFD;
+
+.k-grid .k-grid-header {
+  padding: 0 !important;
 }
 
-.k-grid .k-pager-nav {
-  height: 38px;
-  width: 38px;
-  border-radius: 6px;
+.k-column-title {
+  white-space: break-spaces;
 }
 
-.striped-row {
-  background-color: rgba(169, 170, 172, 0.10) !important;
+.k-grid .k-grid-header .k-table-th {
+  vertical-align: top;
 }
 
-.k-grid-header-menu.k-grid-column-menu .k-svg-i-more-vertical.k-svg-icon{
-  color: #B7B8BA;
+.success-text {
+  color: #00DA69;
+  text-shadow: 0px 0px 8px rgba(0, 255, 123, 0.65);
 }
 
-.k-grid-header-menu.k-grid-column-menu:hover {
-  background: transparent;
+.bold-danger-text {
+  color: #F82F2F;
+  text-shadow: 0px 0px 8px #F82F2F;
 }
