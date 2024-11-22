@@ -13,13 +13,23 @@ $red-primary-color: #cd4b4b;
 $green-primary-color: #00da69;
 $primary-gray-color: #4d4d4d;
 $neutral-base-color: #D6D6D6;
+$transparent-bg-color: transparent;
+$gray-base-color: #a9aaac1a;
+$font-family-primary: 'Titillium Web';
 
 :root {
   --bs-border-radius-lg: 18px;
   --kendo-color-primary-active: #{$adnoc-logo-blue-text-color};
   --kendo-color-on-primary: #{$white-base-color};
   --kendo-color-primary: #{$adnoc-logo-blue-text-color};
+  --kendo-color-surface: #{$transparent-bg-color};
+  --kendo-color-surface-alt: #{$transparent-bg-color};
+  // --kendo-color-app-surface: #{$transparent-bg-color};
+  --kendo-color-border: #{$transparent-bg-color};
+  --kendo-color-base: #{$gray-base-color};
   --kendo-color-on-base: #{$white-base-color};
+  --kendo-font-family: #{$font-family-primary};
+  --kendo-color-light-on-surface: #{$white-base-color};
 }
 
 .k-button-outline-base:hover {
