@@ -1,21 +1,25 @@
 @import "../../../../styles/variables";
 
+kendo-datetimepicker {
+  background-color: rgba($neutral-gray-color, 0.1) !important;
+
+  .k-clear-value {
+    color: $white-base-color !important;
+  }
+
+  .k-input-button {
+    padding-right: 16px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 6px !important;
+    width: 50px !important;
+    background-color: rgba($neutral-gray-color, 0.2) !important;
+    color: $white-base-color !important;
+  }
+}
+
 kendo-timeselector {
   background-color: rgba(0, 0, 0, 0) !important;
-}
-
-.k-clear-value {
-  color: $white-base-color !important;
-}
-
-.k-input-button {
-  padding-right: 16px !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  padding-left: 6px !important;
-  width: 50px !important;
-  background-color: rgba($neutral-gray-color, 0.1) !important;
-  color: $white-base-color !important;
 }
 
 .k-datetimepicker-popup {
