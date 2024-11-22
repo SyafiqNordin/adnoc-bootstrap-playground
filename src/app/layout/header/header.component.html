@@ -44,17 +44,7 @@
 
     <div class="d-flex gap-2">
       <!-- Date and Time -->
-      <kendo-datetimepicker
-        [format]="format"
-        [(value)]="value"
-        placeholder="Select date and time"
-        rounded="full"
-        [fillMode]="'solid'"
-        [size]="'medium'"
-        [allowCaretMode]="false"
-        [clearButton]="true"
-        class="dynamic-border"
-      ></kendo-datetimepicker>
+      <static-datetime-picker></static-datetime-picker>
 
       <!-- Notifications -->
       <button
