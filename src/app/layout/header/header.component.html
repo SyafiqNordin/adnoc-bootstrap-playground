@@ -1,16 +1,20 @@
-<nav class="navbar navbar-expand-lg p-3">
+<nav class="navbar navbar-expand-lg p-4">
   <div class="d-flex w-100 justify-content-between align-items-center">
     <div class="d-flex gap-3">
       <!-- Hamburger Menu -->
-      <div
-        class="d-flex align-items-center cursor-pointer"
+      <button
+        kendoButton
+        fillMode="outline"
+        rounded="full"
+        size="large"
         (click)="toggleSideMenu()"
+        class="p-2 border-0 header-button"
       >
         <img
           src=".././../../assets/icons/hamburgerNavigation.svg"
           alt="Hamburger icon"
         />
-      </div>
+      </button>
 
       <!-- ADNOC logo -->
       <div class="d-flex align-items-center">
@@ -21,18 +25,14 @@
         />
       </div>
 
-      <!-- Dropdown Pages -->
-      <div
-        class="d-flex px-3 py-1 rounded-pill dynamic-border navbar-items-container"
-      >
-        <span class="fs-14px text-primary"
-          >Field Performance Summary</span
-        >
+      <!-- Page Name -->
+      <div class="d-flex align-items-center">
+        <span class="fs-20px text-primary">Field Performance Summary</span>
       </div>
 
       <!-- Breadcrumbs -->
       <div
-        class="d-flex gap-2 px-3 py-1 rounded-pill dynamic-border navbar-items-container"
+        class="d-flex gap-2 px-3 rounded-pill dynamic-border navbar-items-container align-items-center"
       >
         <span class="fs-14px text-secondary">Onshore</span>
         <span class="fs-14px text-secondary">&#62;</span>
@@ -44,48 +44,48 @@
 
     <div class="d-flex gap-2">
       <!-- Date and Time -->
-      <div
-        class="d-flex gap-2 px-3 py-1 rounded-pill navbar-items-container dynamic-border"
-      >
-        <span class="fs-14px text-primary">&#60;</span>
-        <span class="fs-14px text-primary">20-01-2024 00:00</span>
-        <span class="fs-14px text-primary">&#62;</span>
-      </div>
+      <static-datetime-picker></static-datetime-picker>
 
       <!-- Notifications -->
-      <div
-        class="d-flex px-1 align-items-center dynamic-border rounded-circle navbar-items-container cursor-pointer"
+      <button
+        kendoButton
+        fillMode="outline"
+        rounded="full"
+        [size]="'small'"
         (click)="toggleSmartAlarmPanel()"
-      >
-        <i
-          class="bi bi-bell fs-16px d-flex justify-content-center align-items-center text-primary header-button"
-        ></i>
-      </div>
+        class="px-2 dynamic-border header-button"
+        iconClass="bi bi-bell text-primary"
+      ></button>
 
       <!-- Theme switching button (Just for testing) -->
-      <div
-        class="d-flex px-1 align-items-center dynamic-border rounded-circle navbar-items-container cursor-pointer"
+      <button
+        kendoButton
+        fillMode="outline"
+        rounded="full"
+        size="large"
         (click)="toggleTheme()"
-      >
-        <i
-          *ngIf="currentTheme === 'light'"
-          class="bi bi-moon fs-16px d-flex justify-content-center align-items-center text-primary header-button"
-        ></i>
-        <i
-          *ngIf="currentTheme === 'dark'"
-          class="bi bi-brightness-high fs-16px d-flex justify-content-center align-items-center text-primary header-button"
-        ></i>
-      </div>
+        class="px-2 dynamic-border header-button"
+        [iconClass]="
+          currentTheme === 'light'
+            ? 'bi bi-moon text-primary'
+            : 'bi bi-brightness-high text-primary'
+        "
+      ></button>
 
       <!-- AI -->
-      <div
-        class="d-flex px-1 align-items-center dynamic-border rounded-circle navbar-items-container"
+      <button
+        kendoButton
+        fillMode="outline"
+        rounded="full"
+        size="large"
+        class="px-2 dynamic-border header-button"
       >
         <img
           src="../../../assets/icons/ArtificialIntelligence.svg"
           alt="AI icon"
+          class="AI-button"
         />
-      </div>
+      </button>
     </div>
   </div>
 </nav>

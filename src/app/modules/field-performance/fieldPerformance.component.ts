@@ -8,10 +8,11 @@ import { StaticGasProductionSummaryComponent } from '../../components/gas-produc
 import { StaticOilProductionSummaryComponent } from '../../components/oil-production-summary/static-oilProductionSummary.component';
 import { SmartAlarmToggleService } from '../../services/smartAlarmToggle.service';
 import { StaticSwappedSidepanelComponent } from '../../components/swapped-sidepanel/static-swappedSidepanel.component';
-import { Subscription } from 'rxjs';
 import { StaticTopOpportunitiesComponent } from '../../components/top-opportunities/static-topOpportunities.component';
 import { StaticProducerWellComponent } from '../../components/producer-well/static-producerWell.component';
 import { StaticTopUnderperformComponent } from '../../components/top-underperform/static-topUnderperform.component';
+import { StaticGasInjectionComponent } from '../../components/gas-injection/static-gasInjection.component';
+import { Subscription } from 'rxjs';
 import { StaticExceptionsWellComponent } from '../../components/exceptions-well/static-exceptionsWell.component';
 
 
@@ -33,6 +34,7 @@ import { StaticExceptionsWellComponent } from '../../components/exceptions-well/
     StaticTopOpportunitiesComponent,
     StaticProducerWellComponent,
     StaticTopUnderperformComponent,
+    StaticGasInjectionComponent,
     StaticExceptionsWellComponent,
   ],
 })
