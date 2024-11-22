@@ -26,11 +26,6 @@
   width: 38px;
 }
 
-.k-input-inner {
-  padding: 6px 16px !important;
-  color: $white-base-color !important;
-}
-
 .k-clear-value {
   color: $white-base-color !important;
 }
@@ -47,74 +42,10 @@
 
 .k-datetimepicker-popup {
   border-radius: 15px !important;
-  background-color: rgba(169, 170, 172, 0.5) !important;
+  background-color: rgba(169, 170, 172, 0.1) !important;
   backdrop-filter: blur(17.5px) !important;
 }
 
 .k-datetime-calendar-wrap kendo-calendar, kendo-virtualization {
   background-color: rgba(0, 0, 0, 0) !important;
-}
-
-.k-datetime-buttongroup .k-button-group {
-  .k-button-outline-base {
-    background-color: rgba(#A9AAAC , 0.3) !important;
-    border: 1px solid rgba($natural-white-color, 0.1) !important;
-    color: $natural-white-color;
-  }
-  
-  .k-selected {
-    background-color: $adnoc-logo-blue-text-color !important;
-    border: 1px solid rgba($natural-white-color, 0.1) !important;
-  }
-}
-
-kendo-calendar-header {
-  .k-button-flat-primary {
-    color: #22B0F6 !important;
-  }
-  .k-button-flat-base {
-    color: $white-base-color !important;
-  }
-}
-
-.k-calendar-td .k-selected .k-link {
-  background-color: $adnoc-logo-blue-text-color !important;
-}
-
-.k-calendar-table {
-  .k-calendar-caption {
-    color: $white-base-color !important;
-  }
-  .k-calendar-th {
-    color: $white-base-color !important;
-  }
-
-  .k-link {
-    color: $white-base-color !important;
-  }
-
-  .k-calendar-td:hover .k-link {
-    background-color: $adnoc-logo-blue-text-color !important;
-  }
-}
-
-.k-datetime-footer {
-  .k-button-outline-base {
-    background-color: rgba(#A9AAAC , 0.3) !important;
-    border: 1px solid rgba($natural-white-color, 0.1) !important;
-    color: $natural-white-color;
-  }
-
-  .k-button-outline-primary {
-    color: $white-base-color !important;
-    background-color: $adnoc-logo-blue-text-color !important;
-    border: 1px solid rgba($natural-white-color, 0.1) !important;
-  }
-}
-
-.k-datetime-time-wrap {
-  kendo-timeselector {
-    background-color: rgba(0, 0, 0, 0) !important;
-  }
-
 }

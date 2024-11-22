@@ -16,6 +16,8 @@ $neutral-base-color: #D6D6D6;
 
 :root {
   --bs-border-radius-lg: 18px;
+  --kendo-color-primary-active: #{$adnoc-logo-blue-text-color};
+  --kendo-color-on-primary: #{$white-base-color};
 }
 
 .red-text {
