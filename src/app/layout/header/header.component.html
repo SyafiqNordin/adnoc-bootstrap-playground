@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg p-4">
   <div class="d-flex w-100 justify-content-between align-items-center">
-    <div class="d-flex gap-3">
+    <div class="d-flex gap-3 align-items-center">
       <!-- Hamburger Menu -->
       <button
         kendoButton
@@ -30,15 +30,37 @@
         <span class="fs-20px text-primary">Field Performance Summary</span>
       </div>
 
-      <!-- Breadcrumbs -->
-      <div
-        class="d-flex gap-2 px-3 rounded-pill dynamic-border navbar-items-container align-items-center"
-      >
-        <span class="fs-14px text-secondary">Onshore</span>
-        <span class="fs-14px text-secondary">&#62;</span>
-        <span class="fs-14px text-secondary">NEB</span>
-        <span class="fs-14px text-secondary">&#62;</span>
-        <span class="fs-14px text-primary">Dabbiya</span>
+      <!-- Breadcrumb dropdowns -->
+      <div class="d-flex">
+        <kendo-dropdownlist
+          [data]="listCategories"
+          [value]="listCategories[0]"
+          [rounded]="'full'"
+          [popupSettings]="{ width: 'auto' }"
+          class="dynamic-border"
+        ></kendo-dropdownlist>
+      </div>
+
+      <div class="d-flex">
+        <kendo-dropdownlist
+          [data]="listAssets"
+          [value]="listAssets[0]"
+          [rounded]="'full'"
+          [popupSettings]="{ width: 'auto' }"
+          class="dynamic-border"
+        ></kendo-dropdownlist>
+      </div>
+
+      <div class="d-flex">
+        <kendo-dropdownlist
+          [data]="data"
+          [value]="listFields[0]"
+          [rounded]="'full'"
+          [popupSettings]="{ width: 'auto' }"
+          [filterable]="true"
+          (filterChange)="handleFilter($event)"
+          class="dynamic-border"
+        ></kendo-dropdownlist>
       </div>
     </div>
 

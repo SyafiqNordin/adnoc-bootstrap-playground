@@ -12,6 +12,7 @@ import {
   KENDO_DATEINPUTS,
   PopupSettings,
 } from '@progress/kendo-angular-dateinputs';
+import { KENDO_DROPDOWNS } from '@progress/kendo-angular-dropdowns';
 import { SmartAlarmToggleService } from '../../services/smartAlarmToggle.service';
 import { SwitchThemeService } from '../../services/switchTheme.service';
 import { StaticDateTimePickerComponent } from '../../components/custom-kendo-components/datetime-picker/static-datetimePicker.component';
@@ -26,6 +27,7 @@ import { StaticDateTimePickerComponent } from '../../components/custom-kendo-com
     CommonModule,
     KENDO_BUTTONS,
     KENDO_DATEINPUTS,
+    KENDO_DROPDOWNS,
     StaticDateTimePickerComponent,
   ],
 })
@@ -39,13 +41,20 @@ export class HeaderComponent implements OnInit {
     appendTo: 'component',
     popupClass: 'header-datepicker-popup',
   };
+  public listCategories: Array<string> = ['Onshore', 'Offshore'];
+  public listAssets: Array<string> = ['NEB', 'SE', 'Sarb/Umm Lulu'];
+  public listFields: Array<string> = ['Dabbiya', 'Rumaitha', 'Shanayel', 'Qusahwira', 'Shah', 'Mender', 'Sarb', 'Umm Lulu'];
+  public data: Array<string> = [];
   /**
    * Constructor
    */
   constructor(
     private smartAlarmToggleService: SmartAlarmToggleService,
     private switchThemeService: SwitchThemeService
-  ) {}
+  ) 
+  {
+    this.data = this.listFields.slice();
+  }
 
   ngOnInit() {
     this.getCurrentTheme();
@@ -67,5 +76,13 @@ export class HeaderComponent implements OnInit {
     const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
     this.switchThemeService.setTheme(newTheme);
     this.getCurrentTheme(); // get the updated theme to change the theme button icon
+  }
+
+  handleFilter(value: string) {
+    console.log(value);
+    this.data = this.listFields.filter(
+      (s) => s.toLowerCase().indexOf(value.toLowerCase()) !== -1
+    );
+    console.log(this.data);
   }
 }

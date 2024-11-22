@@ -38,7 +38,7 @@
     "@progress/kendo-angular-popup": "17.0.1",
     "@progress/kendo-angular-progressbar": "17.0.1",
     "@progress/kendo-angular-scrollview": "17.0.1",
-    "@progress/kendo-drawing": "^1.21.0",
+    "@progress/kendo-drawing": "1.17.2",
     "@progress/kendo-licensing": "^1.0.2",
     "@progress/kendo-svg-icons": "^4.0.0",
     "@progress/kendo-theme-bootstrap": "^10.0.1",
@@ -50,7 +50,8 @@
     "ngx-lottie": "^11.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.10"
+    "zone.js": "~0.14.10",
+    "@progress/kendo-angular-treeview": "17.0.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.3.0",

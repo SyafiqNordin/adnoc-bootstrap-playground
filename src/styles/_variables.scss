@@ -19,6 +19,11 @@ $neutral-base-color: #D6D6D6;
   --kendo-color-primary-active: #{$adnoc-logo-blue-text-color};
   --kendo-color-on-primary: #{$white-base-color};
   --kendo-color-primary: #{$adnoc-logo-blue-text-color};
+  --kendo-color-on-base: #{$white-base-color};
+}
+
+.k-button-outline-base:hover {
+  background-color: $primary-gray-color !important;
 }
 
 .red-text {
