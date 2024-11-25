@@ -75,6 +75,7 @@ export class StaticProducerWellComponent {
           ],
         },
         data: [
+          [Date.UTC(2024, 0, 16), 8],
           [Date.UTC(2024, 0, 17), 8],
           [Date.UTC(2024, 0, 18), 7],
           [Date.UTC(2024, 0, 19), 8],
@@ -94,6 +95,7 @@ export class StaticProducerWellComponent {
           ],
         },
         data: [
+          [Date.UTC(2024, 0, 16), 6],
           [Date.UTC(2024, 0, 17), 6],
           [Date.UTC(2024, 0, 18), 4],
           [Date.UTC(2024, 0, 19), 3],
