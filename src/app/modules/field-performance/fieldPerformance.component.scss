@@ -12,12 +12,20 @@
   height: 218px;
 }
 
+.height-260px {
+  height: 260px;
+}
+
 .height-464px {
   height: 464px;
 }
 
 .height-314px {
   height: 314px;
+}
+
+.height-536px {
+  height: 536px;
 }
 
 .height-720px {
@@ -28,4 +36,9 @@
   max-height: 855px;
   position: sticky;
   top: 86px;
+}
+
+.k-expander-title {
+  text-transform: capitalize;
+  color: #B7B8BA;
 }

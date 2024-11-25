@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ExpansionPanelComponent } from "@progress/kendo-angular-layout";
 import { StaticProductionChartComponent } from '../../components/production-chart/static-productionChart.component';
 import { StaticOilProductionComponent } from '../../components/oil-production/static-oilProduction.component';
 import { StaticFieldNetworkComponent } from '../../components/field-network/static-fieldNetwork.component';
@@ -13,6 +14,7 @@ import { StaticProducerWellComponent } from '../../components/producer-well/stat
 import { StaticTopUnderperformComponent } from '../../components/top-underperform/static-topUnderperform.component';
 import { StaticGasInjectionComponent } from '../../components/gas-injection/static-gasInjection.component';
 import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'field-performance',
   templateUrl: './fieldPerformance.component.html',
@@ -24,6 +26,7 @@ import { Subscription } from 'rxjs';
     StaticProductionChartComponent,
     StaticFieldNetworkComponent,
     CommonModule,
+    ExpansionPanelComponent,
     StaticOilProductionComponent,
     StaticSwappedSidepanelComponent,
     StaticGasProductionSummaryComponent,
