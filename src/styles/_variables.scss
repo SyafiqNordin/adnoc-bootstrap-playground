@@ -32,6 +32,10 @@ $font-family-primary: 'Titillium Web';
   --kendo-color-light-on-surface: #{$white-base-color};
 }
 
+.k-button-outline-base:hover {
+  background-color: $primary-gray-color !important;
+}
+
 .red-text {
   color: $red-primary-color;
 }
