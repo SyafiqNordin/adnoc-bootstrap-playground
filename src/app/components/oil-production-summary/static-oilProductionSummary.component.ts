@@ -125,7 +125,7 @@ export class StaticOilProductionSummaryComponent {
           linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
           stops: [
             [0, 'rgba(0, 218, 105, 1)'], // start
-            [0.5, 'rgba(0, 218, 105, 0.5)'], // middle
+            [0.5, 'rgba(0, 218, 105, 0.2)'], // middle
             [1, 'rgba(0, 218, 105, 0)'], // end
           ],
         },
