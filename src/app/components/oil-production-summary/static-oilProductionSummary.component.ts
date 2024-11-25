@@ -175,7 +175,7 @@ export class StaticOilProductionSummaryComponent {
     yAxis: [
       {
         opposite: false,
-        gridLineColor: 'rgba(206, 206, 206, 0.4)',
+        gridLineColor: '',
         labels: {
           enabled: false,
         },
