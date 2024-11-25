@@ -11,7 +11,7 @@
         class="p-2 border-0 header-button"
       >
         <img
-          src=".././../../assets/icons/hamburgerNavigation.svg"
+          src="/assets/icons/hamburgerNavigation.svg"
           alt="Hamburger icon"
         />
       </button>
@@ -19,7 +19,7 @@
       <!-- ADNOC logo -->
       <div class="d-flex align-items-center">
         <img
-          src="../../../assets/images/adnoc-logo.jpg"
+          src="/assets/images/adnoc-logo.jpg"
           alt="ADNOC logo"
           class="adnoc-logo"
         />
@@ -32,35 +32,15 @@
 
       <!-- Breadcrumb dropdowns -->
       <div class="d-flex">
-        <kendo-dropdownlist
-          [data]="listCategories"
-          [value]="listCategories[0]"
-          [rounded]="'full'"
-          [popupSettings]="{ width: 'auto' }"
-          class="dynamic-border"
-        ></kendo-dropdownlist>
+        <static-dropdown-list [optionList]="listCategories"></static-dropdown-list>
       </div>
 
       <div class="d-flex">
-        <kendo-dropdownlist
-          [data]="listAssets"
-          [value]="listAssets[0]"
-          [rounded]="'full'"
-          [popupSettings]="{ width: 'auto' }"
-          class="dynamic-border"
-        ></kendo-dropdownlist>
+        <static-dropdown-list [optionList]="listAssets"></static-dropdown-list>
       </div>
 
       <div class="d-flex">
-        <kendo-dropdownlist
-          [data]="data"
-          [value]="listFields[0]"
-          [rounded]="'full'"
-          [popupSettings]="{ width: 'auto' }"
-          [filterable]="true"
-          (filterChange)="handleFilter($event)"
-          class="dynamic-border"
-        ></kendo-dropdownlist>
+        <static-dropdown-list [optionList]="listFields" [filterable]="true"></static-dropdown-list>
       </div>
     </div>
 

@@ -1,0 +1,9 @@
+<kendo-dropdownlist
+  [data]="filteredData"
+  [value]="optionList[0]"
+  [rounded]="'full'"
+  [popupSettings]="{ width: 'auto' }"
+  [filterable]="filterable"
+  (filterChange)="onFilterChange($event)"
+  class="dynamic-border"
+></kendo-dropdownlist>
