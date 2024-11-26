@@ -8,9 +8,7 @@
     }"
   >
     <!-- Collapsible Tab - Production and Injection Summary -->
-    <div class="d-flex w-100 rounded rounded-4 bg-noise-card gradient-border">
-      <!-- Background Layer -->
-      <div class="background-layer"></div>
+    <static-noise-background-card>
       <kendo-expansionpanel
         title="Production Summary"
         class="rounded rounded-4 w-100 border-1"
@@ -19,110 +17,108 @@
         <!-- First Row Cards -->
         <div class="d-flex w-100 gap-3 mb-3">
           <div
-            class="rounded rounded-4 bg-noise-card height-232px"
+            class="height-232px"
             [ngClass]="{
               'flex-grow-1': expandOilProductionSummaryContainer,
               'col-3': !expandOilProductionSummaryContainer
             }"
           >
-            <!-- Background Layer -->
-            <div class="background-layer"></div>
-            <!-- Card Content Here -->
-            <static-oil-production-summary
-              (toggleExpandContainer)="toggleExpandOilSummaryContainer()"
-              [hideAreaChart]="!expandOilProductionSummaryContainer"
-            >
-            </static-oil-production-summary>
+            <static-noise-background-card>
+              <!-- Card Content Here -->
+              <static-oil-production-summary
+                (toggleExpandContainer)="toggleExpandOilSummaryContainer()"
+                [hideAreaChart]="!expandOilProductionSummaryContainer"
+                class="w-100 z-0"
+              >
+              </static-oil-production-summary>
+            </static-noise-background-card>
           </div>
           <div
-            class="rounded rounded-4 bg-noise-card height-232px"
+            class="height-232px"
             [ngClass]="{
               'flex-grow-1': expandGasProductionSummaryContainer,
               'col-3': !expandGasProductionSummaryContainer
             }"
           >
-            <!-- Background Layer -->
-            <div class="background-layer"></div>
-            <!-- Card Content Here -->
-            <static-gas-production-summary
+            <static-noise-background-card>
+              <!-- Card Content Here -->
+              <static-gas-production-summary
               (toggleExpandContainer)="toggleExpandGasSummaryContainer()"
               [hideAreaChart]="!expandGasProductionSummaryContainer"
+              class="w-100 z-0"
             >
             </static-gas-production-summary>
+            </static-noise-background-card>
           </div>
-          <div class="col-3 rounded rounded-4 bg-noise-card p-3 height-232px">
-            <!-- Background Layer -->
-            <div class="background-layer"></div>
-            <!-- Card Content Here -->
+          <div class="col-3 height-232px">
+            <static-noise-background-card>
+              <!-- Card Content Here -->
+            </static-noise-background-card>
           </div>
         </div>
 
         <!-- Second Row Cards -->
         <div class="d-flex w-100 gap-3">
-          <div class="col-6 rounded rounded-4 bg-noise-card height-232px">
-            <!-- Background Layer -->
-            <div class="background-layer"></div>
-            <!-- Card Content Here -->
-            <static-gas-injection></static-gas-injection>
+          <div class="col-6 height-232px">
+            <static-noise-background-card>
+              <!-- Card Content Here -->
+              <static-gas-injection class="w-100 z-0"></static-gas-injection>
+            </static-noise-background-card>
           </div>
-          <div class="flex-grow-1 rounded rounded-4 bg-noise-card height-232px">
-            <!-- Background Layer -->
-            <div class="background-layer"></div>
-            <!-- Card Content Here -->
+          <div class="flex-grow-1 height-232px">
+            <static-noise-background-card>
+              <!-- Card Content Here -->
+            </static-noise-background-card>
           </div>
         </div>
       </kendo-expansionpanel>
-    </div>
+    </static-noise-background-card>
 
     <!-- Third Row Cards -->
     <div class="d-flex w-100 gap-3">
       <!-- Left Column -->
       <div class="col-3 d-flex flex-column gap-3">
         <!-- First Row Left -->
-        <div
-          class="p-4 rounded rounded-4 bg-noise-card gradient-border height-260px"
-        >
-          <!-- Background Layer -->
-          <div class="background-layer"></div>
-          <static-producer-well></static-producer-well>
+        <div class="height-260px">
+          <static-noise-background-card>
+            <!-- Card Content -->
+            <static-producer-well class="w-100 p-4"></static-producer-well>
+          </static-noise-background-card>
         </div>
         <!-- Second Row Left -->
-        <div
-          class="p-4 rounded rounded-4 bg-noise-card gradient-border height-260px"
-        >
-          <!-- Background Layer -->
-          <div class="background-layer"></div>
+        <div class="height-260px">
           <!-- Second Row Left Content -->
+          <static-noise-background-card>
+            <!-- Card Content -->
+          </static-noise-background-card>
         </div>
       </div>
 
       <!-- Right Column -->
       <div
-        class="flex-grow-1 p-3 rounded rounded-4 bg-noise-card gradient-border height-536px"
+        class="flex-grow-1 height-536px"
       >
-        <!-- Background Layer -->
-        <div class="background-layer"></div>
-        <!-- Shared Container Content -->
+        <static-noise-background-card></static-noise-background-card>
       </div>
     </div>
 
     <!-- Fourth Row Cards -->
     <div class="d-flex w-100 gap-3">
       <div
-        class="col-6 rounded rounded-4 bg-noise-card gradient-border height-314px"
+        class="col-6 height-314px"
       >
-        <!-- Background Layer -->
-        <div class="background-layer"></div>
-        <!-- Card Content Here -->
-        <static-top-opportunities></static-top-opportunities>
+        <static-noise-background-card>
+          <!-- Card Content Here -->
+          <static-top-opportunities class="w-100 z-0"></static-top-opportunities>
+        </static-noise-background-card>
       </div>
       <div
-        class="flex-grow-1 rounded rounded-4 bg-noise-card gradient-border height-314px"
+        class="flex-grow-1 height-314px"
       >
-        <!-- Background Layer -->
-        <div class="background-layer"></div>
-        <!-- Card Content Here -->
-        <static-top-underperform></static-top-underperform>
+        <static-noise-background-card>
+          <!-- Card Content Here -->
+          <static-top-underperform class="w-100 z-0"></static-top-underperform>
+        </static-noise-background-card>
       </div>
     </div>
   </div>
