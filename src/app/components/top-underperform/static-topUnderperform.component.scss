@@ -22,7 +22,7 @@ tr:nth-child(even) {
 
 .danger-text {
   color: #E6A5A5;
-  text-shadow: 0px 0px 8px rgba(255, 0, 0, 0.65);
+  text-shadow: 0px 0px 8px rgba(248, 47, 47, 0.3);
 }
 
 .border-end.border-vertical {
@@ -40,5 +40,5 @@ tr:nth-child(even) {
 
 .bold-danger-text {
   color: #F82F2F;
-  text-shadow: 0px 0px 8px #F82F2F;
+  text-shadow: 0px 0px 8px (248, 47, 47, 0.3) !important;
 }
