@@ -2,7 +2,7 @@
 
 .navbar {
   height: 86px;
-  background-color: rgba(39, 39, 39, 0.1);
+  background: linear-gradient(180deg, rgba($deep-blue-base-color, 0.10) 79.97%, rgba($deep-blue-base-color, 0.00) 92.81%);
   backdrop-filter: blur(25px);
   z-index: 10;
 }

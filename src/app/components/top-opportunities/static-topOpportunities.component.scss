@@ -13,7 +13,7 @@ tr:nth-child(even) {
 }
 
 .overview-card {
-  background: linear-gradient(180deg, #003B9B 0%, #00183E 100%);
+  background: linear-gradient(180deg, $blue-base-color 0%, $dark-blue-base-color 100%);
 }
 
 .listing-card {

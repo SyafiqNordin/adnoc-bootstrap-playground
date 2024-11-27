@@ -8,10 +8,6 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    background-color: rgba($primary-gray-color, 0.1);
-    backdrop-filter: blur(20px);
-    background-image: url("../../../assets/images/noise.png");
-    opacity: 0.3;
   }
 }
 
@@ -57,4 +53,21 @@
     syntax: "<color>";
     inherits: false;
     initial-value: rgba(0, 0, 0, 0);
+  }
+
+  static-noise-background-card:not(.collapsible-panel) .bg-noise-card {
+    background: linear-gradient(180deg, rgba($adnoc-logo-blue-text-color, 0.40) 0%, rgba($adnoc-logo-blue-text-color, 0.05) 60%);
+    backdrop-filter: blur(17.5px);
+    opacity: 1.2;
+    z-index: 2;
+  }
+   
+  static-noise-background-card.collapsible-panel .bg-noise-card {
+    border-radius: 16px;
+    backdrop-filter: blur(17.5px);
+    z-index: 1;
+  }
+   
+  static-noise-background-card.collapsible-panel  .k-expander {
+    border: 2px solid rgba($white-base-color, 0.20);
   }
