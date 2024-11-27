@@ -20,6 +20,14 @@ kendo-datetimepicker {
 
 kendo-timeselector {
   background-color: rgba(0, 0, 0, 0) !important;
+
+  .k-timeselector-title {
+    color: $blue-light-secondary-color!important;
+  }
+
+  .k-time-now {
+    color: $white-base-color !important;
+  }
 }
 
 .k-datetimepicker-popup {

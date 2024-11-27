@@ -1,9 +1,5 @@
 @import "../../../styles/variables";
 
-.bg-dashboard-card {
-  background-color: rgba($primary-gray-color, 0.1);
-}
-
 .height-232px {
   height: 232px;
 }
@@ -38,7 +34,15 @@
   top: 86px;
 }
 
-.k-expander-title {
-  text-transform: capitalize;
-  color: #B7B8BA;
+kendo-expansionpanel {
+  background-color: transparent !important;
+
+  .k-expander-header {
+    background-color: transparent !important;
+  }
+
+  .k-expander-title {
+    text-transform: capitalize;
+    color: #b7b8ba;
+  }
 }

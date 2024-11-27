@@ -13,6 +13,7 @@ import { StaticTopOpportunitiesComponent } from '../../components/top-opportunit
 import { StaticProducerWellComponent } from '../../components/producer-well/static-producerWell.component';
 import { StaticTopUnderperformComponent } from '../../components/top-underperform/static-topUnderperform.component';
 import { StaticGasInjectionComponent } from '../../components/gas-injection/static-gasInjection.component';
+import { StaticNoiseBackgroundCardComponent } from '../../components/noise-background-card/static-noiseBackgroundCard.component';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -35,6 +36,7 @@ import { Subscription } from 'rxjs';
     StaticProducerWellComponent,
     StaticTopUnderperformComponent,
     StaticGasInjectionComponent,
+    StaticNoiseBackgroundCardComponent,
   ],
 })
 export class FieldPerformanceComponent implements OnInit, OnDestroy {

@@ -1,6 +1,7 @@
 $primary-color: #ffcd00;
 $secondary-color: #6c757d;
 $blue-light-primary-color: #00a19c;
+$blue-light-secondary-color: #22B0F6;
 $pink-light-primary-color: #763f98;
 $blue-dark-primary-color: #20419a;
 $adnoc-logo-blue-text-color: #0047ba;
@@ -9,7 +10,7 @@ $white-base-color: #cecece;
 $black-base-color: #000000;
 $button-text-color: #040c19;
 $neutral-gray-color: #A9AAAC;
-$red-primary-color: #cd4b4b;
+$red-primary-color: #F82F2F;
 $green-primary-color: #00da69;
 $primary-gray-color: #4d4d4d;
 $neutral-base-color: #D6D6D6;
@@ -22,6 +23,7 @@ $font-family-primary: 'Titillium Web';
   --kendo-color-primary-active: #{$adnoc-logo-blue-text-color};
   --kendo-color-on-primary: #{$white-base-color};
   --kendo-color-primary: #{$adnoc-logo-blue-text-color};
+  --kendo-color-primary-on-surface: #{$blue-light-secondary-color};
   --kendo-color-surface: #{$transparent-bg-color};
   --kendo-color-surface-alt: #{$transparent-bg-color};
   // --kendo-color-app-surface: #{$transparent-bg-color};
@@ -45,11 +47,11 @@ $font-family-primary: 'Titillium Web';
 }
 
 .red-text-shadow {
-  text-shadow: 0px 0px 8px rgba($red-primary-color, 0.65);
+  text-shadow: 0px 0px 8px rgba($red-primary-color, 0.3);
 }
 
 .green-text-shadow {
-  text-shadow: 0px 0px 8px rgba($green-primary-color, 0.65);
+  text-shadow: 0px 0px 8px rgba($green-primary-color, 0.3);
 }
 
 .cursor-pointer {

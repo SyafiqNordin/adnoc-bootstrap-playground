@@ -1,0 +1,60 @@
+@import "../../../styles/variables";
+
+.bg-noise-card {
+  position: relative;
+  overflow: hidden;
+
+  .background-layer {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: rgba($primary-gray-color, 0.1);
+    backdrop-filter: blur(20px);
+    background-image: url("../../../assets/images/noise.png");
+    opacity: 0.3;
+  }
+}
+
+.gradient-border {
+    &:before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 3px;
+      background: linear-gradient(
+        to bottom right,
+        var(--c1) 0%,
+        var(--c2) 30%,
+        var(--c2) 70%,
+        var(--c3) 100%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      transition: --c1 300ms ease, --c2 300ms ease, --c3 300ms ease;
+    }
+  }
+  
+  .gradient-border:hover:before {
+    --c1: rgba(255, 255, 255, 0.5);
+    --c2: rgba(0, 0, 0, 0);
+    --c3: rgba(255, 255, 255, 0.5);
+  }
+  
+  @property --c1 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: rgba(255, 255, 255, 0.3);
+  }
+  @property --c2 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: rgba(0, 0, 0, 0);
+  }
+  @property --c3 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: rgba(0, 0, 0, 0);
+  }
