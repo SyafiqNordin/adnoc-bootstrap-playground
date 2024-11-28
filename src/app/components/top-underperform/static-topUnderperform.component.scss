@@ -1,3 +1,5 @@
+@import "../../../styles/variables";
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -5,32 +7,32 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba($natural-white-color, 0.3);
 }
 
 tr:nth-child(even) {
-  background-color: #CECECE0D;
+  background-color: rgba($white-base-color, 0.05);
 }
 
 .overview-card {
-  background: linear-gradient(149deg, #CF2727 4.78%, #320909 97.21%);
+  background: linear-gradient(149deg, $red-base-color 4.78%, $dark-red-base-color 97.21%);
 }
 
 .listing-card {
-  background: rgba(77, 77, 77, 0.10);
+  background: rgba($primary-gray-color, 0.10);
 }
 
 .danger-text {
   color: #E6A5A5;
-  text-shadow: 0px 0px 8px rgba(248, 47, 47, 0.3);
+  text-shadow: 0px 0px 8px rgba($red-primary-color, 0.3);
 }
 
 .border-end.border-vertical {
-  border-color: #CECECE0D !important;
+  border-color: rgba($white-base-color, 0.05) !important;
 }
 
 .hyperlink-btn {
-  color: #287EFF;
+  color: $blue-light-secondary-color;
 }
 
 .hyperlink-btn:hover {
@@ -39,6 +41,6 @@ tr:nth-child(even) {
 }
 
 .bold-danger-text {
-  color: #F82F2F;
-  text-shadow: 0px 0px 8px (248, 47, 47, 0.3) !important;
+  color: $red-primary-color;
+  text-shadow: 0px 0px 8px rgba($red-primary-color, 0.3) !important;
 }

@@ -25,44 +25,45 @@
         var(--c2) 70%,
         var(--c3) 100%
       );
-      -webkit-mask: linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask: linear-gradient($natural-white-color 0 0) content-box,
+        linear-gradient($natural-white-color 0 0);
+      mask: linear-gradient($natural-white-color 0 0) content-box, linear-gradient($natural-white-color 0 0);
       mask-composite: exclude;
       transition: --c1 300ms ease, --c2 300ms ease, --c3 300ms ease;
     }
   }
   
   .gradient-border:hover:before {
-    --c1: rgba(255, 255, 255, 0.5);
-    --c2: rgba(0, 0, 0, 0);
-    --c3: rgba(255, 255, 255, 0.5);
+    --c1: rgba($natural-white-color, 0.5);
+    --c2: rgba($black-base-color, 0);
+    --c3: rgba($natural-white-color, 0.5);
   }
   
   @property --c1 {
     syntax: "<color>";
     inherits: false;
-    initial-value: rgba(255, 255, 255, 0.3);
+    initial-value: rgba($natural-white-color, 0.3);
   }
   @property --c2 {
     syntax: "<color>";
     inherits: false;
-    initial-value: rgba(0, 0, 0, 0);
+    initial-value: rgba($black-base-color, 0);
   }
   @property --c3 {
     syntax: "<color>";
     inherits: false;
-    initial-value: rgba(0, 0, 0, 0);
+    initial-value: rgba($black-base-color, 0);
   }
 
-  static-noise-background-card:not(.collapsible-panel) .bg-noise-card {
+  static-noise-background-card:not(.collapsible-panel):not(.transparent-overlay) .bg-noise-card {
     background: linear-gradient(180deg, rgba($adnoc-logo-blue-text-color, 0.40) 0%, rgba($adnoc-logo-blue-text-color, 0.05) 60%);
     backdrop-filter: blur(17.5px);
     opacity: 1.2;
     z-index: 2;
   }
    
-  static-noise-background-card.collapsible-panel .bg-noise-card {
+  static-noise-background-card.collapsible-panel .bg-noise-card,
+  static-noise-background-card.transparent-overlay .bg-noise-card {
     border-radius: 16px;
     backdrop-filter: blur(17.5px);
     z-index: 1;

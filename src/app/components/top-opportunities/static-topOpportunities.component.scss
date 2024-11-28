@@ -1,3 +1,5 @@
+@import "../../../styles/variables";
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -5,11 +7,11 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba($natural-white-color, 0.3);
 }
 
 tr:nth-child(even) {
-  background-color: #CECECE0D;
+  background-color: rgba($white-base-color, 0.05);
 }
 
 .overview-card {
@@ -17,16 +19,16 @@ tr:nth-child(even) {
 }
 
 .listing-card {
-  background: rgba(77, 77, 77, 0.10);
+  background: rgba($primary-gray-color, 0.10);
 }
 
 .success-text {
   color: #00DA69;
-  text-shadow: 0px 0px 8px rgba(0, 218, 105, 0.3);
+  text-shadow: 0px 0px 8px rgba($green-primary-color, 0.3);
 }
 
 .border-end.border-vertical {
-  border-color: rgba(206, 206, 206, 0.20) !important;
+  border-color: rgba($white-base-color, 0.20) !important;
 }
 
 .hyperlink-btn {
