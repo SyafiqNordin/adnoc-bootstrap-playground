@@ -18,16 +18,13 @@ import { KENDO_GRID } from '@progress/kendo-angular-grid';
 })
 export class StaticTopOpportunitiesComponent {
   opportunities: any[] = [
-    { well: 'DY0001', actual: 345.3, expGain: '+23.4%', expOilGain: 321.45 },
-    { well: 'DY0002', actual: 290.1, expGain: '+18.2%', expOilGain: 321.45 },
-    { well: 'DY0003', actual: 320.7, expGain: '+21.6%', expOilGain: 321.45 },
-    { well: 'DY0004', actual: 310.4, expGain: '+20.8%', expOilGain: 321.45 },
-    { well: 'DY0005', actual: 400.0, expGain: '+30.2%', expOilGain: 321.45 },
-    { well: 'DY0006', actual: 290.1, expGain: '+18.2%', expOilGain: 321.45 },
-    { well: 'DY0007', actual: 290.1, expGain: '+18.2%', expOilGain: 321.45 },
-    { well: 'DY0008', actual: 290.1, expGain: '+18.2%', expOilGain: 321.45 },
-    { well: 'DY0009', actual: 290.1, expGain: '+18.2%', expOilGain: 321.45 },
-    { well: 'DY00010', actual: 290.1, expGain: '+18.2%', expOilGain: 321.45 },
+    { well: 'DY0001', beforeOptimize: 388, expGainVal: '49', expGainPercentage: '+12.6%', expOilGain: 321.45 },
+    { well: 'DY0002', beforeOptimize: 381, expGainVal: '12', expGainPercentage: '+3.1%', expOilGain: 321.45 },
+    { well: 'DY0003', beforeOptimize: 324, expGainVal: '43', expGainPercentage: '+13.3%', expOilGain: 321.45 },
+    { well: 'DY0004', beforeOptimize: 291, expGainVal: '49', expGainPercentage: '+16.8%', expOilGain: 321.45 },
+    { well: 'DY0005', beforeOptimize: 236, expGainVal: '41', expGainPercentage: '+17.4%', expOilGain: 321.45 },
+    { well: 'DY0006', beforeOptimize: 254, expGainVal: '12', expGainPercentage: '+12%', expOilGain: 321.45 },
+    { well: 'DY0007', beforeOptimize: 254, expGainVal: '12', expGainPercentage: '+12%', expOilGain: 321.45 },
   ];
 
   public gridData: any[] = [...this.opportunities];

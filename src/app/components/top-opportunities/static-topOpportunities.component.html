@@ -13,21 +13,20 @@
                 <div>
                     <h4 class="fs-20px text-primary mb-0">{{ opportunities[0].well }}</h4>
                     <span class="fs-12px text-secondary fw-light">Expected Oil Gain (stb/d)</span>
-                    <h3 class="fs-64px text-primary mb-0">{{ opportunities[0].actual }}</h3>
+                    <h3 class="fs-64px text-primary mb-0">{{ opportunities[0].expOilGain }}</h3>
                 </div>
                 <div>
                     <div class="d-flex gap-2">
                         <div class="pe-4">
                             <span class="fs-12px text-secondary fw-light">Expected Gain</span>
                             <h6 class="text-primary fw-600">
-                                29
-                                <span class="success-text">({{ opportunities[0].expGain }})</span>
+                                {{ opportunities[0].expGainVal }} <span class="success-text">({{ opportunities[0].expGainPercentage }})</span>
                             </h6>
                         </div>
                         <div class="ps-2 me-2 border-end border-vertical"></div>
                         <div class="ps-4">
                             <span class="fs-12px text-secondary fw-light">Before Optimization</span>
-                            <h6 class="text-primary fw-600">{{ opportunities[0].expOilGain }}</h6>
+                            <h6 class="text-primary fw-600">{{ opportunities[0].beforeOptimize }} stb/d</h6>
                         </div>
                     </div>
                 </div>
@@ -47,10 +46,29 @@
             scrollable="scrollable"
             [rowClass]="stripedRows"
         >
-            <kendo-grid-column class="p-3 fw-normal ps-4" field="well" title="Well"> </kendo-grid-column>
-            <kendo-grid-column field="actual" title="Actual"> </kendo-grid-column>
-            <kendo-grid-column field="expOilGain" title="Exp. Oil Gain (stb/d)"></kendo-grid-column>
-            <kendo-grid-column class="success-text" field="expGain" title="Expected Gain"> </kendo-grid-column>
+            <kendo-grid-column 
+                headerClass="fw-semibold p-2 ps-4" 
+                class="p-2 ps-4" 
+                field="well" 
+                title="Well">
+            </kendo-grid-column>
+            <kendo-grid-column 
+                headerClass="fw-semibold" 
+                field="beforeOptimize" 
+                title="Before Opt. (stb/d)">
+            </kendo-grid-column>
+            <kendo-grid-column 
+                headerClass="fw-semibold" 
+                field="expOilGain" 
+                title="Exp. Oil Gain (stb/d)">
+            </kendo-grid-column>
+            <kendo-grid-column 
+                headerClass="fw-semibold" 
+                title="Expected Gain">
+                <ng-template kendoGridCellTemplate let-dataItem>
+                    {{ dataItem.expGainVal }} <span class="success-text">({{ dataItem.expGainPercentage }})</span>
+                </ng-template>
+            </kendo-grid-column>
         </kendo-grid>
     </div>
 

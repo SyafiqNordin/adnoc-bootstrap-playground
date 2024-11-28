@@ -12,19 +12,21 @@
             <kendo-card-body class="px-4 py-3 d-grid align-items-start flex-column">
                 <div>
                     <h4 class="fs-20px text-primary mb-0">{{ underperforms[0].well }}</h4>
-                    <span class="fs-12px text-secondary fw-light">Actual (stb/d)</span>
-                    <h3 class="fs-64px text-primary mb-0">{{ underperforms[0].actual }}</h3>
+                    <span class="fs-12px text-secondary fw-light">Potential Oil Deferment (stb/d)</span>
+                    <h3 class="fs-64px text-primary mb-0">{{ underperforms[0].potOilDeferment }}</h3>
                 </div>
                 <div>
                     <div class="d-flex gap-2">
                         <div class="pe-4">
-                            <span class="fs-12px text-secondary fw-light">Oil Rate</span>
-                            <h6 class="fw-600 text-primary">{{ underperforms[0].oilRate }}</h6>
+                            <span class="fs-12px text-secondary fw-light">Potential Deferment</span>
+                            <h6 class="text-primary fw-600">
+                                {{ underperforms[0].potDefermentVal }} <span class="danger-text">({{ underperforms[0].potDefermentPercentage }})</span>
+                            </h6>
                         </div>
                         <div class="ps-2 me-2 border-end border-vertical"></div>
                         <div class="ps-4">
-                            <span class="fs-12px text-secondary fw-light">Potential Deferment</span>
-                            <h6 class="danger-text fw-600">{{ underperforms[0].potDeferment }}</h6>
+                            <span class="fs-12px text-secondary fw-light">Actual</span>
+                            <h6 class="fw-600 text-primary">{{ underperforms[0].actual }} stb/d</h6>
                         </div>
                     </div>
                 </div>
@@ -39,32 +41,35 @@
     
     <!-- Listing Panel -->
     <div class="listing-card col-6 d-grid flex-column h-auto overflow-auto">
-        <!-- <table class="w-100 text-primary text-start">
-            <tr class="fs-12px">
-                <th class="p-3 fw-light ps-4">Well</th>
-                <th class="p-3 fw-light text-end">Actual</th>
-                <th class="p-3 fw-light text-end">Oil Rate (stb/d)</th>
-                <th class="p-3 fw-light text-end pe-4">Potential Deferment</th>
-            </tr>
-            <tr *ngFor="let underperform of underperforms" class="fs-14px">
-                <td class="p-3 fw-normal ps-4">{{ underperform.well }}</td>
-                <td class="p-3 fw-600 text-end">{{ underperform.actual }}</td>
-                <td class="p-3 fw-600 text-end">{{ underperform.deferment }}</td>
-                <td class="p-3 fw-600 text-end">
-                    <span class="bold-danger-text fw-600 fs-14px pe-4">{{ underperform.potDeferment }}</span>
-                </td>
-            </tr>
-        </table> -->
         <kendo-grid 
         [data]="gridData"
         [height]="300"
         scrollable="scrollable"
         [rowClass]="stripedRows"
     >
-        <kendo-grid-column class="p-3 fw-normal ps-4" field="well" title="Well"> </kendo-grid-column>
-        <kendo-grid-column field="actual" title="Actual"> </kendo-grid-column>
-        <kendo-grid-column field="deferment" title="Oil Rate (stb/d)"></kendo-grid-column>
-        <kendo-grid-column class="bold-danger-text" field="potDeferment" title="Potential Deferment"> </kendo-grid-column>
+        <kendo-grid-column 
+                headerClass="fw-semibold p-2 ps-4" 
+                class="p-2 ps-4" 
+                field="well" 
+                title="Well">
+            </kendo-grid-column>
+            <kendo-grid-column 
+                headerClass="fw-semibold"
+                field="potOilDeferment" 
+                title="Pot. Oil Deferment (stb/d)">
+            </kendo-grid-column>
+            <kendo-grid-column 
+                headerClass="fw-semibold" 
+                field="actual" 
+                title="Actual (stb/d)">
+            </kendo-grid-column>
+            <kendo-grid-column 
+                headerClass="fw-semibold" 
+                title="Potential Deferment">
+                <ng-template kendoGridCellTemplate let-dataItem>
+                    {{ dataItem.potDefermentVal }} <span class="bold-danger-text">({{ dataItem.potDefermentPercentage }})</span>
+                </ng-template>
+            </kendo-grid-column>
     </kendo-grid>
     </div>    
 </div>

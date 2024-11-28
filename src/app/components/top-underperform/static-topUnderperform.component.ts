@@ -20,13 +20,13 @@ import { KENDO_GRID } from '@progress/kendo-angular-grid';
 })
 export class StaticTopUnderperformComponent {
   underperforms: any[] = [
-    { well: 'DY0001', actual: 290, potDeferment: '-9.3%', oilRate: 299.5 },
-    { well: 'DY0002', actual: 218.3, potDeferment: '-5%', oilRate: 223 },
-    { well: 'DY0003', actual: 192, potDeferment: '-19.2%', oilRate: 200.4 },
-    { well: 'DY0004', actual: 310.4, potDeferment: '-7.8%', oilRate: 321.45 },
-    { well: 'DY0005', actual: 190, potDeferment: '-19%', oilRate: 200.7 },
-    { well: 'DY0006', actual: 190, potDeferment: '-19%', oilRate: 200.7 },
-    { well: 'DY0007', actual: 190, potDeferment: '-19%', oilRate: 200.7 },
+    { well: 'DY0001', potOilDeferment: 437, actual: 388, potDefermentPercentage: '-12.6%', potDefermentVal: 49 },
+    { well: 'DY0002', potOilDeferment: 393, actual: 381, potDefermentPercentage: '-3.1%', potDefermentVal: 12 },
+    { well: 'DY0003', potOilDeferment: 367, actual: 324, potDefermentPercentage: '-13.3%', potDefermentVal: 43 },
+    { well: 'DY0004', potOilDeferment: 340, actual: 291, potDefermentPercentage: '-16.8%', potDefermentVal: 49 },
+    { well: 'DY0005', potOilDeferment: 277, actual: 236, potDefermentPercentage: '-17.4%', potDefermentVal: 41 },
+    { well: 'DY0006', potOilDeferment: 190, actual: 290, potDefermentPercentage: '-4.7%', potDefermentVal: 12 },
+    { well: 'DY0007', potOilDeferment: 190, actual: 290, potDefermentPercentage: '-9%', potDefermentVal: 12 },
   ];
 
   public gridData: any[] = [...this.underperforms];
