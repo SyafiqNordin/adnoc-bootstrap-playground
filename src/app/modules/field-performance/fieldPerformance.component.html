@@ -9,69 +9,104 @@
   >
     <!-- Collapsible Tab - Production and Injection Summary -->
     <static-noise-background-card class="collapsible-panel">
-      <kendo-expansionpanel
-        title="Production Summary"
-        class="rounded rounded-4 w-100"
-        [expanded]="true"
-      >
-        <!-- First Row Cards -->
-        <div class="d-flex w-100 gap-3 mb-3">
-          <div
-            class="height-232px"
-            [ngClass]="{
-              'flex-grow-1': expandOilProductionSummaryContainer,
-              'col-3': !expandOilProductionSummaryContainer
-            }"
-          >
-            <static-noise-background-card>
-              <!-- Card Content Here -->
-              <static-oil-production-summary
-                (toggleExpandContainer)="toggleExpandOilSummaryContainer()"
-                [hideAreaChart]="!expandOilProductionSummaryContainer"
+      <mat-accordion id="prodSummaryAccordion" class="w-100"> 
+        <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)"
+          class="rounded rounded-4 bg-transparent text-primary">
+          <mat-expansion-panel-header class="px-3 py-5">
+            <mat-panel-title class="text-primary fs-20px fw-semibold d-grid">
+              Production Summary
+              <span *ngIf="!panelOpenState()" class="fs-16px fw-normal">as at 21-11-2024</span>
+            </mat-panel-title>
+            <mat-panel-description class="text-primary">
+              <div class="summary-details">
+                <!-- Show additional header content only if panel is closed (panelOpenState = false) -->
+                <div *ngIf="!panelOpenState()">
+                  <div class="d-flex column-gap-3">
+                    <div>
+                      <h6 class="fw-semibold">Oil Production</h6>
+                      <span class="stats success-text">+1.24%</span>
+                    </div>
+                    <div>
+                      <h6 class="fw-semibold">Gas Production</h6>
+                      <span class="stats bold-danger-text">-0.89%</span>
+                    </div>
+                    <div>
+                      <h6 class="fw-semibold">Water Production</h6>
+                      <span class="stats success-text">+3.96%</span>
+                    </div>
+                    <div>
+                      <h6 class="fw-semibold">Gas Injection</h6>
+                      <span class="stats bold-danger-text">-0.28%</span>
+                    </div>
+                    <div>
+                      <h6 class="fw-semibold">Water Injection</h6>
+                      <span class="stats success-text">+2.30%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+    
+          <!-- First Row Cards -->
+          <div class="d-flex w-100 gap-3 mb-3">
+            <div
+              class="height-232px"
+              [ngClass]="{
+                'flex-grow-1': expandOilProductionSummaryContainer,
+                'col-3': !expandOilProductionSummaryContainer
+              }"
+            >
+              <static-noise-background-card>
+                <!-- Card Content Here -->
+                <static-oil-production-summary
+                  (toggleExpandContainer)="toggleExpandOilSummaryContainer()"
+                  [hideAreaChart]="!expandOilProductionSummaryContainer"
+                  class="w-100 z-0"
+                >
+                </static-oil-production-summary>
+              </static-noise-background-card>
+            </div>
+            <div
+              class="height-232px"
+              [ngClass]="{
+                'flex-grow-1': expandGasProductionSummaryContainer,
+                'col-3': !expandGasProductionSummaryContainer
+              }"
+            >
+              <static-noise-background-card>
+                <!-- Card Content Here -->
+                <static-gas-production-summary
+                (toggleExpandContainer)="toggleExpandGasSummaryContainer()"
+                [hideAreaChart]="!expandGasProductionSummaryContainer"
                 class="w-100 z-0"
               >
-              </static-oil-production-summary>
-            </static-noise-background-card>
+              </static-gas-production-summary>
+              </static-noise-background-card>
+            </div>
+            <div class="col-3 height-232px">
+              <static-noise-background-card>
+                <!-- Card Content Here -->
+              </static-noise-background-card>
+            </div>
           </div>
-          <div
-            class="height-232px"
-            [ngClass]="{
-              'flex-grow-1': expandGasProductionSummaryContainer,
-              'col-3': !expandGasProductionSummaryContainer
-            }"
-          >
-            <static-noise-background-card>
-              <!-- Card Content Here -->
-              <static-gas-production-summary
-              (toggleExpandContainer)="toggleExpandGasSummaryContainer()"
-              [hideAreaChart]="!expandGasProductionSummaryContainer"
-              class="w-100 z-0"
-            >
-            </static-gas-production-summary>
-            </static-noise-background-card>
-          </div>
-          <div class="col-3 height-232px">
-            <static-noise-background-card>
-              <!-- Card Content Here -->
-            </static-noise-background-card>
-          </div>
-        </div>
 
-        <!-- Second Row Cards -->
-        <div class="d-flex w-100 gap-3">
-          <div class="col-6 height-232px">
-            <static-noise-background-card>
-              <!-- Card Content Here -->
-              <static-gas-injection class="w-100 z-0"></static-gas-injection>
-            </static-noise-background-card>
+          <!-- Second Row Cards -->
+          <div class="d-flex w-100 gap-3">
+            <div class="col-6 height-232px">
+              <static-noise-background-card>
+                <!-- Card Content Here -->
+                <static-gas-injection class="w-100 z-0"></static-gas-injection>
+              </static-noise-background-card>
+            </div>
+            <div class="flex-grow-1 height-232px">
+              <static-noise-background-card>
+                <!-- Card Content Here -->
+              </static-noise-background-card>
+            </div>
           </div>
-          <div class="flex-grow-1 height-232px">
-            <static-noise-background-card>
-              <!-- Card Content Here -->
-            </static-noise-background-card>
-          </div>
-        </div>
-      </kendo-expansionpanel>
+        </mat-expansion-panel>
+      </mat-accordion>
     </static-noise-background-card>
 
     <!-- Third Row Cards -->
@@ -132,7 +167,9 @@
     }"
   >
     <div class="w-100 rounded-4 smart-alarm-panel">
-      <static-swapped-sidepanel></static-swapped-sidepanel>
+      <static-noise-background-card class="transparent-overlay">
+        <static-notification-panel></static-notification-panel>
+      </static-noise-background-card>
     </div>
   </div>
 </div>

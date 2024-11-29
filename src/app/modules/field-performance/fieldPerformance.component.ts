@@ -1,14 +1,15 @@
-import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, OnDestroy, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ExpansionPanelComponent } from "@progress/kendo-angular-layout";
+import { MatExpansionModule } from '@angular/material/expansion';
 import { StaticProductionChartComponent } from '../../components/production-chart/static-productionChart.component';
 import { StaticOilProductionComponent } from '../../components/oil-production/static-oilProduction.component';
 import { StaticFieldNetworkComponent } from '../../components/field-network/static-fieldNetwork.component';
 import { StaticGasProductionSummaryComponent } from '../../components/gas-production-summary/static-gasProductionSummary.component';
 import { StaticOilProductionSummaryComponent } from '../../components/oil-production-summary/static-oilProductionSummary.component';
 import { SmartAlarmToggleService } from '../../services/smartAlarmToggle.service';
-import { StaticSwappedSidepanelComponent } from '../../components/swapped-sidepanel/static-swappedSidepanel.component';
+import { StaticNotificationPanelComponent } from '../../components/notification-panel/static-notificationPanel.component';
 import { StaticTopOpportunitiesComponent } from '../../components/top-opportunities/static-topOpportunities.component';
 import { StaticProducerWellComponent } from '../../components/producer-well/static-producerWell.component';
 import { StaticTopUnderperformComponent } from '../../components/top-underperform/static-topUnderperform.component';
@@ -24,12 +25,13 @@ import { Subscription } from 'rxjs';
   standalone: true,
   imports: [
     RouterLink,
+    CommonModule,
+    MatExpansionModule,
     StaticProductionChartComponent,
     StaticFieldNetworkComponent,
-    CommonModule,
     ExpansionPanelComponent,
     StaticOilProductionComponent,
-    StaticSwappedSidepanelComponent,
+    StaticNotificationPanelComponent,
     StaticGasProductionSummaryComponent,
     StaticOilProductionSummaryComponent,
     StaticTopOpportunitiesComponent,
@@ -44,6 +46,8 @@ export class FieldPerformanceComponent implements OnInit, OnDestroy {
   isShowSmartAlarmPanel: boolean = true;
   expandGasProductionSummaryContainer: boolean = true;
   expandOilProductionSummaryContainer: boolean = false;
+  readonly panelOpenState = signal(false);
+
   /**
    * Constructor
    */
