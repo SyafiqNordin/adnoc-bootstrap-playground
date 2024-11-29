@@ -1,15 +1,14 @@
 <div class="d-flex flex-column h-100">
     <!-- Fixed header -->
     <div class="header-section flex-shrink-0">
-        <div class="px-3 py-4">
-            <div class="mx-2 d-flex justify-content-between">
+        <div class="mb-2 divider-bottom">
+            <div class="d-flex justify-content-between">
                 <div class="d-flex align-items-center">
-                    <img src="assets/icons/ticketing-oppurtunity.svg" alt="Smart Ticket" />
-                    <h5 class="fw-600 fs-16px m-0 ms-3 text-primary">Smart Ticket</h5>
+                    <h5 class="fw-600 fs-20px m-0 text-primary">Alarms</h5>
                 </div>
                 <button
                     kendoButton
-                    (click)="onSmartTicketMenuClick()"
+                    (click)="onAlarmsMenuClick()"
                     [svgIcon]="menuDots"
                     fillMode="clear"
                     title="Browse"
@@ -17,27 +16,27 @@
                 ></button>
             </div>
         </div>
-        <div class="px-3 py-2 border-top-bottom">
+
+        <div class="search-input-box rounded-pill px-2 py-0 mb-2">
             <div class="mx-2 d-flex">
                 <img src="assets/icons/search.svg" alt="Search" />
-                <kendo-textbox class="bg-transparent fs-14px border-0 text-primary" placeholder="Search Well Name..."></kendo-textbox>
+                <kendo-textbox class="bg-transparent fs-14px border-0 text-primary" placeholder="Search Well..."></kendo-textbox>
             </div>
-        </div>    
+        </div>
     </div>
 
     <!-- Scrollable Content -->
     <div class="content-section flex-grow-1 overflow-x-hidden overflow-y-auto">
         <!-- Dynamically generated cards -->
-        <div class="m-4" *ngFor="let ticket of smartTickets">
-            <kendo-card class="w-100 bg-transparent border-0 rounded-0 border-bottom">
-                <kendo-card-header class="border-0 p-0 mb-3">
+        <div class="py-2 divider-bottom" *ngFor="let ticket of alarms">
+            <kendo-card class="w-100 bg-transparent border-0 rounded-0">
+                <kendo-card-header class="border-0 p-0 mb-2 d-grid">
                     <div class="d-flex justify-content-between">
                         <div class="d-flex align-items-center">
                             <h5 class="m-0 fw-bold fs-16px text-primary">
                                 {{ ticket.title }}
-                                <span *ngIf="ticket.sev_level === 'High'" class="sev-level-dot d-inline-block bg-danger rounded-circle align-top"></span>
+                                <span *ngIf="ticket.sev_level === 'High'" class="sev-level-dot d-inline-block rounded-circle align-top"></span>
                             </h5>
-                            
                             <span 
                                 *ngIf="ticket.sev_level"
                                 class="ms-2 badge fw-normal rounded-4 px-2"
@@ -55,6 +54,7 @@
                             fillMode="clear"
                             title="Browse"
                             themeColor="light"
+                            class="dots-icon-btn"
                         ></button>
                     </div>
                     <span class="fs-10px text-secondary">
@@ -62,30 +62,12 @@
                     </span>
                 </kendo-card-header>
                 <kendo-card-body class="p-0">
-                    <div class="bg-dark rounded-2 p-3 mb-4">
-                        <h6 class="fs-12px text-secondary">Recommendation:</h6>
-                        <h6 class="text-primary">
+                    <div>
+                        <h6 class="text-primary fs-12px">
                             {{ ticket.recommendation }}
                         </h6>
-                        <button
-                            kendoButton
-                            fillMode="link"
-                            class="hyperlink-btn fs-14px" 
-                            (click)="viewMore(ticket)">
-                            View More
-                        </button>
                     </div>
                 </kendo-card-body>
-                <kendo-card-actions class="w-50 p-0" orientation="horizontal" layout="stretched">
-                    <button
-                        kendoButton
-                        fillMode="outline"
-                        *ngIf="ticket.assignable" 
-                        class="mb-4 p-2 fs-14px border border-2 rounded-pill text-primary" 
-                        (click)="assignTicket(ticket)">
-                        Assign
-                    </button>
-                </kendo-card-actions>
             </kendo-card>
         </div>
 

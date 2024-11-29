@@ -4,6 +4,7 @@ import { KENDO_TEXTBOX } from '@progress/kendo-angular-inputs';
 import { KENDO_LAYOUT } from '@progress/kendo-angular-layout';
 import { KENDO_BUTTON } from "@progress/kendo-angular-buttons";
 import { SVGIcon, moreVerticalIcon } from '@progress/kendo-svg-icons';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
   selector: 'static-smart-ticket-noti',
@@ -15,6 +16,7 @@ import { SVGIcon, moreVerticalIcon } from '@progress/kendo-svg-icons';
     KENDO_TEXTBOX,
     KENDO_LAYOUT,
     KENDO_BUTTON,
+    MatExpansionModule,
   ],
 })
 export class StaticSmartTicketNotiComponent {
