@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-items: flex-start;
+  }
+
+  kendo-expansionpanel {
+    width: 600px;
+  }

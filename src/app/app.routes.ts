@@ -14,6 +14,13 @@ export const routes: Routes = [
             (m) => m.FieldPerformanceComponent
           ),
       },
+      {
+        path: 'test',
+        loadComponent: () =>
+          import('./modules/test/testExpansionPanel.component').then(
+            (m) => m.testExpansionPanelComponent
+          ),
+      },
     ],
   },
 ];
