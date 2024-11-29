@@ -12,6 +12,7 @@
       ></app-header>
 
       <div class="d-flex flex-grow-1 px-4 pb-3">
+        <div class="hover-zone" (mouseenter)="openSideMenu()"></div>
         <!-- Main content area -->
         <main class="flex-grow-1">
           <router-outlet></router-outlet>
@@ -25,5 +26,6 @@
 <app-side-menu
   [translateValues]="isSideMenuOpen ? '320px 0px' : '0 0'"
   (close)="closeSideMenu()"
+  (mouseleave)="closeSideMenu()"
   class="z-2 position-absolute"
 ></app-side-menu>
