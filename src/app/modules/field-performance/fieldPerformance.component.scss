@@ -46,23 +46,3 @@ kendo-expansionpanel {
     color: #b7b8ba;
   }
 }
-
-#prodSummaryAccordion .mat-expansion-panel-body {
-  padding: 24px !important;
-}
-
-#alarmDescTab .mat-expansion-panel-body {
-  padding: 0 !important;
-}
-
-#alarmDescTab .mat-content {
-  display: grid !important;
-}
-
-#prodSummaryAccordion .mat-expansion-panel-header-description {
-  flex-grow: 6 !important;
-}
-
-#prodSummaryAccordion .mat-content {
-  align-items: flex-start !important;
-}

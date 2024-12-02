@@ -1,8 +1,7 @@
 import { Component, ViewEncapsulation, OnInit, OnDestroy, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ExpansionPanelComponent } from "@progress/kendo-angular-layout";
-import { MatExpansionModule } from '@angular/material/expansion';
+import { ExpansionPanelComponent, LayoutModule } from "@progress/kendo-angular-layout";
 import { StaticProductionChartComponent } from '../../components/production-chart/static-productionChart.component';
 import { StaticOilProductionComponent } from '../../components/oil-production/static-oilProduction.component';
 import { StaticFieldNetworkComponent } from '../../components/field-network/static-fieldNetwork.component';
@@ -26,7 +25,7 @@ import { Subscription } from 'rxjs';
   imports: [
     RouterLink,
     CommonModule,
-    MatExpansionModule,
+    LayoutModule,
     StaticProductionChartComponent,
     StaticFieldNetworkComponent,
     ExpansionPanelComponent,
@@ -47,6 +46,7 @@ export class FieldPerformanceComponent implements OnInit, OnDestroy {
   expandGasProductionSummaryContainer: boolean = true;
   expandOilProductionSummaryContainer: boolean = false;
   readonly panelOpenState = signal(false);
+  isExpanded = true;
 
   /**
    * Constructor
@@ -75,5 +75,13 @@ export class FieldPerformanceComponent implements OnInit, OnDestroy {
   toggleExpandOilSummaryContainer() {
     this.expandOilProductionSummaryContainer = !this.expandOilProductionSummaryContainer;
     this.expandGasProductionSummaryContainer = !this.expandGasProductionSummaryContainer;
+  }
+
+  onExpand(): void {
+    this.isExpanded = true;
+  }
+
+  onCollapse(): void {
+    this.isExpanded = false;
   }
 }
