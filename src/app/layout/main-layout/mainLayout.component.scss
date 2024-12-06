@@ -112,3 +112,40 @@ main.flex-grow-1 {
   z-index: 10; /* Ensure it's above the main content */
   cursor: pointer;
 }
+
+#ticketAlarmTab .k-tabstrip-content {
+  padding: 8px 16px 16px 16px !important;
+  overflow-y: auto;
+}
+
+#ticketAlarmTab .k-tabstrip-items-wrapper {
+  padding: 16px 16px 0 16px !important;
+}
+
+#ticketAlarmTab .k-tabstrip-items li.k-item {
+  background: rgba($neutral-gray-color, 0.10) !important;
+  color: $white-base-color !important;
+  min-width: 127px !important;
+}
+
+#ticketAlarmTab .k-tabstrip-items li.k-item.k-active {
+  background: rgba($adnoc-logo-blue-text-color, 0.30) !important;
+}
+
+#ticketAlarmTab li.k-first {
+  border-top-left-radius: 24px !important;
+  border-bottom-left-radius: 24px !important;
+}
+
+#ticketAlarmTab li.k-last {
+  border-top-right-radius: 24px !important;
+  border-bottom-right-radius: 24px !important;
+}
+
+#ticketAlarmTab .k-expander-header {
+  padding: 0 0 10px 0 !important;
+}
+
+#ticketAlarmTab .k-expander-content {
+  padding: 0 !important;
+}

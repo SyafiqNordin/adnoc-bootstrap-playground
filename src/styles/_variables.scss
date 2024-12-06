@@ -66,3 +66,14 @@ $font-family-primary: 'Titillium Web';
 .cursor-pointer {
   cursor: pointer;
 }
+
+#FPSfilter {
+  min-width: 134px !important;
+  background-color: rgba($neutral-gray-color, 0.1) !important;
+}
+
+.k-grid .k-textbox.bg-dim-gray {
+  background-color: rgba($neutral-gray-color, 0.10) !important;
+  --kendo-color-surface-alt: rgba($neutral-gray-color, 0.10) !important;
+}
+
