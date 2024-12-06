@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { ExpansionPanelModule, LayoutModule } from '@progress/kendo-angular-layout';
 import { CommonModule } from '@angular/common';
+import { StaticExceptionsWellComponent } from '../../components/exceptions-well/static-exceptionsWell.component';
 
 @Component({
     selector: 'test',
@@ -10,7 +11,8 @@ import { CommonModule } from '@angular/common';
     imports: [
       ExpansionPanelModule,
       LayoutModule,
-      CommonModule
+      CommonModule,
+      StaticExceptionsWellComponent,
     ],
   })
 export class testExpansionPanelComponent {

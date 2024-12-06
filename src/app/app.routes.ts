@@ -21,6 +21,13 @@ export const routes: Routes = [
             (m) => m.testExpansionPanelComponent
           ),
       },
+      {
+        path: 'well-performance',
+        loadComponent: () =>
+          import('./modules/well-performance/wellPerformance.component').then(
+            (m) => m.WellPerformanceComponent
+          ),
+      },
     ],
   },
 ];

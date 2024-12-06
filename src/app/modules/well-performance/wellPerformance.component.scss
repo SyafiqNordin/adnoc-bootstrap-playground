@@ -1,0 +1,81 @@
+@import "../../../styles/variables";
+
+.height-232px {
+  height: 232px;
+}
+
+.height-218px {
+  height: 218px;
+}
+
+.height-260px {
+  height: 260px;
+}
+
+.height-464px {
+  height: 464px;
+}
+
+.height-314px {
+  height: 314px;
+}
+
+.height-536px {
+  height: 536px;
+}
+
+.height-720px {
+  height: 720px;
+}
+
+.smart-alarm-panel {
+  max-height: 88vh;
+  position: sticky;
+  top: 95px;
+}
+
+kendo-expansionpanel {
+  background-color: transparent !important;
+
+  .k-expander-header {
+    background-color: transparent !important;
+  }
+
+  .k-expander-title {
+    text-transform: capitalize;
+    color: #b7b8ba;
+  }
+}
+
+#wellInfoContainer button.rounded-pill.text-primary {
+  z-index: 1;
+}
+
+.border-dim-gray {
+  border-color: rgba($white-base-color, 0.20) !important;
+}
+
+.hyperlink-btn {
+  color: $blue-light-secondary-color;
+}
+
+#wellInfoContainer .k-expander-indicator {
+  display: none !important;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba($natural-white-color, 0.3);
+}
+
+#interventionHistoryTable .k-dialog {
+  background: linear-gradient(180deg, rgba($button-text-color, 0.45) 0%, rgba($button-text-color, 0.30) 100%);
+  backdrop-filter: blur(45px); 
+  border-radius: 16px;
+  outline: 2px solid rgba($white-base-color, 0.1);
+}

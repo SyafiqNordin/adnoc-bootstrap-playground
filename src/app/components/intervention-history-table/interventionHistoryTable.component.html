@@ -1,0 +1,64 @@
+<kendo-grid 
+  [kendoGridBinding]="filteredGridData"
+  [filterable]="true"
+  [sortable]="true"
+  [pageable]="{
+    buttonCount: buttonCount,
+    info: info,
+    type: type,
+    pageSizes: pageSizes,
+    previousNext: previousNext,
+    position: position
+  }"
+  [pageSize]="pageSize"
+  [rowHeight]="40"
+  [height]="500"
+  scrollable="scrollable"
+  [rowClass]="stripedRows"
+>
+  <ng-template kendoGridToolbarTemplate>
+    <div class="w-100 d-flex justify-content-between align-items-center">
+      <kendo-textbox
+        [style.width.px]="180"
+        class="bg-dim-gray fs-14px text-primary rounded-pill px-3 gradient-border"
+        placeholder="Search"
+        (valueChange)="onFilter($event)"
+      >
+        <ng-template kendoTextBoxPrefixTemplate>
+          <img src="assets/icons/search.svg" alt="search-icon" />
+        </ng-template>
+      </kendo-textbox>
+      <div>
+        <button
+          kendoGridExcelCommand
+          fillMode="clear"
+          title="Download Excel"
+          themeColor="light"
+          class="rounded"
+        >
+          <img src="assets/icons/download.svg" alt="download-icon" />
+        </button>
+        <button
+          kendoButton
+          fillMode="clear"
+          title="Swap Table"
+          themeColor="light"
+          class="rounded"
+        >
+          <img src="assets/icons/settings-gear.svg" alt="swap-table-icon" />
+        </button>
+      </div>
+    </div>
+
+  </ng-template>
+
+  <kendo-grid-column field="startDateTime" title="Start Date & Time" [width]="200"> </kendo-grid-column>
+  <kendo-grid-column field="endDateTime" title="End Date & Time" [width]="200"> </kendo-grid-column>
+  <kendo-grid-column field="interventionType" title="Intervention Type"> </kendo-grid-column>
+  <kendo-grid-column field="interventionDetails" title="Intervention Details" [width]="540"> </kendo-grid-column>
+  
+  <kendo-grid-excel fileName="WP_InterventionHistory.xlsx"></kendo-grid-excel>
+</kendo-grid>
+
+<!-- Date of data -->
+<div class="mt-2 fs-12px text-secondary fw-light">Data as at 19-01-2024 13:00</div>

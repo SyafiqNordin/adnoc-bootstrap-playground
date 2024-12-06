@@ -160,3 +160,46 @@ body {
   padding: 0 !important;
 }
 
+#interventionHistoryTable .k-window-content {
+  padding-block: 0 1.5rem !important;
+  padding-inline: 1.5rem !important;
+}
+
+#interventionHistoryTable .k-window-titlebar {
+  padding-block: 1.5rem 1.25rem !important;
+  padding-inline: 1.5rem !important;
+}
+
+#interventionHistoryTable .k-grid-toolbar {
+  padding-block: 0 0.75rem !important;
+  padding-inline: 0 !important;
+}
+
+#FPSfilter {
+  min-width: 134px !important;
+  background-color: rgba($neutral-gray-color, 0.1) !important;
+}
+
+#interventionHistoryTable .k-pager,
+#interventionHistoryTable .k-pager-numbers button {
+  font-size: 12px !important;
+}
+
+#interventionHistoryTable .k-pager .k-input-value-text,
+.k-dropdownlist-popup .k-list-item-text {
+  font-size: 14px !important;
+}
+
+.k-grid .k-textbox.bg-dim-gray {
+  background-color: rgba($neutral-gray-color, 0.10) !important;
+  --kendo-color-surface-alt: rgba($neutral-gray-color, 0.10) !important;
+}
+
+.k-tooltip {
+  background-color: $black-tooltip-base-color !important;
+  color: $white-base-color !important;
+}
+
+.k-callout {
+  color: $black-tooltip-base-color !important;
+}

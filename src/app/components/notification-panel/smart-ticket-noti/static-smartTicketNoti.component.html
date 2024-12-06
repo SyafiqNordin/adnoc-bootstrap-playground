@@ -16,12 +16,11 @@
                 ></button>
             </div>
         </div>
-        <div class="search-input-box rounded-pill px-2 py-0 mb-2">
-            <div class="mx-2 d-flex">
-                <img src="assets/icons/search.svg" alt="Search" />
-                <kendo-textbox class="bg-transparent fs-14px border-0 text-primary" placeholder="Search Well..."></kendo-textbox>
-            </div>
-        </div>    
+        <kendo-textbox class="search-input-box fs-14px border-0 text-primary rounded-pill px-3 py-1 mb-2 gradient-border" placeholder="Search Well...">
+            <ng-template kendoTextBoxPrefixTemplate>
+              <img src="assets/icons/search.svg" alt="search-icon" />
+            </ng-template>
+          </kendo-textbox>   
     </div>
 
     <!-- Scrollable Content -->
