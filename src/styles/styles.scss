@@ -17,11 +17,6 @@ body {
   font-size: 16px; // To set 1 rem = 16px by default
 }
 
-[class*="mat"] {
-  font-family: "Titillium Web" !important;
-  font-size: 16px;
-}
-
 .light-theme {
   @import "themes/theme-light";
 }
@@ -63,62 +58,4 @@ body {
   src: url('../assets/fonts/titillium-web/TitilliumWeb-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
-}
-
-// Kendo Table global transparent background
-.k-grid,
-.k-grid .k-toolbar-solid,
-.k-grid .k-grouping-header,
-.k-grid .k-grouping-row,
-.k-grid .k-grouping-row .k-table-td,
-.k-grid .k-grouping-row td,
-.k-grid .k-table-tbody .k-group-cell {
-  background-color: transparent !important;
-  --kendo-color-surface-alt: transparent !important;
-  border: none !important;
-}
-
-.k-grid .k-textbox,
-#ticketAlarmTab .k-tabstrip-content {
-  background-color: transparent !important;
-  --kendo-color-surface-alt: transparent !important;
-}
-
-.k-grid .k-grid-header .k-table-th,
-.k-grid .k-grid-pager {
-  background: rgba($neutral-gray-color, 0.10);
-  border: none !important;
-}
-
-.k-grid-content::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-
-.k-grid-content::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: rgba($natural-white-color, 0.3);
-}
-
-
-.k-grid .k-grid-header {
-  padding: 0 !important;
-}
-
-.k-column-title {
-  white-space: break-spaces;
-}
-
-.k-grid .k-grid-header .k-table-th {
-  vertical-align: top;
-}
-
-.success-text {
-  color: $green-primary-color;
-  text-shadow: 0px 0px 8px rgba($green-primary-color, 0.3);
-}
-
-.bold-danger-text {
-  color: $red-primary-color;
-  text-shadow: 0px 0px 8px rgba($red-primary-color, 0.3);
 }
