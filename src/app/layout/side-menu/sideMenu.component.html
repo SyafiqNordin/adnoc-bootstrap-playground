@@ -5,15 +5,15 @@
   <div class="d-flex flex-column">
     <!-- Header -->
     <div
-      class="d-flex justify-content-between py-4 px-20px border-bottom border-dark-subtle"
+      class="d-flex justify-content-between py-4 px-1_25rem border-bottom border-dark-subtle"
     >
-      <div class="d-flex gap-2">
+      <div class="d-flex gap-2 align-items-center">
         <!-- User Avatar -->
-        <img src="../../../assets/images/user-avatar.png" alt="User avatar" />
+        <img src="../../../assets/images/user-avatar.png" alt="User avatar" class="avatar-img" />
 
         <div class="d-flex flex-column">
-          <span class="text-white fs-16px">Roland Doe</span>
-          <span class="text-white fs-14px fw-light">Settings</span>
+          <span class="text-white fs-1rem">Roland Doe</span>
+          <span class="text-white fs-0_875rem fw-light">Settings</span>
         </div>
       </div>
 
@@ -21,28 +21,28 @@
         src="../../../assets/icons/close.svg"
         alt="Close icon"
         (click)="closePanel()"
-        class="cursor-pointer"
+        class="cursor-pointer w-1_875rem"
       />
     </div>
 
     <!-- List of pages -->
-    <div class="d-flex flex-column px-12px pt-14px">
+    <div class="d-flex flex-column px-0_75rem pt-0_875rem">
       <div
         class="menu-item d-flex px-4 py-3 gap-2 align-items-center"
         *ngFor="let page of pageList"
       >
-        <img [src]="page.icon" alt="" />
-        <span class="text-white fs-16px">{{ page.name }}</span>
+        <img [src]="page.icon" alt="" class="menu-icon" />
+        <span class="text-white fs-1rem">{{ page.name }}</span>
       </div>
     </div>
   </div>
 
   <!-- Footer -->
-  <div class="footer px-20px py-4">
+  <div class="footer px-1_25rem py-4">
     <div class="d-flex flex-column justify-content-between h-100">
       <div clas="d-flex flex-column">
-        <span class="d-block fs-30px fw-bolder footer-text">iPSO</span>
-        <span class="fs-14px fw-semibold footer-text"
+        <span class="d-block fs-1_875rem fw-bolder footer-text">iPSO</span>
+        <span class="fs-0_875rem fw-semibold footer-text"
           >Intelligent Production System Optimization</span
         >
       </div>

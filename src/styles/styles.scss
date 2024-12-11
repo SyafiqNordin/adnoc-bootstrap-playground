@@ -9,14 +9,6 @@
 
 @import "../styles/variables";
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  font-family: "Titillium Web" !important;
-  font-size: 16px; // To set 1 rem = 16px by default
-}
-
 .light-theme {
   @import "themes/theme-light";
 }
@@ -58,4 +50,110 @@ body {
   src: url('../assets/fonts/titillium-web/TitilliumWeb-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Titillium Web" !important;
+  font-size: 16px !important;
+
+  // Font size
+  .fs-0_625rem {
+    font-size: 0.625rem;
+  }
+
+  .fs-0_75rem {
+    font-size: 0.75rem;
+  }
+
+  .fs-0_875rem {
+    font-size: 0.875rem;
+  }
+
+  .fs-1rem {
+    font-size: 1rem;
+  }
+
+  .fs-1_25rem {
+    font-size: 1.25rem;
+  }
+
+  .fs-1_375rem {
+    font-size: 1.375rem;
+  }
+
+  .fs-1_5rem {
+    font-size: 1.5rem;
+  }
+
+  .fs-1_75rem {
+    font-size: 1.75rem;
+  }
+
+  .fs-1_875rem {
+    font-size: 1.875rem;
+  }
+
+  .fs-2rem {
+    font-size: 2rem;
+  }
+
+  .fs-2_25rem {
+    font-size: 2.25rem;
+  }
+
+  .fs-4rem {
+    font-size: 4rem;
+  }
+
+  //icon width
+  .w-1rem {
+    width: 1rem;
+  }
+
+  .w-1_25rem {
+    width: 1.25rem;
+  }
+
+  .w-1_875rem {
+    width: 1.875rem;
+  }
+}
+
+/* Adjust font sizes based on screen width */
+@media (min-width: 2256px) and (max-width: 2495px) {
+  html,
+  body {
+    font-size: 18px !important;
+  }
+}
+
+@media (min-width: 2496px) and (max-width: 2559px) {
+  html,
+  body {
+    font-size: 20px !important;
+  }
+}
+
+@media (min-width: 2560px) and (max-width: 3439px) {
+  html,
+  body {
+    font-size: 22px !important;
+  }
+}
+
+@media (min-width: 3440px) and (max-width: 3839px) {
+  html,
+  body {
+    font-size: 24px !important;
+  }
+}
+
+@media (min-width: 3840px) {
+  html,
+  body {
+    font-size: 28px !important;
+  }
 }

@@ -19,14 +19,14 @@
         <ng-template kendoExpansionPanelTitleDirective>
           <ng-container *ngIf="isExpanded; else collapsedHeader">
             <div class="header-expanded">
-              <h5 class="fs-20px fw-semibold mb-1">Production Summary</h5>
+              <h5 class="fs-1_25rem fw-semibold mb-0 pt-2">Production Summary</h5>
             </div>
           </ng-container>
           <ng-template #collapsedHeader>
             <div class="header-collapsed d-flex w-100">
               <div class="me-5">
-                <h5 class="fs-20px fw-semibold mb-1">Production Summary</h5>
-                <span class="fs-16px fw-normal">as at 21-11-2024</span>
+                <h5 class="fs-1_25rem fw-semibold mb-0 pt-2">Production Summary</h5>
+                <span class="fs-1rem fw-normal">as at 21-11-2024</span>
               </div>
               <div class="d-flex column-gap-3">
                 <div>
@@ -59,7 +59,7 @@
           <!-- First Row Cards -->
           <div class="d-flex w-100 gap-3 mb-3">
             <div
-              class="height-232px"
+              class="height-14_5rem"
               [ngClass]="{
                 'flex-grow-1': expandOilProductionSummaryContainer,
                 'col-3': !expandOilProductionSummaryContainer
@@ -76,7 +76,7 @@
               </static-noise-background-card>
             </div>
             <div
-              class="height-232px"
+              class="height-14_5rem"
               [ngClass]="{
                 'flex-grow-1': expandGasProductionSummaryContainer,
                 'col-3': !expandGasProductionSummaryContainer
@@ -92,7 +92,7 @@
                 </static-gas-production-summary>
               </static-noise-background-card>
             </div>
-            <div class="col-3 height-232px">
+            <div class="col-3 height-14_5rem">
               <static-noise-background-card>
                 <!-- Card Content Here -->
               </static-noise-background-card>
@@ -101,13 +101,13 @@
     
           <!-- Second Row Cards -->
           <div class="d-flex w-100 gap-3">
-            <div class="col-6 height-232px">
+            <div class="col-6 height-14_5rem">
               <static-noise-background-card>
                 <!-- Card Content Here -->
                 <static-gas-injection class="w-100 z-0"></static-gas-injection>
               </static-noise-background-card>
             </div>
-            <div class="flex-grow-1 height-232px">
+            <div class="flex-grow-1 height-14_5rem">
               <static-noise-background-card>
                 <!-- Card Content Here -->
               </static-noise-background-card>
@@ -122,14 +122,14 @@
       <!-- Left Column -->
       <div class="col-3 d-flex flex-column gap-3">
         <!-- First Row Left -->
-        <div class="height-260px">
+        <div class="height-16_25rem">
           <static-noise-background-card>
             <!-- Card Content -->
             <static-producer-well class="w-100 p-4"></static-producer-well>
           </static-noise-background-card>
         </div>
         <!-- Second Row Left -->
-        <div class="height-260px">
+        <div class="height-16_25rem">
           <!-- Second Row Left Content -->
           <static-noise-background-card>
             <!-- Card Content -->
@@ -139,7 +139,7 @@
 
       <!-- Right Column -->
       <div
-        class="flex-grow-1 height-536px"
+        class="flex-grow-1 height-33_5rem"
       >
         <static-noise-background-card></static-noise-background-card>
       </div>
@@ -148,7 +148,7 @@
     <!-- Fourth Row Cards -->
     <div class="d-flex w-100 gap-3">
       <div
-        class="col-6 height-314px"
+        class="col-6 height-19_625rem"
       >
         <static-noise-background-card class="transparent-overlay">
           <!-- Card Content Here -->
@@ -156,7 +156,7 @@
         </static-noise-background-card>
       </div>
       <div
-        class="flex-grow-1 height-314px"
+        class="flex-grow-1 height-19_625rem"
       >
         <static-noise-background-card class="transparent-overlay">
           <!-- Card Content Here -->
@@ -176,7 +176,7 @@
   >
     <div class="w-100 rounded-4 smart-alarm-panel">
       <static-noise-background-card class="transparent-overlay">
-        <static-notification-panel></static-notification-panel>
+        <static-notification-panel class="w-100"></static-notification-panel>
       </static-noise-background-card>
     </div>
   </div>

@@ -4,7 +4,7 @@
         <div class="mb-2 divider-bottom">
             <div class="d-flex justify-content-between">
                 <div class="d-flex align-items-center">
-                    <h5 class="fw-600 fs-20px m-0 text-primary">Alarms</h5>
+                    <h5 class="fw-600 fs-1_25rem m-0 text-primary">Alarms</h5>
                 </div>
                 <button
                     kendoButton
@@ -16,9 +16,9 @@
                 ></button>
             </div>
         </div>
-        <kendo-textbox class="search-input-box fs-14px border-0 text-primary rounded-pill px-3 py-1 mb-2 gradient-border" placeholder="Search Well...">
+        <kendo-textbox class="search-input-box fs-0_875rem border-0 text-primary rounded-pill px-3 py-1 mb-2 gradient-border" placeholder="Search Well...">
             <ng-template kendoTextBoxPrefixTemplate>
-              <img src="assets/icons/search.svg" alt="search-icon" />
+              <img src="assets/icons/search.svg" alt="search-icon" class="w-1rem" />
             </ng-template>
           </kendo-textbox>   
     </div>
@@ -31,7 +31,7 @@
                 <kendo-card-header class="border-0 p-0 mb-2 d-grid">
                     <div class="d-flex justify-content-between">
                         <div class="d-flex align-items-center">
-                            <h5 class="m-0 fw-bold fs-16px text-primary">
+                            <h5 class="m-0 fw-bold fs-1rem text-primary">
                                 {{ ticket.title }}
                                 <span *ngIf="ticket.sev_level === 'High'" class="sev-level-dot d-inline-block rounded-circle align-top"></span>
                             </h5>
@@ -55,13 +55,13 @@
                             class="dots-icon-btn"
                         ></button>
                     </div>
-                    <span class="fs-10px text-secondary">
+                    <span class="fs-0_625rem text-secondary">
                         {{ ticket.timestamp }}
                     </span>
                 </kendo-card-header>
                 <kendo-card-body class="p-0">
                     <div>
-                        <h6 class="text-primary fs-12px">
+                        <h6 class="text-primary fs-0_75rem">
                             {{ ticket.recommendation }}
                         </h6>
                     </div>
@@ -69,7 +69,7 @@
             </kendo-card>
         </div>
 
-        <div class="hyperlink-btn mt-auto p-3 text-center fs-14px">
+        <div class="hyperlink-btn mt-auto p-3 text-center fs-0_875rem">
             View More
         </div>
     </div>

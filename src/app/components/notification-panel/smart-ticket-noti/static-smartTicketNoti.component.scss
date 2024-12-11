@@ -5,12 +5,12 @@
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 0.313rem;
+  height: 0.313rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
+  border-radius: 0.625rem;
   background: rgba($natural-white-color, 0.3);
 }
 
@@ -19,8 +19,8 @@ kendo-card.border-bottom {
 }
 
 h5 .sev-level-dot {
-  width: 8px;
-  height: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
 .hyperlink-btn {
@@ -49,11 +49,11 @@ h5 .sev-level-dot {
 
 .search-input-box {
   background: rgba($neutral-gray-color, 0.10);
-  border: 2px solid rgba($neutral-gray-color, 0.20);
+  border: 0.125rem solid rgba($neutral-gray-color, 0.20);
 }
 
 .divider-bottom {
-  border-bottom: 1px solid rgba($white-base-color, 0.20) !important;
+  border-bottom: 0.0625rem solid rgba($white-base-color, 0.20) !important;
 }
 
 .dots-icon-btn {
@@ -61,5 +61,5 @@ h5 .sev-level-dot {
 }
 
 .k-card-actions button {
-  max-width: 80px;
+  max-width: 5rem;
 }

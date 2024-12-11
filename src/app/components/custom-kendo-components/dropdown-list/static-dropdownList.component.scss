@@ -2,36 +2,36 @@
 
 .k-dropdownlist-popup {
   background-color: rgba($neutral-gray-color, 0.1) !important;
-  backdrop-filter: blur(17.5px) !important;
-  border-radius: 16px !important;
+  backdrop-filter: blur(1.094rem) !important;
+  border-radius: 1rem !important;
   display: flex !important;
 
   ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: 0.313rem;
+    height: 0.313rem;
   }
 
   ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: 0.625rem;
     background: rgba(255, 255, 255, 0.3);
   }
 
   .k-list {
     background-color: rgba(0, 0, 0, 0) !important;
-    padding: 8px !important;
+    padding: 0.5rem !important;
   }
 
   .k-list-item {
-    padding-inline: 10px !important;
-    border-radius: 999px !important;
+    padding-inline: 0.625rem !important;
+    border-radius: 62.438rem !important;
     white-space: nowrap !important;
   }
 
   .k-list-item:hover {
-    border-radius: 999px !important;
+    border-radius: 62.438rem !important;
   }
 
   .k-selected {
-    border-radius: 999px !important;
+    border-radius: 62.438rem !important;
   }
 }

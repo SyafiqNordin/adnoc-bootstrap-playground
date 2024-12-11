@@ -44,7 +44,7 @@ export class StaticProducerWellComponent {
         distance: 5,
         style: {
           color: 'rgba(206, 206, 206, 0.50)',
-          fontSize: '10px',
+          fontSize: '0.625rem',
         },
       },
       lineColor: 'transparent',

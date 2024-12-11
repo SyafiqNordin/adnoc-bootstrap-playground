@@ -1,43 +1,47 @@
 @import "../../../styles/variables";
 
 .side-menu {
-  top: 78px;
-  left: -300px;
-  width: 300px;
+  top: 4.875rem;
+  left: -18.75rem;
+  width: 18.75rem;
   height: 93vh;
   background: radial-gradient(
     206.04% 90.65% at 94.19% 100%,
     rgba(255, 205, 0, 0.1) 0%,
     rgba(178, 178, 178, 0.1) 100%
   );
-  backdrop-filter: blur(17.5px);
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1.094rem);
+  box-shadow: -0.125rem 0 0.313rem rgba(0, 0, 0, 0.5);
   z-index: 100;
   position: fixed;
   transition: 1s;
 }
 
-.page-icon {
-  width: 20px;
-  height: auto;
-}
-
 .footer {
   background-color: $natural-white-color;
-  height: 170px;
+  height: 10.625rem;
 
   .footer-text {
     color: $adnoc-logo-blue-text-color;
   }
 
   .adnoc-logo {
-    height: 35px;
-    width: 90px;
+    height: auto;
+    width: 5.625rem;
   }
 }
 
 .menu-item:hover {
-  border-radius: 8px;
+  border-radius: 0.5rem;
   background: rgba(169, 170, 172, 0.10);
   cursor: pointer;
+}
+
+.avatar-img {
+  object-fit: contain;
+  height: 2.75rem;
+}
+
+.menu-icon {
+  height: 1.25rem;
 }

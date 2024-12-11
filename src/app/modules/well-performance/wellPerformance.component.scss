@@ -1,37 +1,134 @@
 @import "../../../styles/variables";
 
-.height-232px {
-  height: 232px;
+// Define a mixin to dynamically adjust heights
+@mixin height-adjust($base, $increment) {
+  height: calc(#{$base} + #{$increment}rem);
 }
 
-.height-218px {
-  height: 218px;
+// Default heights for base resolution (1920px)
+.height-14_5rem {
+  height: 14.5rem;
 }
 
-.height-260px {
-  height: 260px;
+.height-13_625rem {
+  height: 13.625rem;
 }
 
-.height-464px {
-  height: 464px;
+.height-16_25rem {
+  height: 16.25rem;
 }
 
-.height-314px {
-  height: 314px;
+.height-29rem {
+  height: 29rem;
 }
 
-.height-536px {
-  height: 536px;
+.height-19_625rem {
+  height: 19.625rem;
 }
 
-.height-720px {
-  height: 720px;
+.height-33_5rem {
+  height: 33.5rem;
 }
 
-.smart-alarm-panel {
-  max-height: 88vh;
-  position: sticky;
-  top: 95px;
+.height-45rem {
+  height: 45rem;
+}
+
+// Adjust heights for larger resolutions
+@media (min-width: 2256px) and (max-width: 2495px) {
+  .height-13_625rem {
+    @include height-adjust(13.625rem, 0.5);
+  }
+  .height-14_5rem {
+    @include height-adjust(14.5rem, 0.5);
+  }
+  .height-16_25rem {
+    @include height-adjust(16.25rem, 0.5);
+  }
+  .height-19_625rem {
+    @include height-adjust(19.625rem, 0.5);
+  }
+  .height-29rem {
+    @include height-adjust(29rem, 1);
+  }
+  .height-33_5rem {
+    @include height-adjust(33.5rem, 1);
+  }
+  .height-45rem {
+    @include height-adjust(45rem, 1);
+  }
+}
+
+@media (min-width: 2560px) and (max-width: 3439px) {
+  .height-13_625rem {
+    @include height-adjust(13.625rem, 1);
+  }
+  .height-14_5rem {
+    @include height-adjust(14.5rem, 1);
+  }
+  .height-16_25rem {
+    @include height-adjust(16.25rem, 1);
+  }
+  .height-19_625rem {
+    @include height-adjust(19.625rem, 1);
+  }
+  .height-29rem {
+    @include height-adjust(29rem, 2);
+  }
+  .height-33_5rem {
+    @include height-adjust(33.5rem, 2);
+  }
+  .height-45rem {
+    @include height-adjust(45rem, 2);
+  }
+}
+
+@media (min-width: 3440px) and (max-width: 3839px) {
+  .height-13_625rem {
+    @include height-adjust(13.625rem, 1.5);
+  }
+  .height-14_5rem {
+    @include height-adjust(14.5rem, 1.5);
+  }
+  .height-16_25rem {
+    @include height-adjust(16.25rem, 1.5);
+  }
+  .height-19_625rem {
+    @include height-adjust(19.625rem, 1.5);
+  }
+  .height-29rem {
+    @include height-adjust(29rem, 3);
+  }
+  .height-33_5rem {
+    @include height-adjust(33.5rem, 3);
+  }
+  .height-45rem {
+    @include height-adjust(45rem, 3);
+  }
+}
+
+@media (min-width: 3840px) {
+  .height-13_625rem {
+    @include height-adjust(13.625rem, 2);
+  }
+  .height-14_5rem {
+    @include height-adjust(14.5rem, 2);
+  }
+  .height-16_25rem {
+    @include height-adjust(16.25rem, 2);
+  }
+  .height-19_625rem {
+    @include height-adjust(19.625rem, 2);
+  }
+  .height-29rem {
+    @include height-adjust(29rem, 4);
+  }
+  .height-33_5rem {
+    @include height-adjust(33.5rem, 4);
+  }
+  .height-45rem {
+    @include height-adjust(45rem, 4);
+  }
 }
 
 kendo-expansionpanel {
@@ -64,30 +161,30 @@ kendo-expansionpanel {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 0.313rem;
+  height: 0.313rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
+  border-radius: 0.625rem;
   background: rgba($natural-white-color, 0.3);
 }
 
 #interventionHistoryTable .k-dialog {
   background: linear-gradient(180deg, rgba($button-text-color, 0.45) 0%, rgba($button-text-color, 0.30) 100%);
-  backdrop-filter: blur(45px); 
-  border-radius: 16px;
-  outline: 2px solid rgba($white-base-color, 0.1);
+  backdrop-filter: blur(2.813rem); 
+  border-radius: 1rem;
+  outline: 0.125rem solid rgba($white-base-color, 0.1);
 }
 
 #interventionHistoryTable .k-pager,
 #interventionHistoryTable .k-pager-numbers button {
-  font-size: 12px !important;
+  font-size: 0.75rem !important;
 }
 
 #interventionHistoryTable .k-pager .k-input-value-text,
 .k-dropdownlist-popup .k-list-item-text {
-  font-size: 14px !important;
+  font-size:0.875rem !important;
 }
 
 #interventionHistoryTable .k-window-content {
@@ -112,4 +209,10 @@ kendo-expansionpanel {
 
 .k-callout {
   color: $black-tooltip-base-color !important;
+}
+
+.modal-wrapper .intervention-modal .k-dialog {
+  min-width: 75rem !important;
+  width: 78.125rem !important;
+  height: 38.75rem !important;
 }

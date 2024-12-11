@@ -165,7 +165,7 @@ export class StaticOilProductionSummaryComponent {
       labels: {
         style: {
           color: 'rgba(206, 206, 206, 0.5)', // Set the color for x-axis labels here
-          fontSize: '12px', // Optional: customize font size
+          fontSize: '0.75rem', // Optional: customize font size
         },
       },
       dateTimeLabelFormats: {
@@ -236,7 +236,7 @@ export class StaticOilProductionSummaryComponent {
         fill: 'none',
         style: {
           color: 'rgba(129, 129, 129, 1)',
-          fontSize: '12px',
+          fontSize: '0.75rem',
         },
         states: {
           hover: {

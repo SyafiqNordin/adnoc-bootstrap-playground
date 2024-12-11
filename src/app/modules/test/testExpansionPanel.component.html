@@ -7,16 +7,14 @@
   <ng-template kendoExpansionPanelTitleDirective>
     <ng-container *ngIf="isExpanded; else collapsedHeader">
       <div class="header-expanded">
-        <h5 class="fs-20px fw-semibold mb-1">Production Summary</h5>
-        
-        
+        <h5 class="fs-1_25rem fw-semibold mb-0 pt-2">Production Summary</h5>        
       </div>
     </ng-container>
     <ng-template #collapsedHeader>
       <div class="header-collapsed d-flex w-100">
         <div class="me-5">
-          <h5 class="fs-20px fw-semibold mb-1">Production Summary</h5>
-          <span class="fs-16px fw-normal">as at 21-11-2024</span>
+          <h5 class="fs-1_25rem fw-semibold mb-0 pt-2">Production Summary</h5>
+          <span class="fs-1rem fw-normal">as at 21-11-2024</span>
         </div>
         <div class="d-flex column-gap-3">
           <div>

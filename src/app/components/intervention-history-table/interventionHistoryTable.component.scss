@@ -2,5 +2,13 @@
 
 .search-input-box {
   background: rgba($neutral-gray-color, 0.10);
-  border: 2px solid rgba($neutral-gray-color, 0.20);
+  border: 0.125rem solid rgba($neutral-gray-color, 0.20);
+}
+
+.w-12_5rem {
+  width: 12.5rem;
+}
+
+.w-33_75rem {
+  width: 3.75rem;
 }

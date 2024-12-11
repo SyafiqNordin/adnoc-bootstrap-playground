@@ -36,15 +36,15 @@ main.flex-grow-1 {
   position: fixed;
   top: 30%; /* Adjust position as desired */
   left: 30%; /* Adjust position as desired */
-  height: 400px;
-  width: 400px;
+  height: 25rem;
+  width: 25rem;
   border-radius: 50%;
   background-image: linear-gradient(
     80deg,
     $blue-light-primary-color,
     $blue-dark-primary-color
   );
-  filter: blur(80px);
+  filter: blur(5rem);
   animation: move-aurora-left 16s linear infinite; /* Adjust animation duration and timing */
 }
 
@@ -52,15 +52,15 @@ main.flex-grow-1 {
   position: fixed;
   top: 40%; /* Adjust position as desired */
   left: 50%; /* Adjust position as desired */
-  height: 400px;
-  width: 400px;
+  height: 25rem;
+  width: 25rem;
   border-radius: 50%;
   background-image: linear-gradient(
     80deg,
     $blue-light-primary-color,
     $pink-light-primary-color
   );
-  filter: blur(80px);
+  filter: blur(5rem);
   animation: move-aurora-right 16s linear infinite; /* Adjust animation duration and timing */
 }
 
@@ -71,11 +71,11 @@ main.flex-grow-1 {
     opacity: 1;
   }
   50% {
-    transform: translate(200px, -100px) scale(1); /* Adjust movement distance */
+    transform: translate(12.5rem, -6.25rem) scale(1); /* Adjust movement distance */
     opacity: 0.5;
   }
   75% {
-    transform: translate(200px, 100px) scale(1); /* Adjust movement distance */
+    transform: translate(12.5rem, 6.25rem) scale(1); /* Adjust movement distance */
     opacity: 0.5;
   }
   100% {
@@ -90,11 +90,11 @@ main.flex-grow-1 {
     opacity: 1;
   }
   50% {
-    transform: translate(-200px, 100px) scale(1); /* Adjust movement distance */
+    transform: translate(-12.5rem, 6.25rem) scale(1); /* Adjust movement distance */
     opacity: 0.5;
   }
   75% {
-    transform: translate(-200px, -100px) scale(1); /* Adjust movement distance */
+    transform: translate(-12.5rem, -6.25rem) scale(1); /* Adjust movement distance */
     opacity: 0.5;
   }
   100% {
@@ -105,27 +105,26 @@ main.flex-grow-1 {
 
 .hover-zone {
   position: fixed;
-  top: 70px;
+  top: 4.375rem;
   left: 0;
-  width: 22px;
+  width:1.375rem;
   height: 100vh;
   z-index: 10; /* Ensure it's above the main content */
   cursor: pointer;
 }
 
 #ticketAlarmTab .k-tabstrip-content {
-  padding: 8px 16px 16px 16px !important;
+  padding: 0.5rem 1rem 1rem 1rem !important;
   overflow-y: auto;
 }
 
 #ticketAlarmTab .k-tabstrip-items-wrapper {
-  padding: 16px 16px 0 16px !important;
+  padding: 1rem 1rem 0 1rem !important;
 }
 
 #ticketAlarmTab .k-tabstrip-items li.k-item {
   background: rgba($neutral-gray-color, 0.10) !important;
   color: $white-base-color !important;
-  min-width: 127px !important;
 }
 
 #ticketAlarmTab .k-tabstrip-items li.k-item.k-active {
@@ -133,17 +132,17 @@ main.flex-grow-1 {
 }
 
 #ticketAlarmTab li.k-first {
-  border-top-left-radius: 24px !important;
-  border-bottom-left-radius: 24px !important;
+  border-top-left-radius:1.5rem !important;
+  border-bottom-left-radius:1.5rem !important;
 }
 
 #ticketAlarmTab li.k-last {
-  border-top-right-radius: 24px !important;
-  border-bottom-right-radius: 24px !important;
+  border-top-right-radius:1.5rem !important;
+  border-bottom-right-radius:1.5rem !important;
 }
 
 #ticketAlarmTab .k-expander-header {
-  padding: 0 0 10px 0 !important;
+  padding: 0 0 0.625rem 0 !important;
 }
 
 #ticketAlarmTab .k-expander-content {
@@ -176,12 +175,12 @@ main.flex-grow-1 {
 }
 
 .k-grid-content::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 0.313rem;
+  height: 0.313rem;
 }
 
 .k-grid-content::-webkit-scrollbar-thumb {
-  border-radius: 10px;
+  border-radius: 0.625rem;
   background: rgba($natural-white-color, 0.3);
 }
 
@@ -200,12 +199,12 @@ main.flex-grow-1 {
 
 .success-text {
   color: $green-primary-color;
-  text-shadow: 0px 0px 8px rgba($green-primary-color, 0.3);
+  text-shadow: 0rem 0rem 0.5rem rgba($green-primary-color, 0.3);
 }
 
 .bold-danger-text {
   color: $red-primary-color;
-  text-shadow: 0px 0px 8px rgba($red-primary-color, 0.3);
+  text-shadow: 0rem 0rem 0.5rem rgba($red-primary-color, 0.3);
 }
 
 .k-button-outline-base:hover {
@@ -221,11 +220,11 @@ main.flex-grow-1 {
 }
 
 .red-text-shadow {
-  text-shadow: 0px 0px 8px rgba($red-primary-color, 0.3);
+  text-shadow: 0rem 0rem 0.5rem rgba($red-primary-color, 0.3);
 }
 
 .green-text-shadow {
-  text-shadow: 0px 0px 8px rgba($green-primary-color, 0.3);
+  text-shadow: 0 0 0.5rem rgba($green-primary-color, 0.3);
 }
 
 .cursor-pointer {
@@ -233,7 +232,7 @@ main.flex-grow-1 {
 }
 
 #FPSfilter {
-  min-width: 134px !important;
+  min-width: 8.375rem !important;
   background-color: rgba($neutral-gray-color, 0.1) !important;
 }
 

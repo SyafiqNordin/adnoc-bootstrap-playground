@@ -1,17 +1,16 @@
-<kendo-dialog
-*ngIf="openIMState"
-(close)="closeInterventionModal($event)"
-[minWidth]="1200"
-[width]="1250"
-[height]="620"
-id="interventionHistoryTable"
->
-  <kendo-dialog-titlebar class="justify-content-between">
-    <h5 class="fs-16px fw-semibold mb-0">Well Intervention History | MN-0040-LS</h5>
-  </kendo-dialog-titlebar>
-
-  <intervention-history-table></intervention-history-table>
-</kendo-dialog>
+<div class="modal-wrapper">
+  <kendo-dialog
+  *ngIf="openIMState"
+  (close)="closeInterventionModal($event)"
+  id="interventionHistoryTable"
+  class="intervention-modal"
+  >
+    <kendo-dialog-titlebar class="justify-content-between">
+      <h5 class="fs-1rem fw-semibold mb-0">Well Intervention History | MN-0040-LS</h5>
+    </kendo-dialog-titlebar>
+    <intervention-history-table></intervention-history-table>
+  </kendo-dialog>
+</div>
 
 <div class="d-flex w-100 gap-3">
   <!-- Main Dashboard Content -->
@@ -35,11 +34,11 @@ id="interventionHistoryTable"
             <div class="header-expanded w-100">
               <div class="d-flex w-100 gap-5">
                 <div class="d-flex col-7 justify-content-between align-items-center">
-                  <h5 class="fs-16px fw-semibold mb-0">Well Information</h5>
+                  <h5 class="fs-1rem fw-semibold mb-0">Well Information</h5>
                   <button
                       kendoButton
                       fillMode="outline"
-                      class="py-1 px-3 fs-14px border border-1 rounded-pill text-primary" 
+                      class="py-1 px-3 fs-0_875rem border border-1 rounded-pill text-primary" 
                       (click)="openInterventionModal($event)">
                       Intervention History
                       <i class="ms-2 bi bi-arrow-right"></i>
@@ -47,11 +46,11 @@ id="interventionHistoryTable"
                 </div>
                 <div class="border-dim-gray border-end"></div>
                 <div class="d-flex flex-grow-1 justify-content-between align-items-center">
-                  <h5 class="fs-16px fw-semibold mb-0">Well Model</h5>
+                  <h5 class="fs-1rem fw-semibold mb-0">Well Model</h5>
                   <button
                       kendoButton
                       fillMode="outline"
-                      class="py-1 px-3 fs-14px border border-1 rounded-pill text-primary" 
+                      class="py-1 px-3 fs-0_875rem border border-1 rounded-pill text-primary" 
                       (click)="openManagementModal($event)">
                       Model Management
                       <i class="ms-2 bi bi-arrow-right"></i>
@@ -60,7 +59,7 @@ id="interventionHistoryTable"
                 <button
                   kendoButton
                   fillMode="clear"
-                  class="hyperlink-btn fw-semibold fs-14px"
+                  class="hyperlink-btn fw-semibold fs-0_875rem"
                   (click)="togglePanel()"
                 >
                   {{ isExpanded ? 'Hide Details' : 'Show Details' }}
@@ -73,41 +72,41 @@ id="interventionHistoryTable"
           <div class="body-content d-flex w-100 gap-5">
             <div class="d-flex col-7 justify-content-between">
               <div>
-                <span class="fs-12px fw-light">Well Type</span>
+                <span class="fs-0_75rem fw-light">Well Type</span>
                 <h6 class="fw-semibold">Oil Producer</h6>
               </div>
               <div>
-                <span class="fs-12px fw-light">Lift Type</span>
+                <span class="fs-0_75rem fw-light">Lift Type</span>
                 <h6 class="fw-semibold">Gas Lift</h6>
               </div>
               <div>
-                <span class="fs-12px fw-light">Trajectory</span>
+                <span class="fs-0_75rem fw-light">Trajectory</span>
                 <h6 class="fw-semibold">Vertical</h6>
               </div>
               <div>
-                <span class="fs-12px fw-light">Producing Reservoir</span>
+                <span class="fs-0_75rem fw-light">Producing Reservoir</span>
                 <div class="fw-semibold d-flex align-items-start">
                   Kharaib-2
                   <span kendoTooltip class="d-flex align-items-end" position="bottom">
                     <button kendoButton fillMode="clear" title="Since 2024-07-14" class="p-0 ms-3">
-                      <img src="assets/icons/hexagon-info.svg" alt="hexagon-info-icon" />
+                      <img src="assets/icons/hexagon-info.svg" alt="hexagon-info-icon" class="w-1_25rem" />
                     </button>
                   </span> 
                 </div>
               </div>
               <div>
-                <span class="fs-12px fw-light">Producing Sector</span>
+                <span class="fs-0_75rem fw-light">Producing Sector</span>
                 <h6 class="fw-semibold">Region 4</h6>
               </div>
             </div>
             <div class="border-dim-gray border-end"></div>
             <div class="d-flex flex-grow-1 justify-content-between">
               <div class="col-5">
-                <h6 class="fs-12px fw-light">Model Validity</h6>
+                <h6 class="fs-0_75rem fw-light">Model Validity</h6>
                 <span class="fw-semibold">Matched</span>
               </div>
               <div class="flex-grow-1">
-                <h6 class="fs-12px fw-light">Version Date</h6>
+                <h6 class="fs-0_75rem fw-light">Version Date</h6>
                 <span class="fw-semibold">2024-07-14</span>
               </div>
             </div>            
@@ -121,14 +120,14 @@ id="interventionHistoryTable"
       <!-- Left Column -->
       <div class="col-3 d-flex flex-column gap-3">
         <!-- First Row Left -->
-        <div class="height-260px">
+        <div class="height-16_25rem">
           <static-noise-background-card>
             <!-- Card Content -->
             <static-producer-well class="w-100 p-4"></static-producer-well>
           </static-noise-background-card>
         </div>
         <!-- Second Row Left -->
-        <div class="height-260px">
+        <div class="height-16_25rem">
           <!-- Second Row Left Content -->
           <static-noise-background-card>
             <!-- Card Content -->
@@ -138,7 +137,7 @@ id="interventionHistoryTable"
 
       <!-- Right Column -->
       <div
-        class="flex-grow-1 height-536px"
+        class="flex-grow-1 height-33_5rem"
       >
         <static-noise-background-card></static-noise-background-card>
       </div>
@@ -147,7 +146,7 @@ id="interventionHistoryTable"
     <!-- Fourth Row Cards -->
     <div class="d-flex w-100 gap-3">
       <div
-        class="col-6 height-314px"
+        class="col-6 height-19_625rem"
       >
         <static-noise-background-card class="transparent-overlay">
           <!-- Card Content Here -->
@@ -155,7 +154,7 @@ id="interventionHistoryTable"
         </static-noise-background-card>
       </div>
       <div
-        class="flex-grow-1 height-314px"
+        class="flex-grow-1 height-19_625rem"
       >
         <static-noise-background-card class="transparent-overlay">
           <!-- Card Content Here -->
@@ -175,7 +174,7 @@ id="interventionHistoryTable"
   >
     <div class="w-100 rounded-4 smart-alarm-panel">
       <static-noise-background-card class="transparent-overlay">
-        <static-notification-panel></static-notification-panel>
+        <static-notification-panel class="w-100"></static-notification-panel>
       </static-noise-background-card>
     </div>
   </div>

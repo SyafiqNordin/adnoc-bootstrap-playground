@@ -11,21 +11,19 @@
     position: position
   }"
   [pageSize]="pageSize"
-  [rowHeight]="40"
-  [height]="500"
   scrollable="scrollable"
   [rowClass]="stripedRows"
 >
   <ng-template kendoGridToolbarTemplate>
     <div class="w-100 d-flex justify-content-between align-items-center">
       <kendo-textbox
-        [style.width.px]="180"
-        class="bg-dim-gray fs-14px text-primary rounded-pill px-3 gradient-border"
+        [style.width.rem]="11.25"
+        class="bg-dim-gray fs-0_875rem text-primary rounded-pill px-3 gradient-border"
         placeholder="Search"
         (valueChange)="onFilter($event)"
       >
         <ng-template kendoTextBoxPrefixTemplate>
-          <img src="assets/icons/search.svg" alt="search-icon" />
+          <img src="assets/icons/search.svg" alt="search-icon" class="w-1rem" />
         </ng-template>
       </kendo-textbox>
       <div>
@@ -36,7 +34,7 @@
           themeColor="light"
           class="rounded"
         >
-          <img src="assets/icons/download.svg" alt="download-icon" />
+          <img src="assets/icons/download.svg" alt="download-icon" class="w-1_25rem" />
         </button>
         <button
           kendoButton
@@ -45,20 +43,20 @@
           themeColor="light"
           class="rounded"
         >
-          <img src="assets/icons/settings-gear.svg" alt="swap-table-icon" />
+          <img src="assets/icons/settings-gear.svg" alt="swap-table-icon" class="w-1_25rem" />
         </button>
       </div>
     </div>
 
   </ng-template>
 
-  <kendo-grid-column field="startDateTime" title="Start Date & Time" [width]="200"> </kendo-grid-column>
-  <kendo-grid-column field="endDateTime" title="End Date & Time" [width]="200"> </kendo-grid-column>
+  <kendo-grid-column field="startDateTime" title="Start Date & Time" class="w-12_5rem"> </kendo-grid-column>
+  <kendo-grid-column field="endDateTime" title="End Date & Time" class="w-12_5rem"> </kendo-grid-column>
   <kendo-grid-column field="interventionType" title="Intervention Type"> </kendo-grid-column>
-  <kendo-grid-column field="interventionDetails" title="Intervention Details" [width]="540"> </kendo-grid-column>
+  <kendo-grid-column field="interventionDetails" title="Intervention Details" class="w-33_75rem"> </kendo-grid-column>
   
   <kendo-grid-excel fileName="WP_InterventionHistory.xlsx"></kendo-grid-excel>
 </kendo-grid>
 
 <!-- Date of data -->
-<div class="mt-2 fs-12px text-secondary fw-light">Data as at 19-01-2024 13:00</div>
+<div class="mt-2 fs-0_75rem text-secondary fw-light">Data as at 19-01-2024 13:00</div>

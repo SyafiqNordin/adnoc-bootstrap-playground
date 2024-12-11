@@ -15,9 +15,9 @@
   &:before {
     content: "";
     position: absolute;
-    inset: -1px;
+    inset: -0.0625rem;
     border-radius: inherit;
-    padding: 3px;
+    padding: 0.188rem;
     background: linear-gradient(
       to bottom right,
       var(--c1) 0%,
@@ -56,16 +56,16 @@
 
 static-noise-background-card:not(.collapsible-panel):not(.transparent-overlay) .bg-noise-card {
   background: linear-gradient(180deg, rgba($adnoc-logo-blue-text-color, 0.40) 0%, rgba($adnoc-logo-blue-text-color, 0.05) 60%);
-  backdrop-filter: blur(17.5px);
+  backdrop-filter: blur(1.094rem);
   opacity: 1.2;
   z-index: 2;
-  border: 2px solid rgba($white-base-color, 0.1);
+  border: 0.125rem solid rgba($white-base-color, 0.1);
 }
   
 static-noise-background-card.collapsible-panel .bg-noise-card,
 static-noise-background-card.transparent-overlay .bg-noise-card {
-  border-radius: 16px;
-  backdrop-filter: blur(17.5px);
+  border-radius: 1rem;
+  backdrop-filter: blur(1.094rem);
   z-index: 1;
-  border: 2px solid rgba($white-base-color, 0.1);
+  border: 0.125rem solid rgba($white-base-color, 0.1);
 }
