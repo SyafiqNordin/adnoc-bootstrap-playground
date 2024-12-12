@@ -113,39 +113,39 @@ main.flex-grow-1 {
   cursor: pointer;
 }
 
-#ticketAlarmTab .k-tabstrip-content {
+.collapsible-container-b-0 .k-tabstrip-content {
   padding: 0.5rem 1rem 1rem 1rem !important;
   overflow-y: auto;
 }
 
-#ticketAlarmTab .k-tabstrip-items-wrapper {
+.collapsible-container-b-0 .k-tabstrip-items-wrapper {
   padding: 1rem 1rem 0 1rem !important;
 }
 
-#ticketAlarmTab .k-tabstrip-items li.k-item {
+.collapsible-container-b-0 .k-tabstrip-items li.k-item {
   background: rgba($neutral-gray-color, 0.10) !important;
   color: $white-base-color !important;
 }
 
-#ticketAlarmTab .k-tabstrip-items li.k-item.k-active {
+.collapsible-container-b-0 .k-tabstrip-items li.k-item.k-active {
   background: rgba($adnoc-logo-blue-text-color, 0.30) !important;
 }
 
-#ticketAlarmTab li.k-first {
+.collapsible-container-b-0 li.k-first {
   border-top-left-radius:1.5rem !important;
   border-bottom-left-radius:1.5rem !important;
 }
 
-#ticketAlarmTab li.k-last {
+.collapsible-container-b-0 li.k-last {
   border-top-right-radius:1.5rem !important;
   border-bottom-right-radius:1.5rem !important;
 }
 
-#ticketAlarmTab .k-expander-header {
+.collapsible-container-b-0 .k-expander-header {
   padding: 0 0 0.625rem 0 !important;
 }
 
-#ticketAlarmTab .k-expander-content {
+.collapsible-container-b-0 .k-expander-content {
   padding: 0 !important;
 }
 
@@ -162,8 +162,7 @@ main.flex-grow-1 {
   border: none !important;
 }
 
-.k-grid .k-textbox,
-#ticketAlarmTab .k-tabstrip-content {
+.k-grid .k-textbox {
   background-color: transparent !important;
   --kendo-color-surface-alt: transparent !important;
 }
@@ -231,7 +230,7 @@ main.flex-grow-1 {
   cursor: pointer;
 }
 
-#FPSfilter {
+.dropdown-filter {
   min-width: 8.375rem !important;
   background-color: rgba($neutral-gray-color, 0.1) !important;
 }

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { LayoutModule  } from "@progress/kendo-angular-layout";
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { ButtonsModule } from "@progress/kendo-angular-buttons";
+import { SVGIcon } from "@progress/kendo-svg-icons";
 import { StaticAlarmsNotiComponent } from './alarms-noti/static-alarmsNoti.component';
 import { StaticSmartTicketNotiComponent } from './smart-ticket-noti/static-smartTicketNoti.component';
 
@@ -15,6 +16,7 @@ import { StaticSmartTicketNotiComponent } from './smart-ticket-noti/static-smart
     RouterModule,
     CommonModule,
     LayoutModule,
+    ButtonsModule,
     StaticAlarmsNotiComponent,
     StaticSmartTicketNotiComponent
   ],
@@ -59,6 +61,12 @@ export class StaticNotificationPanelComponent {
       updatedDate: '18-05-2024',
     },
   ];
+
+  selectedTabIndex: number = 0;
+
+  onTabClick(tabIndex: number) {
+    this.selectedTabIndex = tabIndex;
+  }
 
   viewMore(ticket: any): void {
     console.log('View More:', ticket);

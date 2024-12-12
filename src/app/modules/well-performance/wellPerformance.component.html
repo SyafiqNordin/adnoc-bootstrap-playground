@@ -2,8 +2,7 @@
   <kendo-dialog
   *ngIf="openIMState"
   (close)="closeInterventionModal($event)"
-  id="interventionHistoryTable"
-  class="intervention-modal"
+  class="popup-modal"
   >
     <kendo-dialog-titlebar class="justify-content-between">
       <h5 class="fs-1rem fw-semibold mb-0">Well Intervention History | MN-0040-LS</h5>
@@ -25,9 +24,8 @@
     <div class="w-100">
       <static-noise-background-card>
         <kendo-expansionpanel
-          class="rounded rounded-4 w-100"
+          class="collapsible-container rounded rounded-4 w-100"
           [expanded]="isExpanded"
-          id="wellInfoContainer"
         >
           <!-- Header Section -->
           <ng-template kendoExpansionPanelTitleDirective>

@@ -144,7 +144,7 @@ kendo-expansionpanel {
   }
 }
 
-#wellInfoContainer button.rounded-pill.text-primary {
+.collapsible-container button.rounded-pill.text-primary {
   z-index: 1;
 }
 
@@ -156,7 +156,7 @@ kendo-expansionpanel {
   color: $blue-light-secondary-color;
 }
 
-#wellInfoContainer .k-expander-indicator {
+.collapsible-container .k-expander-indicator {
   display: none !important;
 }
 
@@ -170,34 +170,34 @@ kendo-expansionpanel {
   background: rgba($natural-white-color, 0.3);
 }
 
-#interventionHistoryTable .k-dialog {
+.popup-modal .k-dialog {
   background: linear-gradient(180deg, rgba($button-text-color, 0.45) 0%, rgba($button-text-color, 0.30) 100%);
   backdrop-filter: blur(2.813rem); 
   border-radius: 1rem;
   outline: 0.125rem solid rgba($white-base-color, 0.1);
 }
 
-#interventionHistoryTable .k-pager,
-#interventionHistoryTable .k-pager-numbers button {
+.popup-modal .k-pager,
+.popup-modal .k-pager-numbers button {
   font-size: 0.75rem !important;
 }
 
-#interventionHistoryTable .k-pager .k-input-value-text,
+.popup-modal .k-pager .k-input-value-text,
 .k-dropdownlist-popup .k-list-item-text {
   font-size:0.875rem !important;
 }
 
-#interventionHistoryTable .k-window-content {
+.popup-modal .k-window-content {
   padding-block: 0 1.5rem !important;
   padding-inline: 1.5rem !important;
 }
 
-#interventionHistoryTable .k-window-titlebar {
+.popup-modal .k-window-titlebar {
   padding-block: 1.5rem 1.25rem !important;
   padding-inline: 1.5rem !important;
 }
 
-#interventionHistoryTable .k-grid-toolbar {
+.popup-modal .k-grid-toolbar {
   padding-block: 0 0.75rem !important;
   padding-inline: 0 !important;
 }
@@ -211,7 +211,7 @@ kendo-expansionpanel {
   color: $black-tooltip-base-color !important;
 }
 
-.modal-wrapper .intervention-modal .k-dialog {
+.modal-wrapper .popup-modal .k-dialog {
   min-width: 75rem !important;
   width: 78.125rem !important;
   height: 38.75rem !important;
