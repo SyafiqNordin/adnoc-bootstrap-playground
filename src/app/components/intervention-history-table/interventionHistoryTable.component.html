@@ -16,7 +16,7 @@
 >
   <ng-template kendoGridToolbarTemplate>
     <div class="w-100 d-flex justify-content-between align-items-center">
-      <kendo-textbox
+      <!-- <kendo-textbox
         [style.width.rem]="11.25"
         class="bg-dim-gray fs-0_875rem text-primary rounded-pill px-3 gradient-border"
         placeholder="Search"
@@ -25,7 +25,13 @@
         <ng-template kendoTextBoxPrefixTemplate>
           <img src="assets/icons/search.svg" alt="search-icon" class="w-1rem" />
         </ng-template>
-      </kendo-textbox>
+      </kendo-textbox> -->
+      <div class="w-25 pe-5">
+        <search-input
+          [placeholder]="'Search'"
+          (valueChange)="onFilter($event)"
+        ></search-input>
+      </div>
       <div>
         <button
           kendoGridExcelCommand

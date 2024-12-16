@@ -6,7 +6,7 @@ import { KENDO_GRID, PagerPosition, PagerType, DataBindingDirective } from "@pro
 import { process } from "@progress/kendo-data-query";
 import { KENDO_DROPDOWNLIST, DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { KENDO_BUTTON } from "@progress/kendo-angular-buttons";
-import { KENDO_TEXTBOX } from '@progress/kendo-angular-inputs';
+import { SearchInputComponent } from '../search-input/search-input.component';
 
 @Component({
     selector: "intervention-history-table",
@@ -21,7 +21,7 @@ import { KENDO_TEXTBOX } from '@progress/kendo-angular-inputs';
         FormsModule,
         DropDownsModule,
         KENDO_BUTTON,
-        KENDO_TEXTBOX,
+        SearchInputComponent,
     ],
 })
 export class InterventionHistoryComponent implements AfterViewInit {
